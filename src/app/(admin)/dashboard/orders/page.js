@@ -1,14 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { 
-  collection, 
-  query, 
-  where, 
-  onSnapshot, 
-  doc, 
-  updateDoc, 
-  serverTimestamp 
-} from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue, update } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useAuthContext } from "@/context/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -42,12 +34,19 @@ const OrderManagement = () => {
   useEffect(() => {
     if (!cafeId) return;
 
-    const q = query(collection(db, "orders"), where("cafeId", "==", cafeId));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const o = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      // Sort by latest
-      o.sort((a, b) => b.createdAt?.toMillis() - a.createdAt?.toMillis());
-      setOrders(o);
+    const ordersRef = ref(db, "orders");
+    const q = query(ordersRef, orderByChild("cafeId"), equalTo(cafeId));
+    
+    const unsubscribe = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const o = Object.entries(data).map(([id, val]) => ({ id, ...val }));
+        // Sort by latest
+        o.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        setOrders(o);
+      } else {
+        setOrders([]);
+      }
       setLoading(false);
     });
 
@@ -56,10 +55,10 @@ const OrderManagement = () => {
 
   const updateStatus = async (orderId, newStatus, extraData = {}) => {
     try {
-      await updateDoc(doc(db, "orders", orderId), {
+      await update(ref(db, `orders/${orderId}`), {
         status: newStatus,
         ...extraData,
-        updatedAt: serverTimestamp()
+        updatedAt: new Date().toISOString()
       });
       setSelectedOrder(null);
     } catch (error) {

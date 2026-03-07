@@ -1,16 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { 
-  collection, 
-  query, 
-  where, 
-  onSnapshot, 
-  addDoc, 
-  doc, 
-  updateDoc, 
-  deleteDoc, 
-  serverTimestamp 
-} from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue, push, set, update, remove } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useAuthContext } from "@/context/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -46,10 +36,16 @@ const InventoryPage = () => {
   useEffect(() => {
     if (!cafeId) return;
 
-    const q = query(collection(db, "products"), where("cafeId", "==", cafeId));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const p = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setProducts(p);
+    const productsRef = ref(db, "products");
+    const q = query(productsRef, orderByChild("cafeId"), equalTo(cafeId));
+    
+    const unsubscribe = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setProducts(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+      } else {
+        setProducts([]);
+      }
       setLoading(false);
     });
 
@@ -68,15 +64,16 @@ const InventoryPage = () => {
         description,
         cafeId,
         isHidden: false,
-        updatedAt: serverTimestamp(),
+        updatedAt: new Date().toISOString(),
       };
 
       if (editingProduct) {
-        await updateDoc(doc(db, "products", editingProduct.id), productData);
+        await update(ref(db, `products/${editingProduct.id}`), productData);
       } else {
-        await addDoc(collection(db, "products"), {
+        const newRef = push(ref(db, "products"));
+        await set(newRef, {
           ...productData,
-          createdAt: serverTimestamp(),
+          createdAt: new Date().toISOString(),
         });
       }
 
@@ -92,7 +89,7 @@ const InventoryPage = () => {
 
   const toggleVisibility = async (product) => {
     try {
-      await updateDoc(doc(db, "products", product.id), {
+      await update(ref(db, `products/${product.id}`), {
         isHidden: !product.isHidden
       });
     } catch (error) {
@@ -103,7 +100,7 @@ const InventoryPage = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await deleteDoc(doc(db, "products", id));
+        await remove(ref(db, `products/${id}`));
       } catch (error) {
         console.error(error);
       }

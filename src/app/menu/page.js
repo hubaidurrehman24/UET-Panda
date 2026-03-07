@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/common/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useCartContext } from "@/context/CartContext";
 import {
@@ -18,6 +18,8 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
+import { useAuthContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const CAFES = [
   { id: "all",   label: "All Cafes" },
@@ -25,7 +27,7 @@ const CAFES = [
   { id: "cafe2", label: "Cafe 2" },
   { id: "cafe3", label: "Cafe 3" },
   { id: "cafe4", label: "Cafe 4" },
-  { id: "cafe5", label: "Cafe 5" },
+
 ];
 
 const SORT_OPTIONS = [
@@ -45,17 +47,30 @@ export default function AllMenuPage() {
   const [showFilters, setShowFilters] = useState(false);
   const [addedId, setAddedId] = useState(null);
   const { addToCart } = useCartContext();
+  const { user } = useAuthContext();
+  const router = useRouter();
 
   useEffect(() => {
-    const q = query(collection(db, "products"), where("isHidden", "==", false));
-    const unsub = onSnapshot(q, (snap) => {
-      setItems(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    const productsRef = ref(db, "products");
+    const q = query(productsRef, orderByChild("isHidden"), equalTo(false));
+    
+    const unsub = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+      } else {
+        setItems([]);
+      }
       setLoading(false);
     });
     return () => unsub();
   }, []);
 
   const handleAdd = (item) => {
+    if (!user) {
+      router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
+      return;
+    }
     addToCart(item);
     setAddedId(item.id);
     setTimeout(() => setAddedId(null), 1500);

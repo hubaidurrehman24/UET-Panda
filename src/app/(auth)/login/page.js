@@ -1,19 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase/config";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider, db } from "@/firebase/config";
+import { ref, get, set } from "firebase/database";
 import { motion } from "framer-motion";
 import { Mail, Lock, LogIn, ArrowRight, Eye, EyeOff, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-const LoginPage = () => {
+function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get("redirect") || "/";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,10 +27,39 @@ const LoginPage = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push("/");
+      router.push(redirectUrl);
     } catch (err) {
       console.error(err);
       setError("Invalid email or password. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      
+      // Check if user exists in db
+      const userRef = ref(db, `users/${user.uid}`);
+      const snapshot = await get(userRef);
+      
+      if (!snapshot.exists()) {
+        await set(userRef, {
+          name: user.displayName || "Google User",
+          email: user.email,
+          role: "student",
+          createdAt: new Date().toISOString()
+        });
+      }
+      
+      router.push(redirectUrl);
+    } catch (error) {
+      console.error(error);
+      setError("Failed to sign in with Google.");
     } finally {
       setLoading(false);
     }
@@ -132,6 +166,23 @@ const LoginPage = () => {
                 </>
               )}
             </button>
+            
+            <div className="relative flex items-center justify-center py-2">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-white/10"></div>
+              </div>
+              <div className="relative bg-[#002366] px-4 text-xs tracking-widest text-blue-100/40 uppercase font-bold">Or</div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              disabled={loading}
+              className="w-full bg-white text-slate-800 py-4 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all active:scale-95 hover:bg-slate-50"
+            >
+              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" className="w-5 h-5" />
+              <span>Continue with Google</span>
+            </button>
           </form>
 
           {/* Footer Card Section */}
@@ -152,6 +203,12 @@ const LoginPage = () => {
       </motion.div>
     </div>
   );
-};
+}
 
-export default LoginPage;
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-uet-navy flex justify-center items-center"><div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-uet-gold"></div></div>}>
+      <LoginContent />
+    </Suspense>
+  );
+}

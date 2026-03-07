@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useAuthContext } from "@/context/AuthContext";
 import { motion } from "framer-motion";
@@ -26,24 +26,34 @@ const AnalyticsPage = () => {
   useEffect(() => {
     if (!cafeId) return;
 
-    const q = query(
-      collection(db, "orders"), 
-      where("cafeId", "==", cafeId),
-      where("status", "==", "Delivered")
-    );
+    const ordersRef = ref(db, "orders");
+    const q = query(ordersRef, orderByChild("cafeId"), equalTo(cafeId));
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const o = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setOrders(o);
-      
-      const total = o.reduce((sum, order) => sum + order.total, 0);
-      const cod = o.filter(ord => ord.paymentMethod === 'cod').reduce((sum, order) => sum + order.total, 0);
-      const online = o.filter(ord => ord.paymentMethod === 'stripe').reduce((sum, order) => sum + order.total, 0);
-      
-      setTotalSales(total);
-      setCodSales(cod);
-      setOnlineSales(online);
-      setDeliveredCount(o.length);
+    const unsubscribe = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        // Firebase queries support one OrderByChild filter, filter by status in JS
+        const o = Object.entries(data)
+          .map(([id, val]) => ({ id, ...val }))
+          .filter(ord => ord.status === "Delivered");
+          
+        setOrders(o);
+        
+        const total = o.reduce((sum, order) => sum + order.total, 0);
+        const cod = o.filter(ord => ord.paymentMethod === 'cod').reduce((sum, order) => sum + order.total, 0);
+        const online = o.filter(ord => ord.paymentMethod === 'stripe').reduce((sum, order) => sum + order.total, 0);
+        
+        setTotalSales(total);
+        setCodSales(cod);
+        setOnlineSales(online);
+        setDeliveredCount(o.length);
+      } else {
+        setOrders([]);
+        setTotalSales(0);
+        setCodSales(0);
+        setOnlineSales(0);
+        setDeliveredCount(0);
+      }
     });
 
     return () => unsubscribe();

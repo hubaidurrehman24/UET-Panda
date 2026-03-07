@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
-import { auth, db } from "@/firebase/config";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider, db } from "@/firebase/config";
+import { ref, get, set } from "firebase/database";
 import { motion } from "framer-motion";
-import { User, Mail, Lock, UserPlus, ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import { User, Mail, Lock, UserPlus, ArrowRight, AlertCircle, CheckCircle2, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-const RegisterPage = () => {
+function RegisterContent() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +18,11 @@ const RegisterPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get("redirect") || "/login";
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -32,8 +38,8 @@ const RegisterPage = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Create user profile in Firestore
-      await setDoc(doc(db, "users", user.uid), {
+      // Create user profile in Realtime Database
+      await set(ref(db, `users/${user.uid}`), {
         name,
         email,
         role: "student",
@@ -42,7 +48,7 @@ const RegisterPage = () => {
 
       setSuccess(true);
       setTimeout(() => {
-        router.push("/login");
+        router.push(redirectUrl);
       }, 2000);
     } catch (err) {
       console.error(err);
@@ -51,6 +57,35 @@ const RegisterPage = () => {
       } else {
         setError("Failed to create account. Please try again.");
       }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      
+      // Check if user exists in db
+      const userRef = ref(db, `users/${user.uid}`);
+      const snapshot = await get(userRef);
+      
+      if (!snapshot.exists()) {
+        await set(userRef, {
+          name: user.displayName || "Google User",
+          email: user.email,
+          role: "student",
+          createdAt: new Date().toISOString()
+        });
+      }
+      
+      router.push(redirectUrl === "/login" ? "/" : redirectUrl);
+    } catch (error) {
+      console.error(error);
+      setError("Failed to sign in with Google.");
     } finally {
       setLoading(false);
     }
@@ -130,7 +165,7 @@ const RegisterPage = () => {
                 <input 
                   type="email" 
                   required
-                  placeholder="name@uet.edu.pk"
+                  placeholder="your.email@example.com"
                   className="w-full bg-white/5 border border-white/10 text-white py-3 pr-4 pl-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-uet-gold focus:bg-white/10 transition-all font-medium"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -142,34 +177,48 @@ const RegisterPage = () => {
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
                 <label className="block text-blue-100/80 text-xs font-bold mb-2 ml-1 uppercase tracking-wider">Password</label>
-                <div className="relative group">
+                <div className="relative group flex items-center">
                   <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-blue-100/40 group-focus-within:text-uet-gold transition-colors">
                     <Lock size={18} />
                   </div>
                   <input 
-                    type="password" 
+                    type={showPassword ? "text" : "password"} 
                     required
                     placeholder="••••••••"
-                    className="w-full bg-white/5 border border-white/10 text-white py-3 pr-4 pl-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-uet-gold focus:bg-white/10 transition-all font-medium text-sm"
+                    className="w-full bg-white/5 border border-white/10 text-white py-3 pr-12 pl-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-uet-gold focus:bg-white/10 transition-all font-medium text-sm"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+                  <button 
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-4 flex items-center text-blue-100/40 hover:text-white transition-colors"
+                  >
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
                 </div>
               </div>
               <div>
                 <label className="block text-blue-100/80 text-xs font-bold mb-2 ml-1 uppercase tracking-wider">Confirm</label>
-                <div className="relative group">
+                <div className="relative group flex items-center">
                   <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-blue-100/40 group-focus-within:text-uet-gold transition-colors">
                     <Lock size={18} />
                   </div>
                   <input 
-                    type="password" 
+                    type={showConfirmPassword ? "text" : "password"} 
                     required
                     placeholder="••••••••"
-                    className="w-full bg-white/5 border border-white/10 text-white py-3 pr-4 pl-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-uet-gold focus:bg-white/10 transition-all font-medium text-sm"
+                    className="w-full bg-white/5 border border-white/10 text-white py-3 pr-12 pl-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-uet-gold focus:bg-white/10 transition-all font-medium text-sm"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
+                  <button 
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute inset-y-0 right-4 flex items-center text-blue-100/40 hover:text-white transition-colors"
+                  >
+                    {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
                 </div>
               </div>
             </div>
@@ -189,6 +238,23 @@ const RegisterPage = () => {
                 </>
               )}
             </button>
+            
+            <div className="relative flex items-center justify-center py-2 mt-4">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-white/10"></div>
+              </div>
+              <div className="relative bg-[#002366] px-4 text-xs tracking-widest text-blue-100/40 uppercase font-bold">Or</div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              disabled={loading}
+              className="w-full bg-white text-slate-800 py-4 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all active:scale-95 hover:bg-slate-50 mt-4"
+            >
+              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" className="w-5 h-5" />
+              <span>Continue with Google</span>
+            </button>
           </form>
 
           <div className="mt-8 pt-6 border-t border-white/10 text-center">
@@ -201,6 +267,12 @@ const RegisterPage = () => {
       </motion.div>
     </div>
   );
-};
+}
 
-export default RegisterPage;
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-uet-navy flex justify-center items-center"><div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-uet-gold"></div></div>}>
+      <RegisterContent />
+    </Suspense>
+  );
+}

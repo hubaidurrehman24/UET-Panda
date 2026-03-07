@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Navbar from "@/components/common/Navbar";
+import ProtectedRoute from "@/components/common/ProtectedRoute";
 import { useCartContext } from "@/context/CartContext";
 import { useAuthContext } from "@/context/AuthContext";
 import { db } from "@/firebase/config";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { ref, push, set } from "firebase/database";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, User, CreditCard, Banknote, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -18,13 +19,24 @@ const CheckoutPage = () => {
   const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' or 'stripe'
   const [loading, setLoading] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
+  const [showStripeMock, setShowStripeMock] = useState(false);
   const router = useRouter();
 
   const handleCheckout = async (e) => {
     e.preventDefault();
     if (!user) {
       alert("Please login to place an order.");
-      router.push("/login");
+      router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
+      return;
+    }
+
+    if (!/^03\d{9}$/.test(phone)) {
+      alert("Please enter a valid 11-digit Pakistani phone number starting with 03 (e.g., 03001234567)");
+      return;
+    }
+
+    if (paymentMethod === "stripe" && !showStripeMock) {
+      setShowStripeMock(true);
       return;
     }
 
@@ -51,13 +63,14 @@ const CheckoutPage = () => {
           status: "Preparing", // Preparing -> Out for Delivery -> Delivered
           paymentMethod: paymentMethod,
           isPaid: paymentMethod === 'stripe', // Online is paid immediately
-          createdAt: serverTimestamp(),
+          createdAt: new Date().toISOString(),
           riderName: "",
           riderPhone: "",
         };
 
-        const docRef = await addDoc(collection(db, "orders"), orderData);
-        orderIds.push(docRef.id);
+        const newOrderRef = push(ref(db, "orders"));
+        await set(newOrderRef, orderData);
+        orderIds.push(newOrderRef.key);
       }
 
       setOrderComplete(true);
@@ -98,10 +111,53 @@ const CheckoutPage = () => {
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <header className="mb-10 text-center">
-            <h1 className="text-3xl font-poppins font-bold text-uet-navy">Secure Checkout</h1>
-            <p className="text-slate-500 mt-2 font-medium">Split billing logic will generate separate receipts</p>
+            <h1 className="text-3xl font-poppins font-bold text-uet-navy">{showStripeMock ? "Online Payment" : "Secure Checkout"}</h1>
+            <p className="text-slate-500 mt-2 font-medium">{showStripeMock ? "Mock Stripe Integration" : "Split billing logic will generate separate receipts"}</p>
         </header>
 
+        {showStripeMock ? (
+          <div className="max-w-md mx-auto bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100">
+             <div className="flex justify-between items-center mb-6">
+                <h3 className="text-xl font-poppins font-bold text-uet-navy">Card Details</h3>
+                <CreditCard size={24} className="text-uet-gold" />
+             </div>
+             
+             <div className="space-y-4">
+               <div>
+                  <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Card Number</label>
+                  <input type="text" placeholder="4242 4242 4242 4242" className="w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono" />
+               </div>
+               <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Expiry</label>
+                    <input type="text" placeholder="MM/YY" className="w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono" />
+                  </div>
+                  <div>
+                    <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">CVC</label>
+                    <input type="text" placeholder="123" className="w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono" />
+                  </div>
+               </div>
+               
+               <div className="pt-6 border-t border-slate-100 mt-6 flex gap-4">
+                 <button 
+                    type="button" 
+                    onClick={() => setShowStripeMock(false)}
+                    className="flex-1 bg-slate-100 text-slate-500 py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 transition-all active:scale-95"
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={handleCheckout}
+                    disabled={loading}
+                    className="flex-1 bg-uet-navy text-white py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-navy transition-all active:scale-95 disabled:opacity-50"
+                  >
+                    {loading ? <Loader2 className="animate-spin" /> : <span>Pay Rs. {cartTotal + 50}</span>}
+                  </button>
+               </div>
+             </div>
+          </div>
+        ) : (
         <form onSubmit={handleCheckout} className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* User Details */}
           <div className="space-y-6">
@@ -212,15 +268,22 @@ const CheckoutPage = () => {
                   {loading ? <Loader2 className="animate-spin" /> : <><span>Place Multi-Order</span> <ArrowRight size={20} /></>}
                 </button>
 
-                <p className="text-center mt-6 text-[10px] text-blue-100/30 uppercase tracking-[0.2em] font-medium leading-relaxed">
+                 <p className="text-center mt-6 text-[10px] text-blue-100/30 uppercase tracking-[0.2em] font-medium leading-relaxed">
                   Encryption active. Secure checkout via UET Panda Gate.
                 </p>
              </div>
           </div>
         </form>
+        )}
       </div>
     </main>
   );
 };
 
-export default CheckoutPage;
+export default function ProtectedCheckoutPage() {
+  return (
+    <ProtectedRoute>
+      <CheckoutPage />
+    </ProtectedRoute>
+  );
+}

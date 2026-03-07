@@ -13,9 +13,11 @@ import {
   Store,
 } from "lucide-react";
 import Link from "next/link";
-import { collection, query, where, onSnapshot, limit } from "firebase/firestore";
+import { ref, query, orderByChild, limitToFirst, onValue, equalTo } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useCartContext } from "@/context/CartContext";
+import { useAuthContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 /* ─── Cafe Card Data ───────────────────────────────────── */
 const cafes = [
@@ -23,7 +25,7 @@ const cafes = [
   { id: "cafe2", name: "Cafe 2", tagline: "Fresh burgers, sandwiches & crispy fries", specialty: "Fast Food",            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80", rating: "4.6", color: "from-yellow-500 to-orange-600", badge: "⚡ Quick Bites" },
   { id: "cafe3", name: "Cafe 3", tagline: "Hot tea, cold drinks & light snacks",      specialty: "Beverages",            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80", rating: "4.5", color: "from-emerald-600 to-teal-700",  badge: "☕ Best Chai" },
   { id: "cafe4", name: "Cafe 4", tagline: "Shawarmas, rolls & street style eats",     specialty: "Street Food",          image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80", rating: "4.7", color: "from-purple-600 to-indigo-700", badge: "🌯 Street Eats" },
-  { id: "cafe5", name: "Cafe 5", tagline: "Desserts, juices & healthy options",       specialty: "Desserts & Juices",    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80", rating: "4.9", color: "from-pink-500 to-rose-600",    badge: "🍰 Sweet Corner" },
+
 ];
 
 /* ─── Component ────────────────────────────────────────── */
@@ -32,21 +34,30 @@ export default function Home() {
   const [featuredItems, setFeaturedItems] = useState([]);
   const [addedId, setAddedId] = useState(null);
   const { addToCart } = useCartContext();
+  const { user } = useAuthContext();
+  const router = useRouter();
 
-  // Fetch 10 items from Firestore (all cafes)
+  // Fetch 10 items from Realtime Database (all cafes)
   useEffect(() => {
-    const q = query(
-      collection(db, "products"),
-      where("isHidden", "==", false),
-      limit(10)
-    );
-    const unsub = onSnapshot(q, (snap) => {
-      setFeaturedItems(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    const productsRef = ref(db, "products");
+    const q = query(productsRef, orderByChild("isHidden"), equalTo(false), limitToFirst(10));
+    
+    const unsub = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setFeaturedItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+      } else {
+        setFeaturedItems([]);
+      }
     });
     return () => unsub();
   }, []);
 
   const handleAddToCart = (item) => {
+    if (!user) {
+      router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
+      return;
+    }
     addToCart(item);
     setAddedId(item.id);
     setTimeout(() => setAddedId(null), 1500);

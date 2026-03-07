@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { ref, get } from "firebase/database";
 import { auth, db } from "@/firebase/config";
 
 const AuthContext = createContext({});
@@ -18,14 +18,15 @@ export const AuthContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
-        // Fetch user role from Firestore
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-          const userData = userDoc.data();
+        // Fetch user role from Realtime Database
+        const userRef = ref(db, `users/${user.uid}`);
+        const snapshot = await get(userRef);
+        if (snapshot.exists()) {
+          const userData = snapshot.val();
           setUserRole(userData.role);
           setCafeId(userData.cafeId || null);
         } else {
-          // Default to student if no doc exists (auto-created on first login)
+          // Default to student if no node exists (auto-created on first login)
           setUserRole("student");
         }
       } else {

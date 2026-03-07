@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/common/Navbar";
+import ProtectedRoute from "@/components/common/ProtectedRoute";
 import { useAuthContext } from "@/context/AuthContext";
 import { db } from "@/firebase/config";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Package, 
@@ -29,12 +30,19 @@ const OrderTracking = () => {
   useEffect(() => {
     if (!user) return;
 
-    const q = query(collection(db, "orders"), where("userId", "==", user.uid));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const o = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      // Sort by creation time
-      o.sort((a, b) => b.createdAt?.toMillis() - a.createdAt?.toMillis());
-      setOrders(o);
+    const ordersRef = ref(db, "orders");
+    const q = query(ordersRef, orderByChild("userId"), equalTo(user.uid));
+    
+    const unsubscribe = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const o = Object.entries(data).map(([id, val]) => ({ id, ...val }));
+        // Sort by creation time
+        o.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        setOrders(o);
+      } else {
+        setOrders([]);
+      }
       setLoading(false);
     });
 
@@ -225,4 +233,10 @@ const OrderTracking = () => {
   );
 };
 
-export default OrderTracking;
+export default function ProtectedOrderTrackingPage() {
+  return (
+    <ProtectedRoute>
+      <OrderTracking />
+    </ProtectedRoute>
+  );
+}

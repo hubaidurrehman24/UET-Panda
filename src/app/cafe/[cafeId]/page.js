@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/common/Navbar";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
 import { db } from "@/firebase/config";
 import { useCartContext } from "@/context/CartContext";
 import {
@@ -19,13 +19,15 @@ import {
   Flame,
 } from "lucide-react";
 import Link from "next/link";
+import { useAuthContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const cafeInfo = {
   cafe1: { name: "Cafe 1", specialty: "Biryani & Karahi", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&auto=format&fit=crop&q=80", color: "from-orange-700 to-red-800" },
   cafe2: { name: "Cafe 2", specialty: "Fast Food",          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&auto=format&fit=crop&q=80", color: "from-yellow-600 to-orange-700" },
   cafe3: { name: "Cafe 3", specialty: "Beverages",          image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&auto=format&fit=crop&q=80", color: "from-emerald-700 to-teal-800" },
   cafe4: { name: "Cafe 4", specialty: "Street Food",        image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1200&auto=format&fit=crop&q=80", color: "from-purple-700 to-indigo-800" },
-  cafe5: { name: "Cafe 5", specialty: "Desserts & Juices",  image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1200&auto=format&fit=crop&q=80", color: "from-pink-600 to-rose-700" },
+
 };
 
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low", "A-Z"];
@@ -43,21 +45,34 @@ export default function CafeMenuPage() {
   const [addedId, setAddedId] = useState(null);
 
   const { addToCart } = useCartContext();
+  const { user, loading: authLoading } = useAuthContext();
+  const router = useRouter();
 
   useEffect(() => {
-    const q = query(
-      collection(db, "products"),
-      where("cafeId", "==", cafeId),
-      where("isHidden", "==", false)
-    );
-    const unsub = onSnapshot(q, (snap) => {
-      setItems(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    const productsRef = ref(db, "products");
+    const q = query(productsRef, orderByChild("cafeId"), equalTo(cafeId));
+    
+    const unsub = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        // Firebase queries support one OrderByChild filter, so we filter out isHidden in JS
+        const activeItems = Object.entries(data)
+          .map(([id, val]) => ({ id, ...val }))
+          .filter(item => item.isHidden === false);
+        setItems(activeItems);
+      } else {
+        setItems([]);
+      }
       setLoading(false);
     });
     return () => unsub();
   }, [cafeId]);
 
   const handleAddToCart = (item) => {
+    if (!user) {
+      router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
+      return;
+    }
     addToCart(item);
     setAddedId(item.id);
     setTimeout(() => setAddedId(null), 1500);
