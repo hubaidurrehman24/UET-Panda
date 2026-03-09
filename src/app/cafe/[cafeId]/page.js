@@ -8,7 +8,6 @@ import { db } from "@/firebase/config";
 import { useCartContext } from "@/context/CartContext";
 import {
   Search,
-  SlidersHorizontal,
   ShoppingCart,
   Star,
   Clock,
@@ -16,6 +15,7 @@ import {
   ChevronDown,
   X,
   ArrowLeft,
+  ArrowRight,
   Flame,
 } from "lucide-react";
 import Link from "next/link";
@@ -32,6 +32,17 @@ const cafeInfo = {
 
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low", "A-Z"];
 
+const CATEGORIES = [
+  { id: "all", label: "All Categories" },
+  { id: "fast-food", label: "Fast Food" },
+  { id: "desi", label: "Desi Food" },
+  { id: "chinese", label: "Chinese" },
+  { id: "deals", label: "Deals" },
+  { id: "snacks", label: "Snacks" },
+  { id: "drinks", label: "Drinks" },
+  { id: "breakfast", label: "Breakfast" }
+];
+
 export default function CafeMenuPage() {
   const { cafeId } = useParams();
   const cafe = cafeInfo[cafeId] || { name: cafeId, specialty: "Menu", image: "", color: "from-uet-navy to-blue-900" };
@@ -39,14 +50,20 @@ export default function CafeMenuPage() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("Default");
-  const [maxPrice, setMaxPrice] = useState(2000);
-  const [showFilters, setShowFilters] = useState(false);
   const [addedId, setAddedId] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(12);
 
   const { addToCart } = useCartContext();
   const { user, loading: authLoading } = useAuthContext();
   const router = useRouter();
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, sortBy, selectedCategory, itemsPerPage]);
 
   useEffect(() => {
     const productsRef = ref(db, "products");
@@ -82,15 +99,21 @@ export default function CafeMenuPage() {
   let displayed = items
     .filter((i) => {
       const q = searchTerm.toLowerCase();
-      return (
-        (i.name.toLowerCase().includes(q) || i.description?.toLowerCase().includes(q)) &&
-        i.price <= maxPrice
-      );
+      const matchSearch = i.name.toLowerCase().includes(q) || i.description?.toLowerCase().includes(q);
+      const itemCat = i.category || "desi";
+      const matchCategory = selectedCategory === "all" || itemCat === selectedCategory;
+      return matchSearch && matchCategory;
     });
 
   if (sortBy === "Price: Low to High") displayed.sort((a, b) => a.price - b.price);
   else if (sortBy === "Price: High to Low") displayed.sort((a, b) => b.price - a.price);
   else if (sortBy === "A-Z") displayed.sort((a, b) => a.name.localeCompare(b.name));
+
+  // Pagination Support
+  const totalPages = Math.ceil(displayed.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = displayed.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -117,7 +140,7 @@ export default function CafeMenuPage() {
             </div>
             <div className="hidden md:flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full">
               <Flame size={16} className="text-uet-gold" />
-              <span className="text-white font-bold text-sm">{displayed.length} Items Available</span>
+              <span className="text-white font-bold text-sm">{items.length} Items Available</span>
             </div>
           </div>
         </div>
@@ -155,67 +178,41 @@ export default function CafeMenuPage() {
             <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white pointer-events-none" size={14} />
           </div>
 
-          {/* Filter Toggle */}
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className={`flex-shrink-0 flex items-center space-x-2 px-5 py-3 rounded-2xl font-bold text-sm transition-all ${
-              showFilters ? "bg-uet-gold text-uet-navy" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            <SlidersHorizontal size={16} />
-            <span>Filters</span>
-          </button>
-        </div>
-
-        {/* Expandable Filter Panel */}
-        <AnimatePresence>
-          {showFilters && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden border-t border-slate-100 bg-slate-50"
+          {/* Items Per Page */}
+          <div className="relative flex-shrink-0">
+            <select
+              value={itemsPerPage}
+              onChange={(e) => { setItemsPerPage(Number(e.target.value)); }}
+              className="appearance-none bg-slate-100 text-slate-600 pl-4 pr-10 py-3 rounded-2xl font-bold text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-uet-gold"
             >
-              <div className="container mx-auto px-4 py-5 max-w-7xl">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                  <div className="w-full sm:max-w-sm">
-                    <div className="flex justify-between items-center mb-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
-                        Max Price
-                      </label>
-                      <span className="text-uet-navy font-bold text-sm bg-white border border-slate-200 px-3 py-1 rounded-full">
-                        Rs. {maxPrice}
-                      </span>
-                    </div>
-                    <input
-                      type="range"
-                      min={50}
-                      max={2000}
-                      step={50}
-                      value={maxPrice}
-                      onChange={(e) => setMaxPrice(Number(e.target.value))}
-                      className="w-full accent-uet-navy cursor-pointer"
-                    />
-                    <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-1">
-                      <span>Rs. 50</span>
-                      <span>Rs. 2000</span>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => { setMaxPrice(2000); setSearchTerm(""); setSortBy("Default"); }}
-                    className="text-xs font-bold text-red-400 hover:text-red-600 transition-colors uppercase tracking-wider"
-                  >
-                    Reset All Filters
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <option value={12}>12 per page</option>
+              <option value={20}>20 per page</option>
+              <option value={50}>50 per page</option>
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={14} />
+          </div>
+        </div>
       </div>
 
       {/* ── Menu Grid ── */}
       <section className="container mx-auto px-4 py-12 max-w-7xl">
+        
+        {/* Category Filters row */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {CATEGORIES.map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-5 py-2.5 rounded-2xl font-bold text-xs transition-all ${
+                selectedCategory === cat.id
+                  ? "bg-uet-navy text-white shadow-md transform scale-105"
+                  : "bg-white border border-slate-200 text-slate-500 hover:bg-slate-50"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
         {/* Result count */}
         <div className="flex items-center justify-between mb-8">
           <p className="text-slate-500 font-medium text-sm">
@@ -237,7 +234,7 @@ export default function CafeMenuPage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <AnimatePresence mode="popLayout">
-              {displayed.map((item, i) => (
+              {currentItems.map((item, i) => (
                 <motion.div
                   layout
                   key={item.id}
@@ -293,6 +290,50 @@ export default function CafeMenuPage() {
                 </motion.div>
               ))}
             </AnimatePresence>
+          </div>
+        )}
+        
+        {/* Pagination Controls */}
+        {!loading && displayed.length > 0 && totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-12">
+            <button
+              onClick={() => {
+                setCurrentPage(p => Math.max(1, p - 1));
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+              }}
+              disabled={currentPage === 1}
+              className="p-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            
+            <div className="flex gap-1 overflow-x-auto no-scrollbar max-w-[60vw] sm:max-w-none">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setCurrentPage(i + 1);
+                    window.scrollTo({ top: 300, behavior: 'smooth' });
+                  }}
+                  className={`flex-shrink-0 w-10 h-10 rounded-xl font-bold text-sm transition-all ${
+                    currentPage === i + 1 ? "bg-uet-navy text-white shadow-md transform scale-105" : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+            
+            <button
+              onClick={() => {
+                setCurrentPage(p => Math.min(totalPages, p + 1));
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+              }}
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            >
+              <ArrowRight size={16} />
+            </button>
           </div>
         )}
       </section>
