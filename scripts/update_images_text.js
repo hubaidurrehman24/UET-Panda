@@ -27,9 +27,9 @@ async function updateImages() {
     const updates = {};
     
     for (const [id, product] of Object.entries(products)) {
-        // Use ui-avatars for purely consistent font sizes regardless of length
+        // Use placehold.jp which is reliable for custom colors and fixed font sizes
         const encodedName = encodeURIComponent(product.name);
-        const imageUrl = `https://ui-avatars.com/api/?name=${encodedName}&size=600&background=FFD700&color=002366&font-size=0.15&bold=true&length=15`;
+        const imageUrl = `https://placehold.jp/32/ffd700/002366/600x400.png?text=${encodedName}`;
         
         updates[`${id}/image`] = imageUrl;
         updatedCount++;

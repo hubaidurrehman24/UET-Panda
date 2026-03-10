@@ -2,11 +2,15 @@
   "name": "uet-panda",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.7.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.9.0",
@@ -26,6 +30,7 @@
     "eslint-config-next": "16.1.6",
     "firebase-admin": "^13.7.0",
     "tailwindcss": "^4",
+    "turbo": "latest",
     "xlsx": "^0.18.5"
   }
 }

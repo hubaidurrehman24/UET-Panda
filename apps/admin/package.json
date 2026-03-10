@@ -1,0 +1,27 @@
+{
+    "name": "admin",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev -p 3001",
+        "build": "next build",
+        "start": "next start -p 3001",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@uet-panda/shared-config": "*",
+        "@uet-panda/shared-ui": "*",
+        "next": "16.1.6",
+        "react": "19.2.3",
+        "react-dom": "19.2.3",
+        "framer-motion": "^12.35.1",
+        "lucide-react": "^0.577.0",
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^3.5.0",
+        "firebase": "^12.10.0"
+    },
+    "devDependencies": {
+        "tailwindcss": "^4",
+        "@tailwindcss/postcss": "^4"
+    }
+}

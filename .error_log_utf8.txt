@@ -1,0 +1,84 @@
+﻿
+> uet-panda@0.1.0 dev
+> turbo dev
+
+npm : ΓÇó turbo 2.8.15
+At line:1 char:1
++ npm run dev > 
+.error_log.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (ΓÇó turbo    
+ 2.8.15:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+ΓÇó Packages in scope: @uet-panda/shared-config, @uet-panda/shared-ui, admin, student
+ΓÇó Running dev in 4 packages
+ΓÇó Remote caching disabled
+admin:dev: cache bypass, force executing 8a3955e3ac7b4ac0
+student:dev: cache bypass, force executing d5b8fa04253d2d54
+student:dev: 
+student:dev: > student@0.1.0 dev
+student:dev: > next dev -p 3000
+student:dev: 
+admin:dev: 
+admin:dev: > admin@0.1.0 dev
+admin:dev: > next dev -p 3001
+admin:dev: 
+admin:dev: Γ¿» Failed to start server
+student:dev: Γ¿» Failed to start server
+admin:dev: Error: listen EADDRINUSE: address already in use :::3001
+admin:dev:     at <unknown> (Error: listen EADDRINUSE: address already in use :::3001)
+admin:dev:     at new Promise (<anonymous>) {
+admin:dev:   code: 'EADDRINUSE',
+admin:dev:   errno: -4091,
+admin:dev:   syscall: 'listen',
+admin:dev:   address: '::',
+admin:dev:   port: 3001
+admin:dev: }
+student:dev: Error: listen EADDRINUSE: address already in use :::3000
+student:dev:     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+student:dev:     at new Promise (<anonymous>) {
+student:dev:   code: 'EADDRINUSE',
+student:dev:   errno: -4091,
+student:dev:   syscall: 'listen',
+student:dev:   address: '::',
+student:dev:   port: 3000
+student:dev: }
+admin:dev: [?25h
+student:dev: [?25h
+admin:dev: npm error Lifecycle script `dev` failed with error:
+admin:dev: npm error Error: command failed
+admin:dev: npm error   in workspace: admin@0.1.0
+admin:dev: npm error   at location: C:\Users\hubai\OneDrive\Desktop\UET-Panda\apps\admin
+admin:dev: ERROR: 
+command finished with 
+error: command (C:\Use
+rs\hubai\OneDrive\Desk
+top\UET-Panda\apps\adm
+in) C:\Program 
+Files\nodejs\npm.cmd 
+run dev exited (1)
+student:dev: npm error Lifecycle script `dev` failed with error:
+student:dev: npm error Error: command failed
+student:dev: npm error   in workspace: student@0.1.0
+student:dev: npm error   at location: C:\Users\hubai\OneDrive\Desktop\UET-Panda\apps\student
+admin#dev: command (C:
+\Users\hubai\OneDrive\
+Desktop\UET-Panda\apps
+\admin) C:\Program 
+Files\nodejs\npm.cmd 
+run dev exited (1)
+
+ Tasks:    0 successful, 2 total
+Cached:    0 cached, 2 total
+  Time:    7.525s 
+Failed:    admin#dev
+
+ ERROR  run failed: 
+command  exited (1)

@@ -13,10 +13,10 @@ const auth = getAuth();
 const db = getDatabase();
 
 const cafes = [
-  { id: "cafe1", name: "Cafe 1", email: "cafe1@uet.edu.pk", password: "password123" },
-  { id: "cafe2", name: "Cafe 2", email: "cafe2@uet.edu.pk", password: "password123" },
-  { id: "cafe3", name: "Cafe 3", email: "cafe3@uet.edu.pk", password: "password123" },
-  { id: "cafe4", name: "Cafe 4", email: "cafe4@uet.edu.pk", password: "password123" }
+  { id: "cafe1", name: "Cafe 1", email: process.env.CAFE1_EMAIL, password: process.env.CAFE1_PASSWORD },
+  { id: "cafe2", name: "Cafe 2", email: process.env.CAFE2_EMAIL, password: process.env.CAFE2_PASSWORD },
+  { id: "cafe3", name: "Cafe 3", email: process.env.CAFE3_EMAIL, password: process.env.CAFE3_PASSWORD },
+  { id: "cafe4", name: "Cafe 4", email: process.env.CAFE4_EMAIL, password: process.env.CAFE4_PASSWORD }
 ];
 
 async function createAdminAccounts() {
