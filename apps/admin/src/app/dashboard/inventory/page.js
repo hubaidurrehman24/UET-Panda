@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ref, query, orderByChild, equalTo, onValue, push, set, update, remove } from "firebase/database";
-import { db, useAuthContext } from "@uet-panda/shared-config";
+import { db, useAuthContext, storage } from "@uet-panda/shared-config";
+import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Plus, 
@@ -14,7 +15,8 @@ import {
   X, 
   Check, 
   Loader2, 
-  Image as ImageIcon 
+  Image as ImageIcon,
+  UploadCloud
 } from "lucide-react";
 
 const InventoryPage = () => {
@@ -24,12 +26,17 @@ const InventoryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  const [activeTab, setActiveTab] = useState("all");
 
   // Form states
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [imageFile, setImageFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = React.useRef(null);
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("desi");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -56,11 +63,22 @@ const InventoryPage = () => {
     setIsSubmitting(true);
 
     try {
+      let imageUrl = image;
+      
+      if (imageFile) {
+        setIsUploading(true);
+        const fileRef = storageRef(storage, `food-images/${Date.now()}_${imageFile.name.replace(/[^a-zA-Z0-9.]/g, '')}`);
+        await uploadBytes(fileRef, imageFile);
+        imageUrl = await getDownloadURL(fileRef);
+        setIsUploading(false);
+      }
+
       const productData = {
         name,
         price: parseFloat(price),
-        image,
+        image: imageUrl || "",  // Save empty string if no image
         description,
+        category,
         cafeId,
         isHidden: false,
         updatedAt: new Date().toISOString(),
@@ -112,6 +130,7 @@ const InventoryPage = () => {
     setPrice(product.price);
     setImage(product.image);
     setDescription(product.description);
+    setCategory(product.category || "desi");
     setShowModal(true);
   };
 
@@ -120,12 +139,17 @@ const InventoryPage = () => {
     setName("");
     setPrice("");
     setImage("");
+    setImageFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
     setDescription("");
+    setCategory("desi");
   };
 
-  const filteredProducts = products.filter(p => 
-    p.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProducts = products.filter(p => {
+    const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTab = activeTab === "all" || p.category === activeTab;
+    return matchesSearch && matchesTab;
+  });
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -161,19 +185,41 @@ const InventoryPage = () => {
 
       {/* Main Table Container */}
       <div className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden">
-        <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-slate-50/50">
-           <div className="relative max-w-sm w-full">
-             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-             <input 
-               type="text" 
-               placeholder="Search inventory..." 
-               className="w-full bg-white border border-slate-200 py-2.5 pl-11 pr-4 rounded-xl text-sm focus:ring-2 focus:ring-uet-gold outline-none transition-all"
-               value={searchTerm}
-               onChange={(e) => setSearchTerm(e.target.value)}
-             />
+        <div className="p-6 border-b border-slate-50 flex flex-col gap-5 bg-slate-50/50">
+           {/* Top Row: Search and Status */}
+           <div className="flex items-center justify-between gap-4">
+             <div className="relative max-w-sm w-full">
+               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+               <input 
+                 type="text" 
+                 placeholder="Search inventory..." 
+                 className="w-full bg-white border border-slate-200 py-2.5 pl-11 pr-4 rounded-xl text-sm focus:ring-2 focus:ring-uet-gold outline-none shadow-sm transition-all"
+                 value={searchTerm}
+                 onChange={(e) => setSearchTerm(e.target.value)}
+               />
+             </div>
+             
+             <div className="hidden sm:block text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm shrink-0">
+               <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+               Real-time Sync Active
+             </div>
            </div>
-           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-             Real-time Sync Active
+
+           {/* Bottom Row: Category Filters */}
+           <div className="flex flex-wrap items-center gap-2.5 w-full">
+             {["all", "desi", "fast-food", "chinese", "deals", "snacks", "drinks"].map((tab) => (
+               <button
+                 key={tab}
+                 onClick={() => setActiveTab(tab)}
+                 className={`px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-widest transition-all ${
+                   activeTab === tab 
+                   ? 'bg-uet-navy text-white shadow-md' 
+                   : 'bg-white text-slate-500 hover:bg-slate-100 border border-slate-200'
+                 }`}
+               >
+                 {tab.replace('-', ' ')}
+               </button>
+             ))}
            </div>
         </div>
 
@@ -182,6 +228,7 @@ const InventoryPage = () => {
             <thead>
               <tr className="bg-slate-50/50 text-slate-400 text-[10px] uppercase tracking-[0.2em] font-bold">
                 <th className="px-8 py-4">Item Details</th>
+                <th className="px-8 py-4">Category</th>
                 <th className="px-8 py-4">Price</th>
                 <th className="px-8 py-4">Status</th>
                 <th className="px-8 py-4 text-center">Actions</th>
@@ -214,6 +261,11 @@ const InventoryPage = () => {
                     </td>
                     <td className="px-8 py-6">
                       <span className="font-bold text-uet-navy">Rs. {product.price}</span>
+                    </td>
+                    <td className="px-8 py-6">
+                      <span className="inline-block px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-wider">
+                        {product.category || "desi"}
+                      </span>
                     </td>
                     <td className="px-8 py-6">
                       <button 
@@ -308,14 +360,70 @@ const InventoryPage = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Thumbnail URL</label>
-                      <input 
-                        type="text" 
-                        placeholder="https://..."
-                        className="w-full bg-slate-50 border-none outline-none p-4 rounded-2xl text-uet-navy font-medium focus:ring-2 focus:ring-uet-gold transition-all"
-                        value={image} onChange={(e) => setImage(e.target.value)}
-                      />
+                      <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Category</label>
+                      <select 
+                        className="w-full bg-slate-50 border-none outline-none p-4 rounded-2xl text-uet-navy font-medium focus:ring-2 focus:ring-uet-gold transition-all appearance-none"
+                        value={category} onChange={(e) => setCategory(e.target.value)}
+                      >
+                        <option value="desi">Desi Food</option>
+                        <option value="fast-food">Fast Food</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="deals">Deals</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="breakfast">Breakfast</option>
+                      </select>
                     </div>
+                 </div>
+
+                 <div>
+                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Food Image</label>
+                   <input 
+                     type="file" 
+                     accept="image/*"
+                     ref={fileInputRef}
+                     className="hidden"
+                     onChange={(e) => {
+                       if (e.target.files && e.target.files[0]) {
+                         setImageFile(e.target.files[0]);
+                       }
+                     }}
+                   />
+                   <div className="flex items-center gap-4">
+                     <div 
+                       onClick={() => fileInputRef.current?.click()}
+                       className={`flex-grow h-14 bg-slate-50 border-2 border-dashed ${imageFile || image ? 'border-green-400 bg-green-50' : 'border-slate-300'} rounded-2xl flex items-center justify-center cursor-pointer hover:bg-slate-100 transition-all font-medium text-sm text-slate-500 overflow-hidden`}
+                     >
+                       {imageFile ? (
+                         <span className="text-green-600 truncate px-4">✓ {imageFile.name}</span>
+                       ) : image ? (
+                         <span className="text-uet-navy truncate px-4 font-bold">Image Uploaded (Click to change)</span>
+                       ) : (
+                         <span className="flex items-center gap-2"><UploadCloud size={18} /> Upload Image</span>
+                       )}
+                     </div>
+                     {(imageFile || image) && (
+                       <div className="w-14 h-14 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shrink-0 relative group">
+                         <img 
+                           src={imageFile ? URL.createObjectURL(imageFile) : image} 
+                           alt="Preview" 
+                           className="w-full h-full object-cover"
+                         />
+                         <button
+                           type="button"
+                           onClick={(e) => {
+                             e.stopPropagation();
+                             setImageFile(null);
+                             setImage("");
+                             if(fileInputRef.current) fileInputRef.current.value = '';
+                           }}
+                           className="absolute inset-0 bg-red-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-10"
+                         >
+                           <Trash2 size={16} className="text-white" />
+                         </button>
+                       </div>
+                     )}
+                   </div>
                  </div>
 
                  <div>
@@ -330,10 +438,10 @@ const InventoryPage = () => {
 
                  <button 
                    type="submit"
-                   disabled={isSubmitting}
+                   disabled={isSubmitting || isUploading}
                    className="w-full bg-uet-navy text-white py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-navy hover:bg-uet-gold hover:text-uet-navy transition-all active:scale-95 disabled:opacity-50"
                  >
-                   {isSubmitting ? <Loader2 className="animate-spin" /> : <><span>{editingProduct ? 'Save Changes' : 'Add to Menu'}</span> <Check size={20} /></>}
+                   {(isSubmitting || isUploading) ? <><Loader2 className="animate-spin" size={20} /> <span className="ml-2">{isUploading ? 'Uploading Image...' : 'Saving Details...'}</span></> : <><span>{editingProduct ? 'Save Changes' : 'Add to Menu'}</span> <Check size={20} /></>}
                  </button>
               </form>
             </motion.div>

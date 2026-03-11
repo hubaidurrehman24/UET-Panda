@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Navbar } from "@uet-panda/shared-ui";
 import { db, useCartContext, useAuthContext } from "@uet-panda/shared-config";
 import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const CAFES = [
   { id: "all",   label: "All Cafes" },
@@ -47,7 +47,7 @@ const CATEGORIES = [
   { id: "breakfast", label: "Breakfast" }
 ];
 
-export default function AllMenuPage() {
+function MenuContent() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,12 +60,21 @@ export default function AllMenuPage() {
 
   const { addToCart } = useCartContext();
   const { user } = useAuthContext();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Detect category from URL
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    if (cat) {
+      setSelectedCategory(cat);
+    }
+  }, [searchParams]);
 
   // Reset page when filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, selectedCafe, sortBy, selectedCategory, itemsPerPage]);
-  const router = useRouter();
 
   useEffect(() => {
     const productsRef = ref(db, "products");
@@ -401,5 +410,13 @@ export default function AllMenuPage() {
         )}
       </section>
     </main>
+  );
+}
+
+export default function AllMenuPage() {
+  return (
+    <Suspense fallback={<div>Loading Menu...</div>}>
+      <MenuContent />
+    </Suspense>
   );
 }

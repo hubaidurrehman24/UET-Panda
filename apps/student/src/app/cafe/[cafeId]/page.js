@@ -18,7 +18,6 @@ import {
   Flame,
 } from "lucide-react";
 import Link from "next/link";
-import { useAuthContext } from "@uet-panda/shared-config";
 import { useRouter } from "next/navigation";
 
 const cafeInfo = {

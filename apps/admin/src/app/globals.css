@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../../../packages/shared-ui/src/components/**/*.{js,ts,jsx,tsx}";
+@source "../../../../packages/shared-ui/src/components/**/*.{js,ts,jsx,tsx}";
 
 :root {
   --background: #ffffff;

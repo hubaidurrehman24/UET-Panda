@@ -45,18 +45,21 @@ const isHeader = (name) => {
     (typeof name === "object");
 };
 
-const makeItem = (name, price, cafeId, cafeName, category, serving = null) => ({
-  name: toTitleCase(name),
-  price: Number(price),
-  cafeId,
-  cafeName,
-  category,
-  serving: serving || "Single",
-  description: "",
-  image: "",
-  isHidden: false,
-  createdAt: new Date().toISOString(),
-});
+const makeItem = (name, price, cafeId, cafeName, category, serving = null) => {
+  const encodedName = encodeURIComponent(name);
+  return {
+    name: toTitleCase(name),
+    price: Number(price),
+    cafeId,
+    cafeName,
+    category,
+    serving: serving || "Single",
+    description: "",
+    image: `https://placehold.jp/32/ffd700/002366/600x400.png?text=${encodedName}`,
+    isHidden: false,
+    createdAt: new Date().toISOString(),
+  };
+};
 
 // ─── 3. Category assignment logic ─────────────────────────────────────────────
 const sheetToCategory = {
@@ -90,6 +93,7 @@ function parseSheet(rows, sheetName, cafeId, cafeName) {
   const baseCat = sheetToCategory[sheetName] || "desi";
   let currentSubCat = baseCat;
   let currentParentName = null;
+  let lastItemRef = null;
 
   // Sub-category markers inside sheets
   const subCatMap = {
@@ -108,6 +112,8 @@ function parseSheet(rows, sheetName, cafeId, cafeName) {
     "sandwiches": "fast-food",
     "breakfast": "breakfast",
     "deals": "deals",
+    "hot deals": "deals",
+    "deal": "deals",
     "snacks": "snacks",
     "salads": "snacks",
     "chinese": "chinese",
@@ -146,17 +152,30 @@ function parseSheet(rows, sheetName, cafeId, cafeName) {
           currentParentName = col0;
         } else if (typeof col1 === "number") {
           // Normal: col0=name, col1=price
-          items.push(makeItem(col0, col1, cafeId, cafeName, effectiveCat));
+          const newItem = makeItem(col0, col1, cafeId, cafeName, effectiveCat);
+          items.push(newItem);
           currentParentName = col0;
+
+          // If this is a deal, track it for potential multi-row details
+          if (effectiveCat === "deals") {
+            lastItemRef = newItem;
+          } else {
+            lastItemRef = null;
+          }
 
           // Dual size soup ("150 - half", "450 - full")
           if (typeof col2 === "string" && col2.includes("full")) {
             const fullPrice = parseInt(col2.split("-")[0].trim());
             items.push(makeItem(`${col0} (Large)`, fullPrice, cafeId, cafeName, effectiveCat, "Large"));
-            // Rename the first one
             items[items.length - 2].name = toTitleCase(`${col0} (Regular)`);
             items[items.length - 2].serving = "Regular";
           }
+        } else if (typeof col1 === "string" && typeof col2 === "number") {
+          // Case for Cafe 1 Deals: col0=name, col1="Deal", col2=price
+          const newItem = makeItem(col0, col2, cafeId, cafeName, effectiveCat, col1);
+          items.push(newItem);
+          currentParentName = col0;
+          if (effectiveCat === "deals") lastItemRef = newItem;
         } else if (typeof col1 === "string" && col1.includes("half")) {
           // Soup dual-price row
           const halfP = parseInt(col1.split("-")[0].trim());
@@ -167,7 +186,14 @@ function parseSheet(rows, sheetName, cafeId, cafeName) {
       }
     }
 
-    // ── Null first column = size variant of previous item ────────────────────
+    // ── Null or text-only first column = detail/variant ──────────────────────
+    if (!col1 && col0 && lastItemRef) {
+      // row contains deal details like "1 fries", "1 zinger"
+      const currentDesc = lastItemRef.description || "";
+      lastItemRef.description = currentDesc ? `${currentDesc}, ${col0}` : col0;
+      continue; // Don't process as normal item
+    }
+
     if (!col0 && col1 && currentParentName) {
       if (typeof col1 === "string" && col1.includes('"')) {
         // e.g. col1 = 'Medium (10")', col2 = 750
@@ -207,6 +233,8 @@ const FILES = [
 async function seed() {
   let totalPushed = 0;
   const productsRef = db.ref("products");
+  console.log("🧹 Clearing old products...");
+  await productsRef.remove();
 
   for (const { file, cafeId, cafeName } of FILES) {
     console.log(`\n📂 Processing ${file}...`);

@@ -20,7 +20,6 @@ const Sidebar = () => {
   const { cafeId } = useAuthContext();
 
   const menuItems = [
-    { name: "Dashboard", icon: <LayoutDashboard size={20} />, path: "/dashboard" },
     { name: "Inventory", icon: <Package size={20} />, path: "/dashboard/inventory" },
     { name: "Orders", icon: <ShoppingBag size={20} />, path: "/dashboard/orders" },
     { name: "Analytics", icon: <BarChart3 size={20} />, path: "/dashboard/analytics" },

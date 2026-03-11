@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ShoppingCart, User, LogOut, Search } from "lucide-react";
 import { useAuthContext, useCartContext, auth } from "@uet-panda/shared-config";
 import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const { user, userRole } = useAuthContext();
   const { cart } = useCartContext();
 
@@ -18,23 +20,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-uet-navy text-white shadow-navy border-b border-white/10">
+    <nav className="sticky top-0 bg-uet-navy text-white shadow-navy border-b border-white/10" style={{ zIndex: 9999 }}>
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="bg-uet-gold p-1.5 rounded-lg">
-            <span className="text-uet-navy font-bold text-xl tracking-tighter">P</span>
-          </div>
-          <span className="font-poppins font-bold text-xl tracking-tight hidden sm:block">
+        <Link href="/" className="flex items-center">
+          <span className="font-poppins font-bold text-xl tracking-tight">
             UET <span className="text-uet-gold">PANDA</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="hover:text-uet-gold transition-colors font-medium">Home</Link>
-          {user && userRole === 'student' && (
-            <Link href="/orders" className="hover:text-uet-gold transition-colors font-medium">My Orders</Link>
+          {pathname === '/' && (
+            <>
+              <button onClick={() => document.getElementById('cafes')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-uet-gold transition-colors font-medium">Cafes</button>
+              <button onClick={() => document.getElementById('deals')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-uet-gold transition-colors font-medium">Deals</button>
+            </>
           )}
           {userRole === 'admin' && (
             <Link href="/dashboard" className="bg-uet-gold text-uet-navy px-4 py-1.5 rounded-full font-bold hover:bg-white transition-all shadow-sm">
@@ -45,6 +46,12 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="flex items-center space-x-4">
+          {user && userRole === 'student' && (
+            <Link href="/orders" className="hidden md:block hover:text-uet-gold transition-colors font-medium mr-2">
+              My Orders
+            </Link>
+          )}
+
           <div className="relative group">
             <Link href="/cart" className="p-2 hover:bg-white/10 rounded-full transition-colors block">
               <ShoppingCart size={22} className="text-uet-gold" />

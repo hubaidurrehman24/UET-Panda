@@ -1,0 +1,111 @@
+[
+  {
+    "file": "Cafe1.xlsx",
+    "sheets": [
+      "Desi",
+      "Chinese",
+      "Fast Food",
+      "Deals"
+    ],
+    "dealsFound": [
+      {
+        "sheet": "Deals",
+        "name": "Deals"
+      }
+    ]
+  },
+  {
+    "file": "Cafe2.xlsx",
+    "sheets": [
+      "fast food + breakfast",
+      "desi",
+      "chinese",
+      "salads + fried items",
+      "drinks",
+      "snacks "
+    ],
+    "dealsFound": [
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deals "
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 1 ",
+        "price": 320
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 2 ",
+        "price": 430
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 3 ",
+        "price": 470
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 4 ",
+        "price": 250
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 5 ",
+        "price": 430
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 6 ",
+        "price": 380
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 7 ",
+        "price": 240
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 8",
+        "price": 480
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 9 ",
+        "price": 320
+      },
+      {
+        "sheet": "fast food + breakfast",
+        "name": "Deal 10",
+        "price": 230
+      }
+    ]
+  },
+  {
+    "file": "Cafe3.xlsx",
+    "sheets": [
+      "Fast food",
+      "menu",
+      "drinks",
+      "chineese"
+    ],
+    "dealsFound": [
+      {
+        "sheet": "Fast food",
+        "name": "Hot Deals"
+      }
+    ]
+  },
+  {
+    "file": "Cafe4.xlsx",
+    "sheets": [
+      "menu",
+      "salads + fried items",
+      "fast food + breakfast",
+      "snacks ",
+      "drinks",
+      "chinese"
+    ],
+    "dealsFound": []
+  }
+]

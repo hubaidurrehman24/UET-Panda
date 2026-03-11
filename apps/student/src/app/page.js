@@ -35,15 +35,40 @@ export default function Home() {
   const { user } = useAuthContext();
   const router = useRouter();
 
-  // Fetch 10 items from Realtime Database (all cafes)
+  // Fetch deals from Realtime Database and interleave them from all cafes
   useEffect(() => {
     const productsRef = ref(db, "products");
-    const q = query(productsRef, orderByChild("isHidden"), equalTo(false), limitToFirst(10));
+    const q = query(productsRef, orderByChild("category"), equalTo("deals"));
     
     const unsub = onValue(q, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        setFeaturedItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+        const allDeals = Object.entries(data).map(([id, val]) => ({ id, ...val }));
+        
+        // Group by cafe
+        const groups = {};
+        allDeals.forEach(d => {
+          if (!groups[d.cafeId]) groups[d.cafeId] = [];
+          groups[d.cafeId].push(d);
+        });
+
+        // Interleave deals from all cafes evenly, up to 10
+        const mixed = [];
+        let index = 0;
+        let itemsAdded = true;
+        while (mixed.length < 10 && itemsAdded) {
+          itemsAdded = false;
+          // Sort keys to maintain a consistent order across re-renders (e.g. cafe1, cafe2, cafe3)
+          for (const cafeId of Object.keys(groups).sort()) {
+            if (groups[cafeId][index]) {
+              mixed.push(groups[cafeId][index]);
+              itemsAdded = true;
+              if (mixed.length === 10) break;
+            }
+          }
+          index++;
+        }
+        setFeaturedItems(mixed);
       } else {
         setFeaturedItems([]);
       }
@@ -174,7 +199,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════
           CAFE CARDS
       ══════════════════════════════════════════════════ */}
-      <section ref={cafeSectionRef} className="py-20 px-4">
+      <section id="cafes" ref={cafeSectionRef} className="py-20 px-4">
         <div className="container mx-auto max-w-[1400px]">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-poppins font-bold text-uet-navy">
@@ -185,7 +210,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-6 xl:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 xl:gap-8">
             {cafes.map((cafe, i) => (
               <motion.div
                 key={cafe.id}
@@ -193,7 +218,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] 2xl:w-[calc(20%-2.5rem)] max-w-[320px]"
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -230,18 +255,18 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════
           FEATURED ITEMS (10 items across all cafes)
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 px-4 bg-white">
+      <section id="deals" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-[1400px]">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-uet-gold mb-2">From All Cafes</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-uet-gold mb-2">Exclusive Offers</p>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-uet-navy">
-                Popular <span className="text-uet-gold">Items</span>
+                Handpicked <span className="text-uet-gold">Deals</span>
               </h2>
             </div>
             <Link
-              href="/menu"
+              href="/menu?category=deals"
               className="self-start sm:self-auto flex items-center gap-2 bg-uet-navy text-white px-6 py-3 rounded-2xl font-bold text-sm hover:bg-uet-gold hover:text-uet-navy transition-all active:scale-95 shadow-md"
             >
               <span>Explore More</span>
@@ -252,7 +277,7 @@ export default function Home() {
           {featuredItems.length === 0 ? (
             <div className="text-center py-24 bg-slate-50 rounded-[2rem] border border-dashed border-slate-200">
               <Utensils size={44} className="mx-auto text-slate-200 mb-4" />
-              <p className="text-slate-400 font-medium">Add food items via the Admin Panel to see them here.</p>
+              <p className="text-slate-400 font-medium">New deals are added frequently. Check back soon!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -307,11 +332,11 @@ export default function Home() {
           {/* Bottom Explore More */}
           <div className="text-center mt-12">
             <Link
-              href="/menu"
+              href="/menu?category=deals"
               className="inline-flex items-center gap-3 bg-uet-navy text-white px-10 py-4 rounded-2xl font-bold text-base hover:bg-uet-gold hover:text-uet-navy transition-all active:scale-95 shadow-navy shadow-lg"
             >
               <Utensils size={20} />
-              <span>Explore All Menu Items</span>
+              <span>Explore All Deals</span>
               <ArrowRight size={18} />
             </Link>
           </div>
