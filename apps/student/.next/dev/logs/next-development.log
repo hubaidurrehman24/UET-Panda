@@ -1,374 +1,44 @@
-[00:00:02.919] Server  LOG     ✓ Ready in 2s
-[00:00:08.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.070] Browser WARN    [2026-03-11T11:11:18.423Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[00:00:14.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.777] Browser WARN    [2026-03-11T11:11:24.157Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[00:00:19.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:23.028] Browser WARN    [2026-03-11T11:11:28.232Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[00:03:34.748] Server  LOG     ✓ Compiled in 113ms
-[00:05:12.444] Server  LOG     ✓ Compiled in 109ms
-[00:06:33.982] Server  LOG     ✓ Compiled in 54ms
-[00:10:32.385] Server  LOG     ✓ Compiled in 235ms
-[00:19:05.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:09.154] Browser WARN    [2026-03-11T11:30:14.530Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:09:16.608] Browser WARN    [2026-03-11T12:20:21.993Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:09:17.261] Browser WARN    [2026-03-11T12:20:22.638Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:10:38.860] Browser WARN    [2026-03-11T12:21:44.243Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:10:38.860] Browser WARN    [2026-03-11T12:21:44.244Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:10:42.697] Browser WARN    [2026-03-11T12:21:48.068Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:10:43.345] Browser WARN    [2026-03-11T12:21:48.729Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:16:37.863] Server  ERROR   ⨯ ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-
-[01:16:38.307] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:16:41.046] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:16:41.068] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:16:41.201] Server  ERROR   ⨯ ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-
-[01:16:41.424] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:16:42.516] Browser ERROR   uncaughtError: Error: ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-
-[01:16:42.869] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:16:43.106] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:17:01.027] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:17:14.058] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:18:04.178] Server  ERROR   ⨯ ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-
-[01:18:04.808] Browser ERROR   uncaughtError: Error: ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-
-[01:18:05.378] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:18:05.545] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:18:05.549] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:21:10
-Ecmascript file had an error
-  19 | } from "lucide-react";
-  20 | import Link from "next/link";
-> 21 | import { useAuthContext } from "@uet-panda/shared-config";
-     |          ^^^^^^^^^^^^^^
-  22 | import { useRouter } from "next/navigation";
-  23 |
-  24 | const cafeInfo = {
-
-the name `useAuthContext` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-
-  Client Component SSR:
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
-    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
-[01:19:03.744] Server  LOG     ✓ Compiled in 823ms
-[01:19:14.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:19:23.109] Browser WARN    [2026-03-11T12:30:26.906Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:19:23.109] Browser WARN    [2026-03-11T12:30:27.894Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:19:56.965] Browser WARN    [2026-03-11T12:31:02.332Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:19:56.965] Browser WARN    [2026-03-11T12:31:02.333Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:20:08.786] Browser WARN    [2026-03-11T12:31:14.156Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:20:09.120] Browser WARN    [2026-03-11T12:31:14.504Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:20:37.931] Browser WARN    [2026-03-11T12:31:43.288Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:20:38.393] Browser WARN    [2026-03-11T12:31:43.776Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:21:46.035] Browser WARN    [2026-03-11T12:32:50.647Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:21:46.035] Browser WARN    [2026-03-11T12:32:51.088Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:26:54.525] Browser WARN    [2026-03-11T12:37:59.872Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:26:54.788] Browser WARN    [2026-03-11T12:38:00.169Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:30:14.244] Browser WARN    [2026-03-11T12:41:19.623Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:30:14.643] Browser WARN    [2026-03-11T12:41:20.024Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
-[01:30:17.621] Browser WARN    [2026-03-11T12:41:22.994Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:30:18.295] Browser WARN    [2026-03-11T12:41:23.680Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:31:45.026] Server  LOG     ✓ Compiled in 2.7s
-[01:31:46.240] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./packages/shared-config/src/firebase/config.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:31:54.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:32:09.394] Browser WARN    [2026-03-11T12:43:05.764Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:32:09.394] Browser WARN    [2026-03-11T12:43:06.208Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
-[01:54:43.230] Browser WARN    [2026-03-11T13:05:48.514Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
-[01:54:43.230] Browser WARN    [2026-03-11T13:05:48.605Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:00:12.757] Server  LOG     ✓ Ready in 9s
+[00:01:01.222] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:04.844] Browser WARN    [2026-03-14T19:18:06.892Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:01:04.948] Browser WARN    [2026-03-14T19:18:07.100Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:01:17.979] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:26.870] Browser WARN    [2026-03-14T19:18:29.020Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:01:27.163] Browser WARN    [2026-03-14T19:18:29.309Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:02:12.843] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.083] Browser WARN    [2026-03-14T19:19:19.208Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:02:17.484] Browser WARN    [2026-03-14T19:19:19.635Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:09:35.045] Browser WARN    [2026-03-14T19:26:36.881Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:10:27.048] Browser WARN    [2026-03-14T19:27:29.112Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:10:27.211] Browser WARN    [2026-03-14T19:27:29.347Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:11:32.813] Browser WARN    [2026-03-14T19:28:34.865Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:11:34.505] Browser WARN    [2026-03-14T19:28:36.650Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:11:42.613] Browser WARN    [2026-03-14T19:28:44.753Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[00:11:43.244] Browser WARN    [2026-03-14T19:28:45.396Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[00:11:55.459] Browser WARN    [2026-03-14T19:28:57.604Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:11:55.900] Browser WARN    [2026-03-14T19:28:58.053Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:12:32.158] Browser WARN    [2026-03-14T19:29:34.204Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[00:12:32.158] Browser WARN    [2026-03-14T19:29:34.291Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[00:14:46.573] Browser WARN    [2026-03-14T19:31:48.582Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:14:46.573] Browser WARN    [2026-03-14T19:31:48.722Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:15:42.078] Browser WARN    [2026-03-14T19:32:43.974Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:15:42.078] Browser WARN    [2026-03-14T19:32:44.152Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:15:43.395] Browser WARN    [2026-03-14T19:32:45.439Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:15:43.395] Browser WARN    [2026-03-14T19:32:45.535Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:17:12.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:24.795] Browser WARN    [2026-03-14T19:34:26.899Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:18:00.948] Browser WARN    [2026-03-14T19:35:02.850Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:18:01.213] Browser WARN    [2026-03-14T19:35:03.366Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:39:24.855] Browser WARN    [2026-03-14T19:56:26.750Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:39:25.077] Browser WARN    [2026-03-14T19:56:27.223Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:43:01.083] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:06.509] Browser WARN    [2026-03-14T20:00:08.453Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:43:06.716] Browser WARN    [2026-03-14T20:00:08.858Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:45:06.251] Browser WARN    [2026-03-14T20:02:08.206Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:45:06.251] Browser WARN    [2026-03-14T20:02:08.404Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[00:46:54.452] Browser WARN    [2026-03-14T20:03:56.501Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:46:54.733] Browser WARN    [2026-03-14T20:03:56.872Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[00:48:45.256] Browser WARN    [2026-03-14T20:05:47.360Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[00:48:46.883] Browser WARN    [2026-03-14T20:05:49.021Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[01:26:29.047] Browser WARN    [2026-03-14T20:43:30.764Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[01:58:38.058] Browser WARN    [2026-03-14T21:15:39.748Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
