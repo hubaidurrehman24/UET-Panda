@@ -44,6 +44,7 @@ const InventoryPage = ()=>{
     const [showModal, setShowModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingProduct, setEditingProduct] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("all");
+    const [reviews, setReviews] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
     // Form states
     const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [price, setPrice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
@@ -74,6 +75,34 @@ const InventoryPage = ()=>{
     }, [
         cafeId
     ]);
+    // Fetch reviews to calculate average ratings
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!cafeId) return;
+        const reviewsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ref"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$firebase$2f$config$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "reviews");
+        const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["query"])(reviewsRef, (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["orderByChild"])("cafeId"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["equalTo"])(cafeId));
+        const unsub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$node$2d$esm$2f$index$2e$node$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onValue"])(q, (snapshot)=>{
+            const data = snapshot.val();
+            if (data) {
+                const grouped = {};
+                Object.values(data).forEach((r)=>{
+                    if (r.isHidden) return; // Only count visible reviews
+                    if (!grouped[r.itemId]) grouped[r.itemId] = [];
+                    grouped[r.itemId].push(r.rating);
+                });
+                setReviews(grouped);
+            } else {
+                setReviews({});
+            }
+        });
+        return ()=>unsub();
+    }, [
+        cafeId
+    ]);
+    const getItemRating = (itemId)=>{
+        const rs = reviews[itemId];
+        if (!rs || rs.length === 0) return null;
+        return (rs.reduce((a, b)=>a + b, 0) / rs.length).toFixed(1);
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setIsSubmitting(true);
@@ -169,7 +198,7 @@ const InventoryPage = ()=>{
                                 children: "Inventory Manager"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 158,
+                                lineNumber: 187,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -177,13 +206,13 @@ const InventoryPage = ()=>{
                                 children: "Control your menu and availability"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 159,
+                                lineNumber: 188,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 157,
+                        lineNumber: 186,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -197,26 +226,26 @@ const InventoryPage = ()=>{
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 165,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Add New Food"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 166,
+                                lineNumber: 195,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 161,
+                        lineNumber: 190,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                lineNumber: 156,
+                lineNumber: 185,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -230,7 +259,7 @@ const InventoryPage = ()=>{
                                 children: "Total Items"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 173,
+                                lineNumber: 202,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -238,13 +267,13 @@ const InventoryPage = ()=>{
                                 children: products.length
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 174,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 172,
+                        lineNumber: 201,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -255,7 +284,7 @@ const InventoryPage = ()=>{
                                 children: "Live Menu"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 177,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -263,13 +292,13 @@ const InventoryPage = ()=>{
                                 children: products.filter((p)=>!p.isHidden).length
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 178,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 176,
+                        lineNumber: 205,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -280,7 +309,7 @@ const InventoryPage = ()=>{
                                 children: "Hidden"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 181,
+                                lineNumber: 210,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -288,19 +317,19 @@ const InventoryPage = ()=>{
                                 children: products.filter((p)=>p.isHidden).length
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 182,
+                                lineNumber: 211,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 180,
+                        lineNumber: 209,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                lineNumber: 171,
+                lineNumber: 200,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -320,7 +349,7 @@ const InventoryPage = ()=>{
                                                 size: 18
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 192,
+                                                lineNumber: 221,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -331,13 +360,13 @@ const InventoryPage = ()=>{
                                                 onChange: (e)=>setSearchTerm(e.target.value)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 193,
+                                                lineNumber: 222,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                        lineNumber: 191,
+                                        lineNumber: 220,
                                         columnNumber: 14
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -347,20 +376,20 @@ const InventoryPage = ()=>{
                                                 className: "inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 203,
+                                                lineNumber: 232,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Real-time Sync Active"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                        lineNumber: 202,
+                                        lineNumber: 231,
                                         columnNumber: 14
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 190,
+                                lineNumber: 219,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -379,18 +408,18 @@ const InventoryPage = ()=>{
                                         children: tab.replace('-', ' ')
                                     }, tab, false, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                        lineNumber: 211,
+                                        lineNumber: 240,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                lineNumber: 209,
+                                lineNumber: 238,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 188,
+                        lineNumber: 217,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -407,7 +436,7 @@ const InventoryPage = ()=>{
                                                 children: "Item Details"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 230,
+                                                lineNumber: 259,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -415,7 +444,7 @@ const InventoryPage = ()=>{
                                                 children: "Category"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 231,
+                                                lineNumber: 260,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -423,7 +452,15 @@ const InventoryPage = ()=>{
                                                 children: "Price"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 232,
+                                                lineNumber: 261,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                className: "px-8 py-4",
+                                                children: "Rating"
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                lineNumber: 262,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -431,7 +468,7 @@ const InventoryPage = ()=>{
                                                 children: "Status"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 233,
+                                                lineNumber: 263,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -439,18 +476,18 @@ const InventoryPage = ()=>{
                                                 children: "Actions"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 234,
+                                                lineNumber: 264,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                        lineNumber: 229,
+                                        lineNumber: 258,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                    lineNumber: 228,
+                                    lineNumber: 257,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -481,12 +518,12 @@ const InventoryPage = ()=>{
                                                                         className: "w-full h-full object-cover"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                        lineNumber: 251,
+                                                                        lineNumber: 281,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 250,
+                                                                    lineNumber: 280,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -496,7 +533,7 @@ const InventoryPage = ()=>{
                                                                             children: product.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                            lineNumber: 257,
+                                                                            lineNumber: 287,
                                                                             columnNumber: 27
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -504,24 +541,24 @@ const InventoryPage = ()=>{
                                                                             children: product.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                            lineNumber: 258,
+                                                                            lineNumber: 288,
                                                                             columnNumber: 27
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 256,
+                                                                    lineNumber: 286,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 249,
+                                                            lineNumber: 279,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 248,
+                                                        lineNumber: 278,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -534,12 +571,12 @@ const InventoryPage = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 263,
+                                                            lineNumber: 293,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 262,
+                                                        lineNumber: 292,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -549,12 +586,63 @@ const InventoryPage = ()=>{
                                                             children: product.category || "desi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 266,
+                                                            lineNumber: 296,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 265,
+                                                        lineNumber: 295,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                        className: "px-8 py-6",
+                                                        children: getItemRating(product.id) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-1.5 bg-uet-gold/10 px-2.5 py-1 rounded-lg w-fit",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Star, {
+                                                                    size: 12,
+                                                                    className: "text-uet-gold fill-uet-gold"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                                    lineNumber: 303,
+                                                                    columnNumber: 27
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-xs font-bold text-uet-navy",
+                                                                    children: getItemRating(product.id)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                                    lineNumber: 304,
+                                                                    columnNumber: 27
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-[10px] text-slate-400 font-normal",
+                                                                    children: [
+                                                                        "(",
+                                                                        reviews[product.id]?.length,
+                                                                        ")"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                                    lineNumber: 305,
+                                                                    columnNumber: 27
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                            lineNumber: 302,
+                                                            columnNumber: 25
+                                                        }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-[10px] text-slate-300 font-bold uppercase tracking-wider",
+                                                            children: "No Reviews"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                            lineNumber: 308,
+                                                            columnNumber: 25
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
+                                                        lineNumber: 300,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -567,31 +655,31 @@ const InventoryPage = ()=>{
                                                                     size: 12
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 279,
+                                                                    lineNumber: 320,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__["Eye"], {
                                                                     size: 12
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 279,
+                                                                    lineNumber: 320,
                                                                     columnNumber: 68
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: product.isHidden ? 'Hidden' : 'Visible'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 280,
+                                                                    lineNumber: 321,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 271,
+                                                            lineNumber: 312,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 270,
+                                                        lineNumber: 311,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -606,12 +694,12 @@ const InventoryPage = ()=>{
                                                                         size: 18
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                        lineNumber: 289,
+                                                                        lineNumber: 330,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 285,
+                                                                    lineNumber: 326,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -621,56 +709,56 @@ const InventoryPage = ()=>{
                                                                         size: 18
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                        lineNumber: 295,
+                                                                        lineNumber: 336,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 291,
+                                                                    lineNumber: 332,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 284,
+                                                            lineNumber: 325,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 283,
+                                                        lineNumber: 324,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, product.id, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 240,
+                                                lineNumber: 270,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                        lineNumber: 238,
+                                        lineNumber: 268,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                    lineNumber: 237,
+                                    lineNumber: 267,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                            lineNumber: 227,
+                            lineNumber: 256,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                        lineNumber: 226,
+                        lineNumber: 255,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                lineNumber: 187,
+                lineNumber: 216,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -691,7 +779,7 @@ const InventoryPage = ()=>{
                             className: "absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                            lineNumber: 311,
+                            lineNumber: 352,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -722,12 +810,12 @@ const InventoryPage = ()=>{
                                                 size: 24
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 330,
+                                                lineNumber: 371,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 326,
+                                            lineNumber: 367,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,12 +825,12 @@ const InventoryPage = ()=>{
                                                 className: "text-uet-navy"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                lineNumber: 333,
+                                                lineNumber: 374,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 332,
+                                            lineNumber: 373,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -750,7 +838,7 @@ const InventoryPage = ()=>{
                                             children: editingProduct ? 'Update Product' : 'New Food Item'
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 335,
+                                            lineNumber: 376,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -758,13 +846,13 @@ const InventoryPage = ()=>{
                                             children: "Add details for your UET Panda menu"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 338,
+                                            lineNumber: 379,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                    lineNumber: 325,
+                                    lineNumber: 366,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -778,7 +866,7 @@ const InventoryPage = ()=>{
                                                     children: "Food Name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 343,
+                                                    lineNumber: 384,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -790,13 +878,13 @@ const InventoryPage = ()=>{
                                                     onChange: (e)=>setName(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 344,
+                                                    lineNumber: 385,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 342,
+                                            lineNumber: 383,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -809,7 +897,7 @@ const InventoryPage = ()=>{
                                                             children: "Price (Rs)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 354,
+                                                            lineNumber: 395,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -821,13 +909,13 @@ const InventoryPage = ()=>{
                                                             onChange: (e)=>setPrice(e.target.value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 355,
+                                                            lineNumber: 396,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 353,
+                                                    lineNumber: 394,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -837,7 +925,7 @@ const InventoryPage = ()=>{
                                                             children: "Category"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 363,
+                                                            lineNumber: 404,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -850,7 +938,7 @@ const InventoryPage = ()=>{
                                                                     children: "Desi Food"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 368,
+                                                                    lineNumber: 409,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -858,7 +946,7 @@ const InventoryPage = ()=>{
                                                                     children: "Fast Food"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 369,
+                                                                    lineNumber: 410,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -866,7 +954,7 @@ const InventoryPage = ()=>{
                                                                     children: "Chinese"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 370,
+                                                                    lineNumber: 411,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -874,7 +962,7 @@ const InventoryPage = ()=>{
                                                                     children: "Deals"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 371,
+                                                                    lineNumber: 412,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -882,7 +970,7 @@ const InventoryPage = ()=>{
                                                                     children: "Snacks"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 372,
+                                                                    lineNumber: 413,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -890,7 +978,7 @@ const InventoryPage = ()=>{
                                                                     children: "Drinks"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 373,
+                                                                    lineNumber: 414,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -898,25 +986,25 @@ const InventoryPage = ()=>{
                                                                     children: "Breakfast"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 374,
+                                                                    lineNumber: 415,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 364,
+                                                            lineNumber: 405,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 362,
+                                                    lineNumber: 403,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 352,
+                                            lineNumber: 393,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -926,7 +1014,7 @@ const InventoryPage = ()=>{
                                                     children: "Food Image"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 380,
+                                                    lineNumber: 421,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -941,7 +1029,7 @@ const InventoryPage = ()=>{
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 381,
+                                                    lineNumber: 422,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -958,14 +1046,14 @@ const InventoryPage = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                lineNumber: 398,
+                                                                lineNumber: 439,
                                                                 columnNumber: 26
                                                             }, ("TURBOPACK compile-time value", void 0)) : image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "text-uet-navy truncate px-4 font-bold",
                                                                 children: "Image Uploaded (Click to change)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                lineNumber: 400,
+                                                                lineNumber: 441,
                                                                 columnNumber: 26
                                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "flex items-center gap-2",
@@ -974,19 +1062,19 @@ const InventoryPage = ()=>{
                                                                         size: 18
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                        lineNumber: 402,
+                                                                        lineNumber: 443,
                                                                         columnNumber: 68
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     " Upload Image"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                lineNumber: 402,
+                                                                lineNumber: 443,
                                                                 columnNumber: 26
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 393,
+                                                            lineNumber: 434,
                                                             columnNumber: 22
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         (imageFile || image) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -998,7 +1086,7 @@ const InventoryPage = ()=>{
                                                                     className: "w-full h-full object-cover"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 407,
+                                                                    lineNumber: 448,
                                                                     columnNumber: 26
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1015,30 +1103,30 @@ const InventoryPage = ()=>{
                                                                         className: "text-white"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                        lineNumber: 422,
+                                                                        lineNumber: 463,
                                                                         columnNumber: 28
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                                    lineNumber: 412,
+                                                                    lineNumber: 453,
                                                                     columnNumber: 26
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                            lineNumber: 406,
+                                                            lineNumber: 447,
                                                             columnNumber: 24
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 392,
+                                                    lineNumber: 433,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 379,
+                                            lineNumber: 420,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1048,7 +1136,7 @@ const InventoryPage = ()=>{
                                                     children: "Description"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 430,
+                                                    lineNumber: 471,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1059,13 +1147,13 @@ const InventoryPage = ()=>{
                                                     onChange: (e)=>setDescription(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                    lineNumber: 431,
+                                                    lineNumber: 472,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 429,
+                                            lineNumber: 470,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1079,7 +1167,7 @@ const InventoryPage = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 444,
+                                                        lineNumber: 485,
                                                         columnNumber: 55
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     " ",
@@ -1088,7 +1176,7 @@ const InventoryPage = ()=>{
                                                         children: isUploading ? 'Uploading Image...' : 'Saving Details...'
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 444,
+                                                        lineNumber: 485,
                                                         columnNumber: 102
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
@@ -1098,7 +1186,7 @@ const InventoryPage = ()=>{
                                                         children: editingProduct ? 'Save Changes' : 'Add to Menu'
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 444,
+                                                        lineNumber: 485,
                                                         columnNumber: 198
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     " ",
@@ -1106,43 +1194,43 @@ const InventoryPage = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                                        lineNumber: 444,
+                                                        lineNumber: 485,
                                                         columnNumber: 261
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                            lineNumber: 439,
+                                            lineNumber: 480,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                                    lineNumber: 341,
+                                    lineNumber: 382,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                            lineNumber: 319,
+                            lineNumber: 360,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                    lineNumber: 310,
+                    lineNumber: 351,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-                lineNumber: 308,
+                lineNumber: 349,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/admin/src/app/dashboard/inventory/page.js",
-        lineNumber: 155,
+        lineNumber: 184,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
