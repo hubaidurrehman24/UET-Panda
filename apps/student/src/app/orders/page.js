@@ -17,14 +17,24 @@ import {
   ArrowRight,
   ChevronRight,
   Search,
-  ShoppingBag
+  ShoppingBag,
+  Star,
+  MessageSquare,
+  X
 } from "lucide-react";
+import { push, set } from "firebase/database";
 import Link from "next/link";
 
 const OrderTracking = () => {
   const { user } = useAuthContext();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [currentOrder, setCurrentOrder] = useState(null);
+  const [rating, setRating] = useState(5);
+  const [comment, setComment] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (!user) return;
@@ -174,12 +184,27 @@ const OrderTracking = () => {
                         <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-4">Items Summary</p>
                         <div className="space-y-3">
                            {order.items.map((item, idx) => (
-                             <div key={idx} className="flex justify-between items-center group/item">
-                                <p className="text-uet-navy font-bold text-sm leading-tight flex items-center">
-                                   <ChevronRight size={12} className="mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                                   {item.quantity}x <span className="font-medium text-slate-600 ml-1">{item.name}</span>
-                                </p>
-                                <p className="text-slate-400 font-mono text-xs italic">Rs.{item.price * item.quantity}</p>
+                             <div key={idx} className="flex flex-col gap-2">
+                                <div className="flex justify-between items-center group/item">
+                                   <p className="text-uet-navy font-bold text-sm leading-tight flex items-center">
+                                      <ChevronRight size={12} className="mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                      {item.quantity}x <span className="font-medium text-slate-600 ml-1">{item.name}</span>
+                                   </p>
+                                   <p className="text-slate-400 font-mono text-xs italic">Rs.{item.price * item.quantity}</p>
+                                </div>
+                                {(order.status === "Delivered" || order.status === "Collected") && (
+                                  <button 
+                                    onClick={() => {
+                                      setSelectedItem(item);
+                                      setCurrentOrder(order);
+                                      setReviewModalOpen(true);
+                                    }}
+                                    className="self-start text-[10px] font-bold text-uet-gold hover:text-uet-navy flex items-center gap-1 transition-colors"
+                                  >
+                                    <Star size={10} className="fill-uet-gold" />
+                                    Rate Item
+                                  </button>
+                                )}
                              </div>
                            ))}
                         </div>
@@ -250,6 +275,106 @@ const OrderTracking = () => {
           </div>
         )}
       </div>
+
+      {/* Review Modal */}
+      <AnimatePresence>
+        {reviewModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setReviewModalOpen(false)}
+              className="absolute inset-0 bg-uet-navy/60 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl overflow-hidden"
+            >
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 className="text-2xl font-poppins font-bold text-uet-navy">Rate your Meal</h3>
+                    <p className="text-slate-400 text-sm font-medium mt-1">{selectedItem?.name}</p>
+                  </div>
+                  <button onClick={() => setReviewModalOpen(false)} className="bg-slate-50 p-2 rounded-xl text-slate-400 hover:text-uet-navy transition-colors">
+                    <X size={20} />
+                  </button>
+                </div>
+
+                <div className="flex justify-center gap-2 mb-8">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button 
+                      key={star} 
+                      onClick={() => setRating(star)}
+                      className="transition-transform active:scale-90"
+                    >
+                      <Star 
+                        size={32} 
+                        className={`${rating >= star ? 'text-uet-gold fill-uet-gold' : 'text-slate-200'} transition-colors`} 
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Your Feedback (Optional)</label>
+                    <textarea 
+                      placeholder="How was the taste? Was it fresh? (Optional)"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-uet-gold min-h-[120px] transition-all"
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                    />
+                  </div>
+
+                  <button 
+                    disabled={submitting}
+                    onClick={async () => {
+                      setSubmitting(true);
+                      try {
+                        const reviewsRef = ref(db, "reviews");
+                        const newReviewRef = push(reviewsRef);
+                        await set(newReviewRef, {
+                          orderId: currentOrder.id,
+                          itemId: selectedItem.id || selectedItem.name, 
+                          itemName: selectedItem.name,
+                          cafeId: currentOrder.cafeId,
+                          userId: user.uid,
+                          userName: user.displayName || (user.email ? user.email.split('@')[0].split(/[._]/).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ') : "Student"),
+                          userEmail: user.email || "",
+                          rating,
+                          comment,
+                          createdAt: new Date().toISOString()
+                        });
+                        setReviewModalOpen(false);
+                        setComment("");
+                        setRating(5);
+                      } catch (err) {
+                        console.error("Review Error:", err);
+                      } finally {
+                        setSubmitting(false);
+                      }
+                    }}
+                    className="w-full bg-uet-navy text-white py-4 rounded-2xl font-bold shadow-navy hover:bg-uet-gold hover:text-uet-navy transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {submitting ? (
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <MessageSquare size={18} />
+                        Submit Review
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 };

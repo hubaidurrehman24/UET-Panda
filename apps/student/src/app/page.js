@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { Navbar } from "@uet-panda/shared-ui";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
@@ -11,6 +11,7 @@ import {
   ShoppingCart,
   Clock,
   Store,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { ref, query, orderByChild, limitToFirst, onValue, equalTo } from "firebase/database";
@@ -19,11 +20,10 @@ import { useRouter } from "next/navigation";
 
 /* ─── Cafe Card Data ───────────────────────────────────── */
 const cafes = [
-  { id: "cafe1", name: "Cafe 1", tagline: "Classic desi meals & famous biryani",     specialty: "Biryani & Karahi",    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&auto=format&fit=crop&q=80", rating: "4.8", color: "from-orange-600 to-red-700",    badge: "🔥 Most Popular" },
-  { id: "cafe2", name: "Cafe 2", tagline: "Fresh burgers, sandwiches & crispy fries", specialty: "Fast Food",            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80", rating: "4.6", color: "from-yellow-500 to-orange-600", badge: "⚡ Quick Bites" },
-  { id: "cafe3", name: "Cafe 3", tagline: "Hot tea, cold drinks & light snacks",      specialty: "Beverages",            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80", rating: "4.5", color: "from-emerald-600 to-teal-700",  badge: "☕ Best Chai" },
-  { id: "cafe4", name: "Cafe 4", tagline: "Shawarmas, rolls & street style eats",     specialty: "Street Food",          image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80", rating: "4.7", color: "from-purple-600 to-indigo-700", badge: "🌯 Street Eats" },
-
+  { id: "cafe1", name: "Cafe 1", tagline: "Classic desi meals & famous biryani",     specialty: "Biryani & Karahi",    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-orange-600 to-red-700",    badge: "🔥 Most Popular" },
+  { id: "cafe2", name: "Cafe 2", tagline: "Fresh burgers, sandwiches & crispy fries", specialty: "Fast Food",            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-yellow-500 to-orange-600", badge: "⚡ Quick Bites" },
+  { id: "cafe3", name: "Cafe 3", tagline: "Hot tea, cold drinks & light snacks",      specialty: "Beverages",            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-emerald-600 to-teal-700",  badge: "☕ Best Chai" },
+  { id: "cafe4", name: "Cafe 4", tagline: "Shawarmas, rolls & street style eats",     specialty: "Street Food",          image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-purple-600 to-indigo-700", badge: "🌯 Street Eats" },
 ];
 
 /* ─── Component ────────────────────────────────────────── */
@@ -31,6 +31,9 @@ export default function Home() {
   const cafeSectionRef = useRef(null);
   const [featuredItems, setFeaturedItems] = useState([]);
   const [addedId, setAddedId] = useState(null);
+  const [reviews, setReviews] = useState({});
+  const [cafeRatings, setCafeRatings] = useState({});
+  const [viewingFeedback, setViewingFeedback] = useState(null);
   const { addToCart } = useCartContext();
   const { user } = useAuthContext();
   const router = useRouter();
@@ -75,6 +78,50 @@ export default function Home() {
     });
     return () => unsub();
   }, []);
+
+  // Fetch reviews for dynamic ratings
+  useEffect(() => {
+    const reviewsRef = ref(db, "reviews");
+    const unsub = onValue(reviewsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const itemGroups = {};
+        const cafeGroups = {};
+        
+        Object.values(data).forEach(review => {
+          if (review.isHidden) return;
+          
+          // Item Level
+          const itemId = review.itemId;
+          if (!itemGroups[itemId]) itemGroups[itemId] = [];
+          itemGroups[itemId].push(review);
+
+          // Cafe Level
+          const cafeId = review.cafeId;
+          if (!cafeGroups[cafeId]) cafeGroups[cafeId] = [];
+          cafeGroups[cafeId].push(review.rating);
+        });
+
+        setReviews(itemGroups);
+        
+        // Calculate cafe averages
+        const cRatings = {};
+        Object.entries(cafeGroups).forEach(([cid, rs]) => {
+          const avg = rs.reduce((a, b) => a + b, 0) / rs.length;
+          cRatings[cid] = avg.toFixed(1);
+        });
+        setCafeRatings(cRatings);
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  const getRatingSummary = (itemId) => {
+    const itemReviews = reviews[itemId];
+    if (!itemReviews || itemReviews.length === 0) return null;
+    const avg = itemReviews.reduce((a, b) => a + b.rating, 0) / itemReviews.length;
+    return { avg: avg.toFixed(1), count: itemReviews.length };
+  };
 
   const handleAddToCart = (item) => {
     if (!user) {
@@ -227,7 +274,9 @@ export default function Home() {
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-bold text-uet-navy shadow-sm">{cafe.badge}</div>
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
                     <Star size={11} className="text-uet-gold fill-uet-gold" />
-                    <span className="text-[11px] font-bold text-uet-navy">{cafe.rating}</span>
+                    <span className="text-[11px] font-bold text-uet-navy">
+                      {cafeRatings[cafe.id] || "N/A"}
+                    </span>
                   </div>
                 </div>
 
@@ -310,6 +359,17 @@ export default function Home() {
                       <div className="flex items-center text-slate-400 text-[11px] font-medium">
                         <Clock size={11} className="mr-1" />
                         <span>15–20 min</span>
+                        {getRatingSummary(item.id || item.name) && (
+                          <button 
+                            onClick={() => setViewingFeedback(item)}
+                            className="flex items-center gap-0.5 ml-3 bg-uet-gold/10 px-1.5 py-0.5 rounded-lg text-uet-navy hover:bg-uet-gold/20 transition-all group/rating"
+                          >
+                            <Star size={9} className="text-uet-gold fill-uet-gold group-hover/rating:scale-110 transition-transform" />
+                            <span className="text-[9px] font-bold">
+                              {getRatingSummary(item.id || item.name).avg}
+                            </span>
+                          </button>
+                        )}
                       </div>
                       <button
                         onClick={() => handleAddToCart(item)}
@@ -433,6 +493,85 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Feedback Modal */}
+      <AnimatePresence>
+        {viewingFeedback && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setViewingFeedback(null)}
+              className="absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl relative z-10 overflow-hidden"
+            >
+              <div className="bg-uet-navy p-6 relative">
+                 <button 
+                  onClick={() => setViewingFeedback(null)}
+                  className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors"
+                >
+                  <X size={20} />
+                </button>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden">
+                    <img 
+                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white leading-tight">{viewingFeedback.name}</h3>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <Star size={12} className="text-uet-gold fill-uet-gold" />
+                      <span className="text-uet-gold font-bold text-sm">
+                        {getRatingSummary(viewingFeedback.id || viewingFeedback.name).avg}
+                      </span>
+                      <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest ml-1">
+                        {getRatingSummary(viewingFeedback.id || viewingFeedback.name).count} Reviews
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="max-h-[60vh] overflow-y-auto p-6 space-y-4 no-scrollbar">
+                {reviews[viewingFeedback.id || viewingFeedback.name]?.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map((r, idx) => (
+                  <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <p className="font-bold text-uet-navy text-xs">{r.userName || "Student"}</p>
+                        <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{new Date(r.createdAt).toLocaleDateString()}</p>
+                      </div>
+                      <div className="flex items-center gap-0.5 bg-white px-2 py-0.5 rounded-lg border border-slate-100">
+                        <Star size={10} className="text-uet-gold fill-uet-gold" />
+                        <span className="text-[10px] font-bold text-uet-navy">{r.rating}</span>
+                      </div>
+                    </div>
+                    {r.comment && (
+                      <p className="text-slate-600 text-xs leading-relaxed italic mt-2">"{r.comment}"</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="p-4 bg-slate-50 border-t border-slate-100 text-center">
+                <button 
+                  onClick={() => setViewingFeedback(null)}
+                  className="text-uet-navy font-bold text-sm hover:text-uet-gold transition-colors"
+                >
+                  Close Feedback
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

@@ -79,3 +79,129 @@
 [04:13:53.544] Server  LOG     ✓ Compiled in 522ms
 [04:15:20.698] Server  LOG     ✓ Compiled in 345ms
 [04:15:51.401] Server  LOG     ✓ Compiled in 254ms
+[13:38:46.058] Browser WARN    [2026-03-15T08:55:31.141Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[15:07:55.046] Browser WARN    [2026-03-15T10:24:40.502Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[15:22:57.047] Browser WARN    [2026-03-15T10:39:42.356Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[15:28:50.051] Browser WARN    [2026-03-15T10:45:35.014Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[15:31:06.045] Browser WARN    [2026-03-15T10:47:51.802Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:03:12.052] Browser WARN    [2026-03-15T19:19:41.053Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:15:08.553] Server  LOG     ✓ Compiled in 669ms
+[24:15:24.562] Server  LOG     ✓ Compiled in 285ms
+[24:15:56.753] Server  LOG     ✓ Compiled in 548ms
+[24:16:18.519] Server  LOG     ✓ Compiled in 883ms
+[24:18:35.701] Browser WARN    [2026-03-15T19:35:04.965Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:18:35.833] Browser WARN    [2026-03-15T19:35:05.174Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:18:39.447] Browser ERROR   uncaughtError: ReferenceError: X is not defined
+[24:19:57.924] Server  LOG     ✓ Compiled in 418ms
+[24:19:57.928] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:19:59.879] Browser WARN    [2026-03-15T19:36:28.427Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:20:01.329] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:20:06.115] Browser WARN    [2026-03-15T19:36:34.518Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:20:06.115] Browser WARN    [2026-03-15T19:36:34.660Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:24:05.185] Browser WARN    [2026-03-15T19:40:34.523Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:05.506] Browser WARN    [2026-03-15T19:40:34.845Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:06.792] Browser WARN    [2026-03-15T19:40:36.123Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:24:06.792] Browser WARN    [2026-03-15T19:40:36.125Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:24:14.352] Browser WARN    [2026-03-15T19:40:43.697Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:14.902] Browser WARN    [2026-03-15T19:40:44.255Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:27.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:24:32.484] Browser WARN    [2026-03-15T19:41:01.823Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:32.999] Browser WARN    [2026-03-15T19:41:02.344Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:24:43.730] Browser WARN    [2026-03-15T19:41:13.070Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:24:43.854] Browser WARN    [2026-03-15T19:41:13.202Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:25:28.034] Browser WARN    [2026-03-15T19:41:57.387Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:25:28.865] Browser WARN    [2026-03-15T19:41:58.216Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:25:53.829] Browser WARN    [2026-03-15T19:42:23.147Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:25:53.948] Browser WARN    [2026-03-15T19:42:23.300Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:26:37.944] Browser WARN    [2026-03-15T19:43:07.297Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:26:38.194] Browser WARN    [2026-03-15T19:43:07.540Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:26:49.622] Browser WARN    [2026-03-15T19:43:18.947Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:26:49.622] Browser WARN    [2026-03-15T19:43:18.948Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:26:54.968] Browser WARN    [2026-03-15T19:43:24.188Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:26:54.968] Browser WARN    [2026-03-15T19:43:24.308Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:28:19.110] Server  LOG     ✓ Compiled in 932ms
+[24:28:21.975] Browser WARN    [2026-03-15T19:44:50.250Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:28:23.186] Browser WARN    [2026-03-15T19:44:52.415Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[24:28:23.186] Browser WARN    [2026-03-15T19:44:52.526Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[24:28:47.230] Browser WARN    [2026-03-15T19:45:16.483Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[24:28:47.230] Browser WARN    [2026-03-15T19:45:16.581Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "isHidden" at /products to your security rules for better performance. 
+[24:28:59.539] Browser WARN    [2026-03-15T19:45:28.878Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:28:59.702] Browser WARN    [2026-03-15T19:45:29.054Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:30:58.924] Browser WARN    [2026-03-15T19:47:28.194Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:30:58.924] Browser WARN    [2026-03-15T19:47:28.275Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:31:02.251] Browser WARN    [2026-03-15T19:47:31.477Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:31:02.251] Browser WARN    [2026-03-15T19:47:31.605Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:35:45.229] Server  LOG     ✓ Compiled in 138ms
+[24:37:21.559] Server  LOG     ✓ Compiled in 684ms
+[24:37:22.054] Browser ERROR   ./apps/student/src/app/menu/page.js:98:4
+Parsing ecmascript source code failed
+   96 |
+   97 |     return () => unsub();
+>  98 |   }, []);
+      |    ^
+   99 |
+  100 |   useEffect(() => {
+  101 |     const reviewsRef = ref(db, "reviews");
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./apps/student/src/app/menu/page.js [Client Component Browser]
+    ./apps/student/src/app/menu/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/student/src/app/menu/page.js [Client Component SSR]
+    ./apps/student/src/app/menu/page.js [Server Component]
+[24:37:40.686] Server  LOG     ✓ Compiled in 565ms
+[24:38:15.446] Server  LOG     ✓ Compiled in 175ms
+[24:38:16.053] Browser ERROR   uncaughtError: ReferenceError: AnimatePresence is not defined
+[24:38:36.476] Browser ERROR   ./apps/student/src/app/cafe/[cafeId]/page.js:89:4
+Parsing ecmascript source code failed
+  87 |
+  88 |     return () => unsub();
+> 89 |   }, []);
+     |    ^
+  90 |
+  91 |   const getRatingSummary = (itemId) => {
+  92 |     const itemReviews = reviews[itemId];
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component Browser]
+    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/student/src/app/cafe/[cafeId]/page.js [Client Component SSR]
+    ./apps/student/src/app/cafe/[cafeId]/page.js [Server Component]
+[24:39:08.893] Server  LOG     ✓ Compiled in 98ms
+[24:39:10.397] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:39:14.056] Browser ERROR   uncaughtError: ReferenceError: AnimatePresence is not defined
+[24:41:47.292] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:41:49.362] Browser ERROR   uncaughtError: ReferenceError: AnimatePresence is not defined
+[24:43:35.725] Server  LOG     ✓ Compiled in 856ms
+[24:43:35.831] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:43:40.405] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:43:49.051] Browser WARN    [2026-03-15T20:00:17.575Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:43:51.060] Browser WARN    [2026-03-15T20:00:19.491Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:46:28.629] Server  LOG     ✓ Compiled in 1028ms
+[24:48:05.607] Browser WARN    [2026-03-15T20:04:34.914Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:48:05.607] Browser WARN    [2026-03-15T20:04:34.951Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:48:28.255] Browser WARN    [2026-03-15T20:04:57.585Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:48:28.764] Browser WARN    [2026-03-15T20:04:58.117Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:48:35.693] Browser WARN    [2026-03-15T20:05:05.017Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[24:48:36.954] Browser WARN    [2026-03-15T20:05:06.302Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[24:53:52.299] Browser WARN    [2026-03-15T20:10:21.653Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:53:53.164] Browser WARN    [2026-03-15T20:10:22.514Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[24:58:16.251] Browser WARN    [2026-03-15T20:14:45.585Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[24:58:16.359] Browser WARN    [2026-03-15T20:14:45.706Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[25:00:07.007] Server  LOG     ✓ Compiled in 180ms
+[25:00:52.986] Server  LOG     ✓ Compiled in 582ms
+[25:02:31.836] Browser WARN    [2026-03-15T20:19:01.112Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[25:02:34.203] Browser WARN    [2026-03-15T20:19:03.537Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "category" at /products to your security rules for better performance. 
+[25:02:37.051] Browser WARN    [2026-03-15T20:19:05.588Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[25:02:38.053] Browser WARN    [2026-03-15T20:19:06.626Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[25:03:01.098] Browser WARN    [2026-03-15T20:19:30.355Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 
+[25:03:01.098] Browser WARN    [2026-03-15T20:19:30.451Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "userId" at /orders to your security rules for better performance. 

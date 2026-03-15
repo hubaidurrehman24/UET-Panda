@@ -466,6 +466,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/packages/shared-ui/src/index.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navbar$3e$__ = __turbopack_context__.i("[project]/packages/shared-ui/src/components/Navbar.js [app-client] (ecmascript) <export default as Navbar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$utensils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Utensils$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/utensils.js [app-client] (ecmascript) <export default as Utensils>");
@@ -474,6 +475,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shopping-cart.js [app-client] (ecmascript) <export default as ShoppingCart>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/store.js [app-client] (ecmascript) <export default as Store>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$database$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/database/dist/esm/index.esm.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/database/dist/index.esm.js [app-client] (ecmascript)");
@@ -500,7 +502,7 @@ var _s = __turbopack_context__.k.signature();
         tagline: "Classic desi meals & famous biryani",
         specialty: "Biryani & Karahi",
         image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&auto=format&fit=crop&q=80",
-        rating: "4.8",
+        rating: "Loading...",
         color: "from-orange-600 to-red-700",
         badge: "🔥 Most Popular"
     },
@@ -510,7 +512,7 @@ var _s = __turbopack_context__.k.signature();
         tagline: "Fresh burgers, sandwiches & crispy fries",
         specialty: "Fast Food",
         image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80",
-        rating: "4.6",
+        rating: "Loading...",
         color: "from-yellow-500 to-orange-600",
         badge: "⚡ Quick Bites"
     },
@@ -520,7 +522,7 @@ var _s = __turbopack_context__.k.signature();
         tagline: "Hot tea, cold drinks & light snacks",
         specialty: "Beverages",
         image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80",
-        rating: "4.5",
+        rating: "Loading...",
         color: "from-emerald-600 to-teal-700",
         badge: "☕ Best Chai"
     },
@@ -530,7 +532,7 @@ var _s = __turbopack_context__.k.signature();
         tagline: "Shawarmas, rolls & street style eats",
         specialty: "Street Food",
         image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80",
-        rating: "4.7",
+        rating: "Loading...",
         color: "from-purple-600 to-indigo-700",
         badge: "🌯 Street Eats"
     }
@@ -540,6 +542,9 @@ function Home() {
     const cafeSectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [featuredItems, setFeaturedItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [addedId, setAddedId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [reviews, setReviews] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [cafeRatings, setCafeRatings] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [viewingFeedback, setViewingFeedback] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const { addToCart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCartContext"])();
     const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuthContext"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -593,6 +598,58 @@ function Home() {
             })["Home.useEffect"];
         }
     }["Home.useEffect"], []);
+    // Fetch reviews for dynamic ratings
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Home.useEffect": ()=>{
+            const reviewsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ref"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$firebase$2f$config$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "reviews");
+            const unsub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$database$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onValue"])(reviewsRef, {
+                "Home.useEffect.unsub": (snapshot)=>{
+                    const data = snapshot.val();
+                    if (data) {
+                        const itemGroups = {};
+                        const cafeGroups = {};
+                        Object.values(data).forEach({
+                            "Home.useEffect.unsub": (review)=>{
+                                if (review.isHidden) return;
+                                // Item Level
+                                const itemId = review.itemId;
+                                if (!itemGroups[itemId]) itemGroups[itemId] = [];
+                                itemGroups[itemId].push(review);
+                                // Cafe Level
+                                const cafeId = review.cafeId;
+                                if (!cafeGroups[cafeId]) cafeGroups[cafeId] = [];
+                                cafeGroups[cafeId].push(review.rating);
+                            }
+                        }["Home.useEffect.unsub"]);
+                        setReviews(itemGroups);
+                        // Calculate cafe averages
+                        const cRatings = {};
+                        Object.entries(cafeGroups).forEach({
+                            "Home.useEffect.unsub": ([cid, rs])=>{
+                                const avg = rs.reduce({
+                                    "Home.useEffect.unsub": (a, b)=>a + b
+                                }["Home.useEffect.unsub"], 0) / rs.length;
+                                cRatings[cid] = avg.toFixed(1);
+                            }
+                        }["Home.useEffect.unsub"]);
+                        setCafeRatings(cRatings);
+                    }
+                }
+            }["Home.useEffect.unsub"]);
+            return ({
+                "Home.useEffect": ()=>unsub()
+            })["Home.useEffect"];
+        }
+    }["Home.useEffect"], []);
+    const getRatingSummary = (itemId)=>{
+        const itemReviews = reviews[itemId];
+        if (!itemReviews || itemReviews.length === 0) return null;
+        const avg = itemReviews.reduce((a, b)=>a + b.rating, 0) / itemReviews.length;
+        return {
+            avg: avg.toFixed(1),
+            count: itemReviews.length
+        };
+    };
     const handleAddToCart = (item)=>{
         if (!user) {
             router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
@@ -607,7 +664,7 @@ function Home() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navbar$3e$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/apps/student/src/app/page.js",
-                lineNumber: 91,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -617,14 +674,14 @@ function Home() {
                         className: "absolute top-0 right-0 w-[40vw] h-[40vw] bg-uet-gold/10 rounded-full -mr-[20vw] -mt-[20vw] blur-[80px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 106,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-blue-500/10 rounded-full -ml-[20vw] -mb-[20vw] blur-[80px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 107,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -646,7 +703,7 @@ function Home() {
                                         className: "text-uet-gold"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 116,
+                                        lineNumber: 163,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -654,13 +711,13 @@ function Home() {
                                         children: "5 Cafes · One Unified Cart"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 117,
+                                        lineNumber: 164,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 111,
+                                lineNumber: 158,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -684,13 +741,13 @@ function Home() {
                                         children: "PANDA"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 131,
+                                        lineNumber: 178,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 123,
+                                lineNumber: 170,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -714,7 +771,7 @@ function Home() {
                                         children: "5 UET cafes"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 142,
+                                        lineNumber: 189,
                                         columnNumber: 13
                                     }, this),
                                     " ",
@@ -722,7 +779,7 @@ function Home() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 134,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -749,14 +806,14 @@ function Home() {
                                                 size: 18
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 157,
+                                                lineNumber: 204,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Browse Cafes"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 158,
+                                                lineNumber: 205,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
@@ -764,13 +821,13 @@ function Home() {
                                                 className: "group-hover:translate-x-1 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 159,
+                                                lineNumber: 206,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 153,
+                                        lineNumber: 200,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -779,13 +836,13 @@ function Home() {
                                         children: "View All Menus"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 161,
+                                        lineNumber: 208,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 147,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -820,7 +877,7 @@ function Home() {
                                                 children: s.value
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 182,
+                                                lineNumber: 229,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -828,24 +885,24 @@ function Home() {
                                                 children: s.label
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 183,
+                                                lineNumber: 230,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, s.label, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 181,
+                                        lineNumber: 228,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 170,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 109,
+                        lineNumber: 156,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -858,18 +915,18 @@ function Home() {
                             size: 28
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 195,
+                            lineNumber: 242,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 190,
+                        lineNumber: 237,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/page.js",
-                lineNumber: 96,
+                lineNumber: 143,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -891,13 +948,13 @@ function Home() {
                                             children: "Cafe"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 206,
+                                            lineNumber: 253,
                                             columnNumber: 27
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 205,
+                                    lineNumber: 252,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -905,13 +962,13 @@ function Home() {
                                     children: "Each cafe has its own unique menu. Pick one to explore and order."
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 208,
+                                    lineNumber: 255,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 204,
+                            lineNumber: 251,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -942,14 +999,14 @@ function Home() {
                                                     className: "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 225,
+                                                    lineNumber: 272,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: `absolute inset-0 bg-gradient-to-t ${cafe.color} opacity-60`
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 226,
+                                                    lineNumber: 273,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -957,7 +1014,7 @@ function Home() {
                                                     children: cafe.badge
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 227,
+                                                    lineNumber: 274,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -968,27 +1025,27 @@ function Home() {
                                                             className: "text-uet-gold fill-uet-gold"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 229,
+                                                            lineNumber: 276,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-[11px] font-bold text-uet-navy",
-                                                            children: cafe.rating
+                                                            children: cafeRatings[cafe.id] || "N/A"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 230,
+                                                            lineNumber: 277,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 228,
+                                                    lineNumber: 275,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 224,
+                                            lineNumber: 271,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -999,7 +1056,7 @@ function Home() {
                                                     children: cafe.specialty
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 236,
+                                                    lineNumber: 285,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1007,7 +1064,7 @@ function Home() {
                                                     children: cafe.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 237,
+                                                    lineNumber: 286,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1015,7 +1072,7 @@ function Home() {
                                                     children: cafe.tagline
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 238,
+                                                    lineNumber: 287,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1029,7 +1086,7 @@ function Home() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 243,
+                                                            lineNumber: 292,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1039,46 +1096,46 @@ function Home() {
                                                                 className: "group-hover/btn:translate-x-1 transition-transform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 245,
+                                                                lineNumber: 294,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 244,
+                                                            lineNumber: 293,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 239,
+                                                    lineNumber: 288,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 235,
+                                            lineNumber: 284,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, cafe.id, true, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 215,
+                                    lineNumber: 262,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 213,
+                            lineNumber: 260,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/student/src/app/page.js",
-                    lineNumber: 203,
+                    lineNumber: 250,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/student/src/app/page.js",
-                lineNumber: 202,
+                lineNumber: 249,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1097,7 +1154,7 @@ function Home() {
                                             children: "Exclusive Offers"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 263,
+                                            lineNumber: 312,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1109,19 +1166,19 @@ function Home() {
                                                     children: "Deals"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 265,
+                                                    lineNumber: 314,
                                                     columnNumber: 28
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 264,
+                                            lineNumber: 313,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 262,
+                                    lineNumber: 311,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1132,26 +1189,26 @@ function Home() {
                                             children: "Explore More"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 272,
+                                            lineNumber: 321,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 273,
+                                            lineNumber: 322,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 268,
+                                    lineNumber: 317,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 261,
+                            lineNumber: 310,
                             columnNumber: 11
                         }, this),
                         featuredItems.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1162,7 +1219,7 @@ function Home() {
                                     className: "mx-auto text-slate-200 mb-4"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 279,
+                                    lineNumber: 328,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1170,13 +1227,13 @@ function Home() {
                                     children: "New deals are added frequently. Check back soon!"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 280,
+                                    lineNumber: 329,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 278,
+                            lineNumber: 327,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6",
@@ -1206,7 +1263,7 @@ function Home() {
                                                     className: "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 294,
+                                                    lineNumber: 343,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,13 +1274,13 @@ function Home() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 299,
+                                                    lineNumber: 348,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 293,
+                                            lineNumber: 342,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1237,7 +1294,7 @@ function Home() {
                                                             className: "text-uet-gold"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 305,
+                                                            lineNumber: 354,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1245,13 +1302,13 @@ function Home() {
                                                             children: item.cafeName || item.cafeId
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 306,
+                                                            lineNumber: 355,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 304,
+                                                    lineNumber: 353,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1259,7 +1316,7 @@ function Home() {
                                                     children: item.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 308,
+                                                    lineNumber: 357,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1273,20 +1330,46 @@ function Home() {
                                                                     className: "mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 311,
+                                                                    lineNumber: 360,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "15–20 min"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 312,
+                                                                    lineNumber: 361,
                                                                     columnNumber: 25
+                                                                }, this),
+                                                                getRatingSummary(item.id || item.name) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    onClick: ()=>setViewingFeedback(item),
+                                                                    className: "flex items-center gap-0.5 ml-3 bg-uet-gold/10 px-1.5 py-0.5 rounded-lg text-uet-navy hover:bg-uet-gold/20 transition-all group/rating",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                            size: 9,
+                                                                            className: "text-uet-gold fill-uet-gold group-hover/rating:scale-110 transition-transform"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                                            lineNumber: 367,
+                                                                            columnNumber: 29
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "text-[9px] font-bold",
+                                                                            children: getRatingSummary(item.id || item.name).avg
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                                            lineNumber: 368,
+                                                                            columnNumber: 29
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 363,
+                                                                    columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 310,
+                                                            lineNumber: 359,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1297,43 +1380,43 @@ function Home() {
                                                                     size: 13
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 322,
+                                                                    lineNumber: 382,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: addedId === item.id ? "Added!" : "Add"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 323,
+                                                                    lineNumber: 383,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 314,
+                                                            lineNumber: 374,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                    lineNumber: 309,
+                                                    lineNumber: 358,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/page.js",
-                                            lineNumber: 303,
+                                            lineNumber: 352,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, item.id, true, {
                                     fileName: "[project]/apps/student/src/app/page.js",
-                                    lineNumber: 285,
+                                    lineNumber: 334,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 283,
+                            lineNumber: 332,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1346,43 +1429,43 @@ function Home() {
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 338,
+                                        lineNumber: 398,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Explore All Deals"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 339,
+                                        lineNumber: 399,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 340,
+                                        lineNumber: 400,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 334,
+                                lineNumber: 394,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/page.js",
-                            lineNumber: 333,
+                            lineNumber: 393,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/student/src/app/page.js",
-                    lineNumber: 259,
+                    lineNumber: 308,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/student/src/app/page.js",
-                lineNumber: 258,
+                lineNumber: 307,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1392,7 +1475,7 @@ function Home() {
                         className: "absolute top-0 right-0 w-[500px] h-[500px] bg-uet-gold/5 rounded-full -mr-60 -mt-60 blur-[100px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 350,
+                        lineNumber: 410,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1413,12 +1496,12 @@ function Home() {
                                                             children: "P"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 360,
+                                                            lineNumber: 420,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 359,
+                                                        lineNumber: 419,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1430,19 +1513,19 @@ function Home() {
                                                                 children: "PANDA"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 363,
+                                                                lineNumber: 423,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 362,
+                                                        lineNumber: 422,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 358,
+                                                lineNumber: 418,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1450,7 +1533,7 @@ function Home() {
                                                 children: "The unified food ordering platform for UET Lahore. Order from 5 cafes in one seamless cart."
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 366,
+                                                lineNumber: 426,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1458,7 +1541,7 @@ function Home() {
                                                 children: "Follow Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 369,
+                                                lineNumber: 429,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1475,12 +1558,12 @@ function Home() {
                                                                 d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 372,
+                                                                lineNumber: 432,
                                                                 columnNumber: 122
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 372,
+                                                            lineNumber: 432,
                                                             columnNumber: 57
                                                         }, this)
                                                     },
@@ -1505,14 +1588,14 @@ function Home() {
                                                                     ry: "5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 373,
+                                                                    lineNumber: 433,
                                                                     columnNumber: 198
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                                     d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 373,
+                                                                    lineNumber: 433,
                                                                     columnNumber: 254
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -1522,13 +1605,13 @@ function Home() {
                                                                     y2: "6.5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 373,
+                                                                    lineNumber: 433,
                                                                     columnNumber: 313
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 373,
+                                                            lineNumber: 433,
                                                             columnNumber: 58
                                                         }, this)
                                                     },
@@ -1543,12 +1626,12 @@ function Home() {
                                                                 d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 374,
+                                                                lineNumber: 434,
                                                                 columnNumber: 115
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 374,
+                                                            lineNumber: 434,
                                                             columnNumber: 50
                                                         }, this)
                                                     },
@@ -1563,12 +1646,12 @@ function Home() {
                                                                 d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 375,
+                                                                lineNumber: 435,
                                                                 columnNumber: 122
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                            lineNumber: 375,
+                                                            lineNumber: 435,
                                                             columnNumber: 57
                                                         }, this)
                                                     }
@@ -1579,18 +1662,18 @@ function Home() {
                                                         children: s.icon
                                                     }, s.label, false, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 377,
+                                                        lineNumber: 437,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 370,
+                                                lineNumber: 430,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 357,
+                                        lineNumber: 417,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1600,7 +1683,7 @@ function Home() {
                                                 children: "Contact Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 390,
+                                                lineNumber: 450,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1624,7 +1707,7 @@ function Home() {
                                                                             d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 394,
+                                                                            lineNumber: 454,
                                                                             columnNumber: 222
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -1633,18 +1716,18 @@ function Home() {
                                                                             r: "3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 394,
+                                                                            lineNumber: 454,
                                                                             columnNumber: 280
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 394,
+                                                                    lineNumber: 454,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 393,
+                                                                lineNumber: 453,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1654,7 +1737,7 @@ function Home() {
                                                                         children: "Address"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 397,
+                                                                        lineNumber: 457,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1662,19 +1745,19 @@ function Home() {
                                                                         children: "UET Lahore, Grand Trunk Road, Lahore"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 398,
+                                                                        lineNumber: 458,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 396,
+                                                                lineNumber: 456,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 392,
+                                                        lineNumber: 452,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1695,25 +1778,25 @@ function Home() {
                                                                             d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 403,
+                                                                            lineNumber: 463,
                                                                             columnNumber: 222
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
                                                                             points: "22,6 12,13 2,6"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 403,
+                                                                            lineNumber: 463,
                                                                             columnNumber: 309
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 403,
+                                                                    lineNumber: 463,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 402,
+                                                                lineNumber: 462,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1723,7 +1806,7 @@ function Home() {
                                                                         children: "Email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 406,
+                                                                        lineNumber: 466,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1732,19 +1815,19 @@ function Home() {
                                                                         children: "support@uetpanda.pk"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 407,
+                                                                        lineNumber: 467,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 405,
+                                                                lineNumber: 465,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 401,
+                                                        lineNumber: 461,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1767,25 +1850,25 @@ function Home() {
                                                                             r: "10"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 412,
+                                                                            lineNumber: 472,
                                                                             columnNumber: 222
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
                                                                             points: "12 6 12 12 16 14"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/page.js",
-                                                                            lineNumber: 412,
+                                                                            lineNumber: 472,
                                                                             columnNumber: 254
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/page.js",
-                                                                    lineNumber: 412,
+                                                                    lineNumber: 472,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 411,
+                                                                lineNumber: 471,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1795,7 +1878,7 @@ function Home() {
                                                                         children: "Cafe Hours"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 415,
+                                                                        lineNumber: 475,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1803,37 +1886,37 @@ function Home() {
                                                                         children: "Mon–Sat  8:00 AM – 6:00 PM"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                                        lineNumber: 416,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                                lineNumber: 414,
+                                                                lineNumber: 474,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/page.js",
-                                                        lineNumber: 410,
+                                                        lineNumber: 470,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 391,
+                                                lineNumber: 451,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 389,
+                                        lineNumber: 449,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 354,
+                                lineNumber: 414,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1848,7 +1931,7 @@ function Home() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 425,
+                                        lineNumber: 485,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1858,7 +1941,7 @@ function Home() {
                                                 className: "w-1.5 h-1.5 bg-uet-gold/40 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 429,
+                                                lineNumber: 489,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1866,48 +1949,306 @@ function Home() {
                                                 children: "Built for UET Lahore · Multi-Vendor Food System"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 430,
+                                                lineNumber: 490,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "w-1.5 h-1.5 bg-uet-gold/40 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/page.js",
-                                                lineNumber: 431,
+                                                lineNumber: 491,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/page.js",
-                                        lineNumber: 428,
+                                        lineNumber: 488,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/page.js",
-                                lineNumber: 424,
+                                lineNumber: 484,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/page.js",
-                        lineNumber: 351,
+                        lineNumber: 411,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/page.js",
-                lineNumber: 349,
+                lineNumber: 409,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                children: viewingFeedback && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "fixed inset-0 z-[100] flex items-center justify-center p-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0
+                            },
+                            animate: {
+                                opacity: 1
+                            },
+                            exit: {
+                                opacity: 0
+                            },
+                            onClick: ()=>setViewingFeedback(null),
+                            className: "absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
+                        }, void 0, false, {
+                            fileName: "[project]/apps/student/src/app/page.js",
+                            lineNumber: 501,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                scale: 0.9,
+                                opacity: 0,
+                                y: 20
+                            },
+                            animate: {
+                                scale: 1,
+                                opacity: 1,
+                                y: 0
+                            },
+                            exit: {
+                                scale: 0.9,
+                                opacity: 0,
+                                y: 20
+                            },
+                            className: "bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl relative z-10 overflow-hidden",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "bg-uet-navy p-6 relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>setViewingFeedback(null),
+                                            className: "absolute top-6 right-6 text-white/40 hover:text-white transition-colors",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                                size: 20
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/student/src/app/page.js",
+                                                lineNumber: 519,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/student/src/app/page.js",
+                                            lineNumber: 515,
+                                            columnNumber: 18
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-12 h-12 rounded-2xl bg-white/10 overflow-hidden",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`,
+                                                        className: "w-full h-full object-cover"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/student/src/app/page.js",
+                                                        lineNumber: 523,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                    lineNumber: 522,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                            className: "text-lg font-bold text-white leading-tight",
+                                                            children: viewingFeedback.name
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                            lineNumber: 529,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-1.5 mt-0.5",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                    size: 12,
+                                                                    className: "text-uet-gold fill-uet-gold"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 531,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-uet-gold font-bold text-sm",
+                                                                    children: getRatingSummary(viewingFeedback.id || viewingFeedback.name).avg
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 532,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-white/40 text-[10px] uppercase font-bold tracking-widest ml-1",
+                                                                    children: [
+                                                                        getRatingSummary(viewingFeedback.id || viewingFeedback.name).count,
+                                                                        " Reviews"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 535,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                            lineNumber: 530,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                    lineNumber: 528,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/apps/student/src/app/page.js",
+                                            lineNumber: 521,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/student/src/app/page.js",
+                                    lineNumber: 514,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "max-h-[60vh] overflow-y-auto p-6 space-y-4 no-scrollbar",
+                                    children: reviews[viewingFeedback.id || viewingFeedback.name]?.sort((a, b)=>new Date(b.createdAt) - new Date(a.createdAt)).map((r, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-slate-50 p-4 rounded-2xl border border-slate-100",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex justify-between items-start mb-2",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "font-bold text-uet-navy text-xs",
+                                                                    children: r.userName || "Student"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 548,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-[9px] text-slate-400 font-bold uppercase tracking-widest",
+                                                                    children: new Date(r.createdAt).toLocaleDateString()
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 549,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                            lineNumber: 547,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-0.5 bg-white px-2 py-0.5 rounded-lg border border-slate-100",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                    size: 10,
+                                                                    className: "text-uet-gold fill-uet-gold"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 552,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-[10px] font-bold text-uet-navy",
+                                                                    children: r.rating
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                                    lineNumber: 553,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/student/src/app/page.js",
+                                                            lineNumber: 551,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                    lineNumber: 546,
+                                                    columnNumber: 21
+                                                }, this),
+                                                r.comment && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-slate-600 text-xs leading-relaxed italic mt-2",
+                                                    children: [
+                                                        '"',
+                                                        r.comment,
+                                                        '"'
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/apps/student/src/app/page.js",
+                                                    lineNumber: 557,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, idx, true, {
+                                            fileName: "[project]/apps/student/src/app/page.js",
+                                            lineNumber: 545,
+                                            columnNumber: 19
+                                        }, this))
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/student/src/app/page.js",
+                                    lineNumber: 543,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "p-4 bg-slate-50 border-t border-slate-100 text-center",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setViewingFeedback(null),
+                                        className: "text-uet-navy font-bold text-sm hover:text-uet-gold transition-colors",
+                                        children: "Close Feedback"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/student/src/app/page.js",
+                                        lineNumber: 564,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/student/src/app/page.js",
+                                    lineNumber: 563,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/student/src/app/page.js",
+                            lineNumber: 508,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/apps/student/src/app/page.js",
+                    lineNumber: 500,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/apps/student/src/app/page.js",
+                lineNumber: 498,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/student/src/app/page.js",
-        lineNumber: 90,
+        lineNumber: 137,
         columnNumber: 5
     }, this);
 }
-_s(Home, "ptVhTE9CSc6AXVzifHAFh/Syc5w=", false, function() {
+_s(Home, "vMrh5uM77+GzBDUnOjKiX0dTFrI=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCartContext"],
         __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuthContext"],

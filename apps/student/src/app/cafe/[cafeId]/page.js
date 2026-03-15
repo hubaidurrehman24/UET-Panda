@@ -53,6 +53,8 @@ export default function CafeMenuPage() {
   const [addedId, setAddedId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [reviews, setReviews] = useState({});
+  const [viewingFeedback, setViewingFeedback] = useState(null);
 
   const { addToCart } = useCartContext();
   const { user, loading: authLoading } = useAuthContext();
@@ -82,6 +84,31 @@ export default function CafeMenuPage() {
     });
     return () => unsub();
   }, [cafeId]);
+
+  useEffect(() => {
+    const reviewsRef = ref(db, "reviews");
+    const unsub = onValue(reviewsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const grouped = {};
+        Object.values(data).forEach(review => {
+          if (review.isHidden) return;
+          const id = review.itemId;
+          if (!grouped[id]) grouped[id] = [];
+          grouped[id].push(review);
+        });
+        setReviews(grouped);
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  const getRatingSummary = (itemId) => {
+    const itemReviews = reviews[itemId];
+    if (!itemReviews || itemReviews.length === 0) return null;
+    const avg = itemReviews.reduce((a, b) => a + b.rating, 0) / itemReviews.length;
+    return { avg: avg.toFixed(1), count: itemReviews.length, items: itemReviews };
+  };
 
   const handleAddToCart = (item) => {
     if (!user) {
@@ -258,10 +285,23 @@ export default function CafeMenuPage() {
                   <div className="p-5 flex-grow flex flex-col">
                     <div className="flex items-start justify-between mb-1">
                       <h3 className="font-bold text-uet-navy text-base leading-tight">{item.name}</h3>
-                      <div className="flex items-center space-x-1 flex-shrink-0 ml-2">
-                        <Star size={12} className="text-uet-gold fill-uet-gold" />
-                        <span className="text-xs font-bold text-slate-500">4.8</span>
-                      </div>
+                      {getRatingSummary(item.id || item.name) ? (
+                        <button 
+                          onClick={() => setViewingFeedback(item)}
+                          className="flex items-center gap-0.5 flex-shrink-0 bg-uet-gold/10 px-1.5 py-0.5 rounded-lg hover:bg-uet-gold/20 transition-all group/rating"
+                        >
+                          <Star size={10} className="text-uet-gold fill-uet-gold group-hover/rating:scale-110 transition-transform" />
+                          <span className="text-[10px] font-bold text-uet-navy">
+                            {getRatingSummary(item.id || item.name).avg}
+                            <span className="text-[8px] text-slate-400 ml-0.5">({getRatingSummary(item.id || item.name).count})</span>
+                          </span>
+                        </button>
+                      ) : (
+                        <div className="flex items-center gap-0.5 flex-shrink-0 opacity-20">
+                          <Star size={10} className="text-slate-300" />
+                          <span className="text-[10px] font-bold text-slate-300">N/A</span>
+                        </div>
+                      )}
                     </div>
                     <p className="text-slate-400 text-xs leading-relaxed line-clamp-2 flex-grow">
                       {item.description || "Freshly prepared from our kitchen. A campus favourite!"}
@@ -335,6 +375,85 @@ export default function CafeMenuPage() {
           </div>
         )}
       </section>
+
+      {/* Feedback Modal */}
+      <AnimatePresence>
+        {viewingFeedback && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setViewingFeedback(null)}
+              className="absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl relative z-10 overflow-hidden"
+            >
+              <div className="bg-uet-navy p-6 relative">
+                 <button 
+                  onClick={() => setViewingFeedback(null)}
+                  className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors"
+                >
+                  <X size={20} />
+                </button>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden">
+                    <img 
+                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white leading-tight">{viewingFeedback.name}</h3>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <Star size={12} className="text-uet-gold fill-uet-gold" />
+                      <span className="text-uet-gold font-bold text-sm">
+                        {getRatingSummary(viewingFeedback.id || viewingFeedback.name).avg}
+                      </span>
+                      <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest ml-1">
+                        {getRatingSummary(viewingFeedback.id || viewingFeedback.name).count} Reviews
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="max-h-[60vh] overflow-y-auto p-6 space-y-4 no-scrollbar">
+                {reviews[viewingFeedback.id || viewingFeedback.name]?.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map((r, idx) => (
+                  <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <p className="font-bold text-uet-navy text-xs">{r.userName || "Student"}</p>
+                        <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{new Date(r.createdAt).toLocaleDateString()}</p>
+                      </div>
+                      <div className="flex items-center gap-0.5 bg-white px-2 py-0.5 rounded-lg border border-slate-100">
+                        <Star size={10} className="text-uet-gold fill-uet-gold" />
+                        <span className="text-[10px] font-bold text-uet-navy">{r.rating}</span>
+                      </div>
+                    </div>
+                    {r.comment && (
+                      <p className="text-slate-600 text-xs leading-relaxed italic mt-2">"{r.comment}"</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="p-4 bg-slate-50 border-t border-slate-100 text-center">
+                <button 
+                  onClick={() => setViewingFeedback(null)}
+                  className="text-uet-navy font-bold text-sm hover:text-uet-gold transition-colors"
+                >
+                  Close Feedback
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

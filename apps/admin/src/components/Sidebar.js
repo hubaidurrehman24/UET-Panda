@@ -10,7 +10,8 @@ import {
   Settings, 
   LogOut, 
   ChevronRight,
-  Store
+  Store,
+  MessageSquare
 } from "lucide-react";
 import { signOut } from "firebase/auth";
 import { auth, useAuthContext } from "@uet-panda/shared-config";
@@ -22,6 +23,7 @@ const Sidebar = () => {
   const menuItems = [
     { name: "Inventory", icon: <Package size={20} />, path: "/dashboard/inventory" },
     { name: "Orders", icon: <ShoppingBag size={20} />, path: "/dashboard/orders" },
+    { name: "Reviews", icon: <MessageSquare size={20} />, path: "/dashboard/feedback" },
     { name: "Analytics", icon: <BarChart3 size={20} />, path: "/dashboard/analytics" },
   ];
 

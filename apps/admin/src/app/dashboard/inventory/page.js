@@ -27,6 +27,7 @@ const InventoryPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [activeTab, setActiveTab] = useState("all");
+  const [reviews, setReviews] = useState({});
 
   // Form states
   const [name, setName] = useState("");
@@ -57,6 +58,34 @@ const InventoryPage = () => {
 
     return () => unsubscribe();
   }, [cafeId]);
+
+  // Fetch reviews to calculate average ratings
+  useEffect(() => {
+    if (!cafeId) return;
+    const reviewsRef = ref(db, "reviews");
+    const q = query(reviewsRef, orderByChild("cafeId"), equalTo(cafeId));
+    const unsub = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const grouped = {};
+        Object.values(data).forEach(r => {
+          if (r.isHidden) return; // Only count visible reviews
+          if (!grouped[r.itemId]) grouped[r.itemId] = [];
+          grouped[r.itemId].push(r.rating);
+        });
+        setReviews(grouped);
+      } else {
+        setReviews({});
+      }
+    });
+    return () => unsub();
+  }, [cafeId]);
+
+  const getItemRating = (itemId) => {
+    const rs = reviews[itemId];
+    if (!rs || rs.length === 0) return null;
+    return (rs.reduce((a, b) => a + b, 0) / rs.length).toFixed(1);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -230,6 +259,7 @@ const InventoryPage = () => {
                 <th className="px-8 py-4">Item Details</th>
                 <th className="px-8 py-4">Category</th>
                 <th className="px-8 py-4">Price</th>
+                <th className="px-8 py-4">Rating</th>
                 <th className="px-8 py-4">Status</th>
                 <th className="px-8 py-4 text-center">Actions</th>
               </tr>
@@ -266,6 +296,17 @@ const InventoryPage = () => {
                       <span className="inline-block px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-wider">
                         {product.category || "desi"}
                       </span>
+                    </td>
+                    <td className="px-8 py-6">
+                      {getItemRating(product.id) ? (
+                        <div className="flex items-center gap-1.5 bg-uet-gold/10 px-2.5 py-1 rounded-lg w-fit">
+                          <Star size={12} className="text-uet-gold fill-uet-gold" />
+                          <span className="text-xs font-bold text-uet-navy">{getItemRating(product.id)}</span>
+                          <span className="text-[10px] text-slate-400 font-normal">({reviews[product.id]?.length})</span>
+                        </div>
+                      ) : (
+                        <span className="text-[10px] text-slate-300 font-bold uppercase tracking-wider">No Reviews</span>
+                      )}
                     </td>
                     <td className="px-8 py-6">
                       <button 

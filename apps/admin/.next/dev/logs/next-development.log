@@ -201,3 +201,29 @@ Import traces:
 [03:50:42.132] Browser WARN    [2026-03-14T23:07:44.939Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
 [03:54:53.701] Server  LOG     ✓ Compiled in 504ms
 [04:19:17.589] Server  LOG     ✓ Compiled in 669ms
+[13:40:03.399] Browser WARN    [2026-03-15T08:56:48.915Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[15:06:47.394] Browser WARN    [2026-03-15T10:23:33.394Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:04:29.390] Browser WARN    [2026-03-15T19:20:59.263Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:16:32.851] Server  LOG     ✓ Compiled in 726ms
+[24:16:33.466] Browser ERROR   uncaughtError: ReferenceError: MessageSquare is not defined
+[24:16:41.775] Server  LOG     ✓ Compiled in 2.2s
+[24:16:45.241] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:16:45.245] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:16:45.256] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:16:48.046] Browser WARN    [2026-03-15T19:33:16.558Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:16:48.046] Browser WARN    [2026-03-15T19:33:16.843Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:16:53.174] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:16:57.404] Browser WARN    [2026-03-15T19:33:26.932Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:16:57.404] Browser WARN    [2026-03-15T19:33:27.178Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[24:17:02.074] Server  LOG     ✓ Compiled in 903ms
+[24:29:59.234] Browser WARN    [2026-03-15T19:46:29.178Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /reviews to your security rules for better performance. 
+[24:29:59.234] Browser WARN    [2026-03-15T19:46:29.237Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /reviews to your security rules for better performance. 
+[24:36:13.590] Server  LOG     ✓ Compiled in 791ms
+[24:36:46.002] Server  LOG     ✓ Compiled in 750ms
+[24:39:24.475] Server  LOG     ✓ Compiled in 247ms
+[24:41:37.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:41:40.770] Browser WARN    [2026-03-15T19:58:10.748Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /reviews to your security rules for better performance. 
+[24:41:40.770] Browser WARN    [2026-03-15T19:58:10.772Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /reviews to your security rules for better performance. 
+[24:46:03.897] Server  LOG     ✓ Compiled in 173ms
+[24:59:35.499] Server  LOG     ✓ Compiled in 2.8s
+[25:01:17.429] Server  LOG     ✓ Compiled in 180ms
