@@ -287,6 +287,9 @@
     --color-blue-400: #54a2ff;
     --color-blue-500: #3080ff;
     --color-blue-600: #155dfc;
+    --color-purple-100: #f3e8ff;
+    --color-purple-400: #c07eff;
+    --color-purple-600: #9810fa;
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
     --color-slate-200: #e2e8f0;
@@ -358,6 +361,9 @@
       --color-blue-400: lab(65.0361% -1.42062 -56.9803);
       --color-blue-500: lab(54.1736% 13.3368 -74.6839);
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
+      --color-purple-100: lab(93.3333% 6.9744 -9.83434);
+      --color-purple-400: lab(63.6946% 47.6127 -59.2066);
+      --color-purple-600: lab(43.0295% 75.21 -86.5669);
       --color-slate-50: lab(98.1434% -.369549 -1.05968);
       --color-slate-100: lab(96.286% -.852466 -2.46847);
       --color-slate-200: lab(91.7353% -.998765 -4.76968);
@@ -1389,6 +1395,10 @@
     background-color: var(--color-orange-100);
   }
 
+  .bg-purple-100 {
+    background-color: var(--color-purple-100);
+  }
+
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1819,6 +1829,14 @@
 
   .text-orange-600 {
     color: var(--color-orange-600);
+  }
+
+  .text-purple-400 {
+    color: var(--color-purple-400);
+  }
+
+  .text-purple-600 {
+    color: var(--color-purple-600);
   }
 
   .text-red-200 {
@@ -2306,12 +2324,6 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:w-auto {
-      width: auto;
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -2350,12 +2362,6 @@
   @media (min-width: 64rem) {
     .lg\:items-center {
       align-items: center;
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .xl\:block {
-      display: block;
     }
   }
 }

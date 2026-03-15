@@ -44,3 +44,160 @@
 [00:45:58.208] Browser WARN    [2026-03-14T20:03:01.014Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
 [01:32:15.394] Browser WARN    [2026-03-14T20:49:17.822Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
 [01:58:38.398] Browser WARN    [2026-03-14T21:15:40.748Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:21:37.400] Browser WARN    [2026-03-14T22:38:39.757Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:45:59.922] Server  LOG     ✓ Compiled in 2.7s
+[03:46:00.388] Browser ERROR   ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+[03:46:28.634] Server  LOG     ✓ Compiled in 267ms
+[03:46:29.556] Browser ERROR   ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+[03:47:24.129] Server  ERROR   ⨯ ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+
+[03:47:24.261] Browser ERROR   ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+[03:47:25.205] Browser ERROR   uncaughtError: Error: ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+
+[03:47:25.347] Browser ERROR   ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+[03:47:25.581] Browser ERROR   ./apps/admin/src/app/dashboard/orders/page.js:19:3
+Ecmascript file had an error
+  17 |   CreditCard,
+  18 |   Banknote,
+> 19 |   ShoppingBag
+     |   ^^^^^^^^^^^
+  20 | } from "lucide-react";
+  21 |
+  22 | const OrderManagement = () => {
+
+the name `ShoppingBag` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component Browser]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+
+  Client Component SSR:
+    ./apps/admin/src/app/dashboard/orders/page.js [Client Component SSR]
+    ./apps/admin/src/app/dashboard/orders/page.js [Server Component]
+[03:47:51.043] Server  LOG     ✓ Compiled in 126ms
+[03:47:53.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:47:57.398] Browser WARN    [2026-03-14T23:04:59.655Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:47:57.398] Browser WARN    [2026-03-14T23:04:59.699Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:50:41.557] Browser WARN    [2026-03-14T23:07:44.352Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[03:50:42.132] Browser WARN    [2026-03-14T23:07:44.879Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /products to your security rules for better performance. 
+[03:50:42.132] Browser WARN    [2026-03-14T23:07:44.887Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:50:42.132] Browser WARN    [2026-03-14T23:07:44.939Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[03:54:53.701] Server  LOG     ✓ Compiled in 504ms
+[04:19:17.589] Server  LOG     ✓ Compiled in 669ms

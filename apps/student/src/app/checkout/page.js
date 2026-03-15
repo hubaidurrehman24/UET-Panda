@@ -4,7 +4,7 @@ import { Navbar, ProtectedRoute } from "@uet-panda/shared-ui";
 import { useCartContext, useAuthContext, db } from "@uet-panda/shared-config";
 import { ref, push, set } from "firebase/database";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Phone, User, CreditCard, Banknote, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
+import { MapPin, Phone, User, CreditCard, Banknote, CheckCircle2, ArrowRight, Loader2, Truck, ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const CheckoutPage = () => {
@@ -14,6 +14,7 @@ const CheckoutPage = () => {
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' or 'stripe'
+  const [orderType, setOrderType] = useState("delivery"); // 'delivery' or 'takeaway'
   const [loading, setLoading] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
   const [showStripeMock, setShowStripeMock] = useState(false);
@@ -52,7 +53,8 @@ const CheckoutPage = () => {
           userName: name,
           userEmail: user.email,
           userPhone: phone,
-          address: address,
+          address: orderType === 'takeaway' ? "Self-Pickup at Cafe" : address,
+          orderType: orderType,
           cafeId: cafeId,
           cafeName: items[0].cafeName || `Cafe ${cafeId}`,
           items: items.map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity })),
@@ -149,7 +151,7 @@ const CheckoutPage = () => {
                     disabled={loading}
                     className="flex-1 bg-uet-navy text-white py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-navy transition-all active:scale-95 disabled:opacity-50"
                   >
-                    {loading ? <Loader2 className="animate-spin" /> : <span>Pay Rs. {cartTotal + 50}</span>}
+                    {loading ? <Loader2 className="animate-spin" /> : <span>Pay Rs. {cartTotal}</span>}
                   </button>
                </div>
              </div>
@@ -184,14 +186,51 @@ const CheckoutPage = () => {
                    />
                  </div>
                  <div>
-                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">UET Hoste/Dept/Room</label>
+                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">
+                     {orderType === 'takeaway' ? 'Pre Order Pickup Info (Optional)' : 'UET Hostel/Dept/Room'}
+                   </label>
                    <textarea 
-                     required rows="3"
-                     placeholder="e.g. Room 45, Zubair Hall"
+                     required={orderType === 'delivery'} rows="3"
+                     placeholder={orderType === 'takeaway' ? "e.g. I will pick up from counter" : "e.g. Room 45, Zubair Hall"}
                      className="w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium focus:ring-2 focus:ring-uet-gold transition-all resize-none"
                      value={address} onChange={(e) => setAddress(e.target.value)}
                    />
                  </div>
+               </div>
+            </div>
+
+            {/* Order Type */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+               <h3 className="text-lg font-bold text-uet-navy mb-6 flex items-center space-x-2">
+                 <Truck size={20} className="text-uet-gold" />
+                 <span>Order Type</span>
+               </h3>
+
+               <div className="grid grid-cols-2 gap-4">
+                 <button 
+                   type="button"
+                   onClick={() => setOrderType("delivery")}
+                   className={`p-4 rounded-2xl border-2 flex flex-col items-center justify-center transition-all ${
+                     orderType === 'delivery' 
+                     ? "border-uet-gold bg-uet-gold/5 text-uet-navy shadow-sm scale-105" 
+                     : "border-slate-100 text-slate-400 hover:border-slate-200"
+                   }`}
+                 >
+                   <Truck size={24} className="mb-2" />
+                   <span className="text-xs font-bold uppercase">Delivery</span>
+                 </button>
+                 <button 
+                   type="button"
+                   onClick={() => setOrderType("takeaway")}
+                   className={`p-4 rounded-2xl border-2 flex flex-col items-center justify-center transition-all ${
+                     orderType === 'takeaway' 
+                     ? "border-uet-gold bg-uet-gold/5 text-uet-navy shadow-sm scale-105" 
+                     : "border-slate-100 text-slate-400 hover:border-slate-200"
+                   }`}
+                 >
+                   <ShoppingBag size={24} className="mb-2" />
+                   <span className="text-xs font-bold uppercase">Pre Order</span>
+                 </button>
                </div>
             </div>
 
@@ -242,18 +281,21 @@ const CheckoutPage = () => {
                 </h3>
 
                 <div className="space-y-4 mb-10">
-                  <div className="flex justify-between text-blue-100/60 font-medium">
-                    <span>Items Total</span>
+                  <div className="flex justify-between text-blue-100/60 font-medium font-poppins">
+                    <span>Order Subtotal</span>
                     <span>Rs. {cartTotal}</span>
                   </div>
-                  <div className="flex justify-between text-blue-100/60 font-medium">
-                    <span>Delivery (Flat)</span>
-                    <span>Rs. 50</span>
+                  <div className="flex justify-between items-center text-blue-100/60 font-medium">
+                    <span className="flex items-center gap-2">
+                      {orderType === 'delivery' ? <Truck size={14} /> : <ShoppingBag size={14} />}
+                      {orderType === 'delivery' ? 'Delivery Fee' : 'Pre Order'}
+                    </span>
+                    <span className="text-uet-gold font-bold">FREE</span>
                   </div>
                   <div className="h-px bg-white/10 my-6"></div>
                   <div className="flex justify-between text-2xl font-bold text-white">
                     <span>Grand Total</span>
-                    <span className="text-uet-gold">Rs. {cartTotal + 50}</span>
+                    <span className="text-uet-gold">Rs. {cartTotal}</span>
                   </div>
                 </div>
 

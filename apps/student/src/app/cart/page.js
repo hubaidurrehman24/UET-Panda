@@ -124,9 +124,12 @@ const CartPage = () => {
                       <span>Subtotal</span>
                       <span>Rs. {cartTotal}</span>
                     </div>
-                    <div className="flex justify-between text-blue-100/60 font-medium">
-                      <span>Delivery (Flat)</span>
-                      <span>Rs. 50</span>
+                    <div className="flex justify-between items-center text-blue-100/60 font-medium">
+                      <span className="flex items-center gap-2">
+                        <ShoppingBag size={14} />
+                        Service Fee
+                      </span>
+                      <span className="text-uet-gold font-bold">FREE</span>
                     </div>
                     <div className="flex justify-between text-blue-100/60 font-medium italic">
                       <span>Orders Count</span>
@@ -135,7 +138,7 @@ const CartPage = () => {
                     <div className="h-px bg-white/10 my-6"></div>
                     <div className="flex justify-between text-xl font-bold text-white">
                       <span>Total</span>
-                      <span className="text-uet-gold">Rs. {cartTotal + 50}</span>
+                      <span className="text-uet-gold">Rs. {cartTotal}</span>
                     </div>
                   </div>
 

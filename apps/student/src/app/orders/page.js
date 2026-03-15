@@ -16,7 +16,8 @@ import {
   Bike,
   ArrowRight,
   ChevronRight,
-  Search
+  Search,
+  ShoppingBag
 } from "lucide-react";
 import Link from "next/link";
 
@@ -50,8 +51,10 @@ const OrderTracking = () => {
   const getStatusStep = (status) => {
     switch (status) {
       case "Preparing": return 1;
-      case "Out for Delivery": return 2;
-      case "Delivered": return 3;
+      case "Out for Delivery": 
+      case "Ready for Pickup": return 2;
+      case "Delivered": 
+      case "Collected": return 3;
       default: return 1;
     }
   };
@@ -142,20 +145,24 @@ const OrderTracking = () => {
                            <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 1 ? 'text-uet-navy' : 'text-slate-300'}`}>Preparing</span>
                         </div>
 
-                        {/* Step 2: Out for Delivery */}
+                        {/* Step 2: Transit/Ready */}
                         <div className="relative z-10 flex flex-col items-center">
                            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 2 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`}>
-                              <Truck size={20} />
+                              {order.orderType === 'takeaway' ? <ShoppingBag size={20} /> : <Truck size={20} />}
                            </div>
-                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`}>In Transit</span>
+                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`}>
+                              {order.orderType === 'takeaway' ? 'Ready for Pickup' : 'In Transit'}
+                           </span>
                         </div>
 
-                        {/* Step 3: Delivered */}
+                        {/* Step 3: Delivered/Collected */}
                         <div className="relative z-10 flex flex-col items-center">
                            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 3 ? 'bg-uet-gold text-uet-navy shadow-gold font-bold' : 'bg-white text-slate-300 border border-slate-200'}`}>
                               <CheckCircle2 size={24} />
                            </div>
-                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`}>Home</span>
+                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`}>
+                              {order.orderType === 'takeaway' ? 'Pre Order Collected' : 'Home'}
+                           </span>
                         </div>
                      </div>
                   </div>
@@ -178,7 +185,7 @@ const OrderTracking = () => {
                         </div>
                      </div>
 
-                     {/* Delivery Info */}
+                     {/* Delivery/Takeaway Info */}
                      <div className="bg-white p-6 rounded-[2rem] border border-slate-100 lg:w-[320px] shadow-sm relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-20 h-20 bg-uet-navy/5 rounded-full -mr-10 -mt-10"></div>
                         
@@ -199,13 +206,29 @@ const OrderTracking = () => {
                                    <span>Contact: {order.riderPhone}</span>
                                 </button>
                              </div>
-                           ) : order.status === "Delivered" ? (
+                           ) : order.status === "Delivered" || order.status === "Collected" ? (
                              <div className="text-center py-4">
                                 <CheckCircle2 size={32} className="text-green-500 mx-auto mb-3" />
                                 <h4 className="font-bold text-uet-navy">Enjoy your meal!</h4>
                                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Order Complete</p>
                              </div>
-                           ) : (
+                           ) : order.orderType === 'takeaway' ? (
+                              <div className="space-y-4">
+                                <div className="flex items-center space-x-3 mb-2">
+                                   <Store size={20} className="text-uet-gold" />
+                                   <h4 className="font-bold text-uet-navy text-sm">Self-Pickup Order</h4>
+                                </div>
+                                <p className="text-xs text-slate-400 leading-relaxed italic">
+                                  {order.status === "Ready for Pickup" 
+                                    ? "Your order is ready at the counter! Please head to the cafe to collect it." 
+                                    : "The cafe is preparing your food. We'll notify you when it's ready for pickup."}
+                                </p>
+                                <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
+                                   <Store size={14} className="text-uet-gold" />
+                                   <span className="text-[10px] font-bold text-slate-600 line-clamp-1">{order.cafeName} Counter</span>
+                                </div>
+                              </div>
+                            ) : (
                              <div className="space-y-4">
                                <div className="flex items-center space-x-3 mb-2">
                                   <Clock size={20} className="text-uet-gold" />

@@ -91,8 +91,10 @@ const OrderManagement = ()=>{
             case "Preparing":
                 return "bg-orange-100 text-orange-600";
             case "Out for Delivery":
+            case "Ready for Pickup":
                 return "bg-blue-100 text-blue-600";
             case "Delivered":
+            case "Collected":
                 return "bg-green-100 text-green-600";
             default:
                 return "bg-slate-100 text-slate-500";
@@ -111,7 +113,7 @@ const OrderManagement = ()=>{
                                 children: "Order Management"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                lineNumber: 95,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -119,40 +121,42 @@ const OrderManagement = ()=>{
                                 children: "Process and fulfill incoming requests"
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                lineNumber: 96,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                        lineNumber: 94,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex bg-white p-1 rounded-2xl border border-slate-100 shadow-sm",
+                        className: "flex bg-white p-1 rounded-2xl border border-slate-100 shadow-sm overflow-x-auto no-scrollbar",
                         children: [
                             "All",
                             "Preparing",
                             "Out for Delivery",
-                            "Delivered"
+                            "Ready for Pickup",
+                            "Delivered",
+                            "Collected"
                         ].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setFilterStatus(s),
-                                className: `px-4 py-2 rounded-xl text-xs font-bold transition-all ${filterStatus === s ? "bg-uet-navy text-white shadow-lg" : "text-slate-400 hover:text-uet-navy"}`,
+                                className: `px-4 py-2 rounded-xl text-[10px] font-bold transition-all whitespace-nowrap ${filterStatus === s ? "bg-uet-navy text-white shadow-lg" : "text-slate-400 hover:text-uet-navy"}`,
                                 children: s
                             }, s, false, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                lineNumber: 100,
+                                lineNumber: 102,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                        lineNumber: 98,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                lineNumber: 93,
+                lineNumber: 95,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -165,7 +169,7 @@ const OrderManagement = ()=>{
                             className: "mx-auto text-slate-200 mb-4"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                            lineNumber: 117,
+                            lineNumber: 119,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -173,13 +177,13 @@ const OrderManagement = ()=>{
                             children: "No orders found"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                            lineNumber: 118,
+                            lineNumber: 120,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                    lineNumber: 116,
+                    lineNumber: 118,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)) : filteredOrders.map((order)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                         layout: true,
@@ -198,27 +202,27 @@ const OrderManagement = ()=>{
                                                         size: 24
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 131,
-                                                        columnNumber: 54
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    order.status === "Out for Delivery" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
-                                                        size: 24
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 132,
-                                                        columnNumber: 61
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    order.status === "Delivered" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                                        size: 24
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
                                                         lineNumber: 133,
                                                         columnNumber: 54
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    (order.status === "Out for Delivery" || order.status === "Ready for Pickup") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
+                                                        size: 24
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                        lineNumber: 134,
+                                                        columnNumber: 102
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    (order.status === "Delivered" || order.status === "Collected") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                                        size: 24
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                        lineNumber: 135,
+                                                        columnNumber: 88
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 130,
+                                                lineNumber: 132,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,7 +238,7 @@ const OrderManagement = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 137,
+                                                                lineNumber: 139,
                                                                 columnNumber: 24
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -242,13 +246,21 @@ const OrderManagement = ()=>{
                                                                 children: order.status
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 138,
+                                                                lineNumber: 140,
+                                                                columnNumber: 24
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: `px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${order.orderType === 'takeaway' ? 'bg-purple-100 text-purple-600' : 'bg-blue-100 text-blue-600'}`,
+                                                                children: order.orderType === 'takeaway' ? 'Pre Order' : order.orderType || 'Delivery'
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                                lineNumber: 141,
                                                                 columnNumber: 24
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 136,
+                                                        lineNumber: 138,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -256,7 +268,7 @@ const OrderManagement = ()=>{
                                                         children: order.userName
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 140,
+                                                        lineNumber: 145,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,7 +282,7 @@ const OrderManagement = ()=>{
                                                                         className: "mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                        lineNumber: 142,
+                                                                        lineNumber: 147,
                                                                         columnNumber: 59
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     " ",
@@ -278,44 +290,50 @@ const OrderManagement = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 142,
+                                                                lineNumber: 147,
                                                                 columnNumber: 24
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "flex items-center",
                                                                 children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                    order.orderType === 'takeaway' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$bag$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingBag$3e$__["ShoppingBag"], {
+                                                                        size: 14,
+                                                                        className: "mr-1 text-purple-400"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                                        lineNumber: 149,
+                                                                        columnNumber: 60
+                                                                    }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
                                                                         size: 14,
                                                                         className: "mr-1 text-red-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                        lineNumber: 143,
-                                                                        columnNumber: 59
+                                                                        lineNumber: 149,
+                                                                        columnNumber: 121
                                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                                    " ",
-                                                                    order.address
+                                                                    order.orderType === 'takeaway' ? 'Pre Order Pickup' : order.address
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 143,
+                                                                lineNumber: 148,
                                                                 columnNumber: 24
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 141,
+                                                        lineNumber: 146,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 135,
+                                                lineNumber: 137,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                        lineNumber: 129,
+                                        lineNumber: 131,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -326,7 +344,7 @@ const OrderManagement = ()=>{
                                                 children: "Order Items"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 150,
+                                                lineNumber: 158,
                                                 columnNumber: 20
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -344,13 +362,13 @@ const OrderManagement = ()=>{
                                                                         children: item.name
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                        lineNumber: 154,
+                                                                        lineNumber: 162,
                                                                         columnNumber: 101
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 154,
+                                                                lineNumber: 162,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -361,18 +379,18 @@ const OrderManagement = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 155,
+                                                                lineNumber: 163,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, idx, true, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 153,
+                                                        lineNumber: 161,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 151,
+                                                lineNumber: 159,
                                                 columnNumber: 20
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -386,21 +404,21 @@ const OrderManagement = ()=>{
                                                                 className: "mr-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 161,
+                                                                lineNumber: 169,
                                                                 columnNumber: 59
                                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
                                                                 size: 10,
                                                                 className: "mr-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                                lineNumber: 161,
+                                                                lineNumber: 169,
                                                                 columnNumber: 101
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             order.paymentMethod
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 160,
+                                                        lineNumber: 168,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -411,46 +429,58 @@ const OrderManagement = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 164,
+                                                        lineNumber: 172,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 159,
+                                                lineNumber: 167,
                                                 columnNumber: 20
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                        lineNumber: 149,
+                                        lineNumber: 157,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex flex-col gap-2 min-w-[200px]",
                                         children: [
                                             order.status === "Preparing" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setSelectedOrder(order),
+                                                onClick: ()=>{
+                                                    if (order.orderType === 'takeaway') {
+                                                        updateStatus(order.id, "Ready for Pickup");
+                                                    } else {
+                                                        setSelectedOrder(order);
+                                                    }
+                                                },
                                                 className: "bg-uet-gold text-uet-navy py-3 px-6 rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-gold hover:bg-white transition-all active:scale-95",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
+                                                    order.orderType === 'takeaway' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$bag$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingBag$3e$__["ShoppingBag"], {
                                                         size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 175,
-                                                        columnNumber: 24
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        children: "Dispatch Order"
+                                                        lineNumber: 189,
+                                                        columnNumber: 58
+                                                    }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
+                                                        size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 176,
+                                                        lineNumber: 189,
+                                                        columnNumber: 86
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: order.orderType === 'takeaway' ? 'Mark Pre Order Ready' : 'Dispatch Order'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                        lineNumber: 190,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 171,
+                                                lineNumber: 179,
                                                 columnNumber: 22
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             order.status === "Out for Delivery" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -463,20 +493,46 @@ const OrderManagement = ()=>{
                                                         size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 184,
+                                                        lineNumber: 198,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Mark Delivered"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                        lineNumber: 185,
+                                                        lineNumber: 199,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 180,
+                                                lineNumber: 194,
+                                                columnNumber: 22
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            order.status === "Ready for Pickup" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>updateStatus(order.id, "Collected", {
+                                                        isPaid: true
+                                                    }),
+                                                className: "bg-green-500 text-white py-3 px-6 rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-lg hover:shadow-green-500/20 active:scale-95 transition-all outline-none",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                                        size: 18
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                        lineNumber: 207,
+                                                        columnNumber: 24
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Mark Collected"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                        lineNumber: 208,
+                                                        columnNumber: 24
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
+                                                lineNumber: 203,
                                                 columnNumber: 22
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -484,19 +540,19 @@ const OrderManagement = ()=>{
                                                 children: "Print Invoice"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 188,
+                                                lineNumber: 211,
                                                 columnNumber: 20
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                        lineNumber: 169,
-                                        columnNumber: 17
+                                        lineNumber: 177,
+                                        columnNumber: 18
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                lineNumber: 127,
+                                lineNumber: 129,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             order.riderName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -510,7 +566,7 @@ const OrderManagement = ()=>{
                                                 className: "mr-2 text-uet-gold"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 197,
+                                                lineNumber: 220,
                                                 columnNumber: 55
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " Rider: ",
@@ -518,7 +574,7 @@ const OrderManagement = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                        lineNumber: 197,
+                                        lineNumber: 220,
                                         columnNumber: 20
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -529,7 +585,7 @@ const OrderManagement = ()=>{
                                                 className: "mr-2 text-uet-gold"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 198,
+                                                lineNumber: 221,
                                                 columnNumber: 55
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " Contact: ",
@@ -537,24 +593,24 @@ const OrderManagement = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                        lineNumber: 198,
+                                        lineNumber: 221,
                                         columnNumber: 20
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                lineNumber: 196,
+                                lineNumber: 219,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, order.id, true, {
                         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                        lineNumber: 122,
+                        lineNumber: 124,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                lineNumber: 114,
+                lineNumber: 116,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -575,7 +631,7 @@ const OrderManagement = ()=>{
                             className: "absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                            lineNumber: 210,
+                            lineNumber: 233,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -606,12 +662,12 @@ const OrderManagement = ()=>{
                                                 className: "text-uet-navy"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                lineNumber: 226,
+                                                lineNumber: 249,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 225,
+                                            lineNumber: 248,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -619,7 +675,7 @@ const OrderManagement = ()=>{
                                             children: "Assign Rider"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 228,
+                                            lineNumber: 251,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -630,13 +686,13 @@ const OrderManagement = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 229,
+                                            lineNumber: 252,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                    lineNumber: 224,
+                                    lineNumber: 247,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -650,7 +706,7 @@ const OrderManagement = ()=>{
                                                     children: "Rider Name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 234,
+                                                    lineNumber: 257,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -662,13 +718,13 @@ const OrderManagement = ()=>{
                                                     onChange: (e)=>setRiderName(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 235,
+                                                    lineNumber: 258,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 233,
+                                            lineNumber: 256,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -678,7 +734,7 @@ const OrderManagement = ()=>{
                                                     children: "Rider Phone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 243,
+                                                    lineNumber: 266,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -690,13 +746,13 @@ const OrderManagement = ()=>{
                                                     onChange: (e)=>setRiderPhone(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 244,
+                                                    lineNumber: 267,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 242,
+                                            lineNumber: 265,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -707,7 +763,7 @@ const OrderManagement = ()=>{
                                                     children: "Confirm & Dispatch"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 256,
+                                                    lineNumber: 279,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -715,42 +771,42 @@ const OrderManagement = ()=>{
                                                     className: "-rotate-90"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                                    lineNumber: 257,
+                                                    lineNumber: 280,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                            lineNumber: 252,
+                                            lineNumber: 275,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                                    lineNumber: 232,
+                                    lineNumber: 255,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                            lineNumber: 218,
+                            lineNumber: 241,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                    lineNumber: 209,
+                    lineNumber: 232,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-                lineNumber: 207,
+                lineNumber: 230,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/admin/src/app/dashboard/orders/page.js",
-        lineNumber: 92,
+        lineNumber: 94,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
