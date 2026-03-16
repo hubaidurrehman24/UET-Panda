@@ -1,0 +1,17 @@
+﻿Image Map rows:
+3: 1 images, 4: 1 images, 5: 1 images, 6: 1 images, 7: 1 images, 8: 1 images, 9: 1 images, 10: 1 images, 11: 1 images, 12: 1 images, 13: 1 images, 14: 1 images, 16: 1 images, 19: 1 images, 20: 1 images, 21: 1 images, 22: 1 images, 23: 1 images, 24: 1 images, 25: 1 images, 27: 1 images, 30: 1 images, 31: 1 images, 32: 1 images, 33: 1 images, 37: 1 images, 38: 1 images, 39: 1 images, 40: 1 images, 41: 1 images, 42: 1 images, 43: 1 images, 44: 1 images, 45: 1 images, 46: 1 images, 47: 1 images, 50: 1 images, 51: 1 images, 54: 1 images, 56: 1 images, 59: 1 images, 60: 1 images, 61: 1 images, 62: 1 images, 63: 1 images, 64: 1 images, 67: 1 images, 71: 1 images, 72: 1 images, 74: 1 images, 77: 1 images, 78: 1 images, 79: 1 images, 80: 1 images, 81: 1 images, 82: 1 images, 83: 1 images, 84: 1 images, 85: 1 images, 86: 1 images
+Row 71: [ <1 empty item>, 'nuggets' ]
+Row 72: [ <1 empty item>, '6 pcs', 300 ]
+Row 73: [ <1 empty item>, '12 pcs', 550 ]
+Row 75: [ <1 empty item>, '1 chicken piece', 170 ]
+Row 77: [ <1 empty item>, 'Hot Deals' ]
+Row 78: [ <1 empty item>, 'zinger burger + fries', 300 ]
+Row 79: [ <1 empty item>, 'tower zinger burger + fries', 420 ]
+Row 80: [ <1 empty item>, 'zinger burger + piece chicken + fries', 460 ]
+Row 81: [ <1 empty item>, 'chicken burger+fries', 250 ]
+Row 82: [ <1 empty item>, '2 piece chicken+fries', 430 ]
+Row 83: [ <1 empty item>, '1platter shawarma+fries', 370 ]
+Row 84: [ <1 empty item>, 'shami burger+fries', 240 ]
+Row 85: [ <1 empty item>, 'migthy zinger+fries', 470 ]
+Row 86: [ <1 empty item>, 'twister roll+fries', 300 ]
+Row 87: [ <1 empty item>, 'shawarma+fries', 220 ]
