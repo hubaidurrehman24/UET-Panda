@@ -21,10 +21,10 @@ import { useRouter } from "next/navigation";
 
 const CAFES = [
   { id: "all", name: "All Cafes" },
-  { id: "cafe1", name: "Cafe 1" },
-  { id: "cafe2", name: "Cafe 2" },
-  { id: "cafe3", name: "Cafe 3" },
-  { id: "cafe4", name: "Cafe 4" },
+  { id: "cafe1", name: "Bhola" },
+  { id: "cafe2", name: "GSSC" },
+  { id: "cafe3", name: "BSSC" },
+  { id: "cafe4", name: "Aneexe" },
 ];
 
 const TIME_RANGES = [

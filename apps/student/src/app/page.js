@@ -20,10 +20,10 @@ import { useRouter } from "next/navigation";
 
 /* ─── Cafe Card Data ───────────────────────────────────── */
 const cafes = [
-  { id: "cafe1", name: "Cafe 1", tagline: "Classic desi meals & famous biryani",     specialty: "Biryani & Karahi",    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-orange-600 to-red-700",    badge: "🔥 Most Popular" },
-  { id: "cafe2", name: "Cafe 2", tagline: "Fresh burgers, sandwiches & crispy fries", specialty: "Fast Food",            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-yellow-500 to-orange-600", badge: "⚡ Quick Bites" },
-  { id: "cafe3", name: "Cafe 3", tagline: "Hot tea, cold drinks & light snacks",      specialty: "Beverages",            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-emerald-600 to-teal-700",  badge: "☕ Best Chai" },
-  { id: "cafe4", name: "Cafe 4", tagline: "Shawarmas, rolls & street style eats",     specialty: "Street Food",          image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-purple-600 to-indigo-700", badge: "🌯 Street Eats" },
+  { id: "cafe1", name: "Bhola", tagline: "Classic desi meals & famous biryani",     specialty: "Biryani & Karahi",    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-orange-600 to-red-700",    badge: "🔥 Most Popular" },
+  { id: "cafe2", name: "GSSC", tagline: "Fresh burgers, sandwiches & crispy fries", specialty: "Fast Food",            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-yellow-500 to-orange-600", badge: "⚡ Quick Bites" },
+  { id: "cafe3", name: "BSSC", tagline: "Hot tea, cold drinks & light snacks",      specialty: "Beverages",            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-emerald-600 to-teal-700",  badge: "☕ Best Chai" },
+  { id: "cafe4", name: "Aneexe", tagline: "Shawarmas, rolls & street style eats",     specialty: "Street Food",          image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&auto=format&fit=crop&q=80", rating: "Loading...", color: "from-purple-600 to-indigo-700", badge: "🌯 Street Eats" },
 ];
 
 /* ─── Component ────────────────────────────────────────── */
@@ -39,32 +39,34 @@ export default function Home() {
   const router = useRouter();
 
   // Fetch deals from Realtime Database and interleave them from all cafes
+  // Fetch deals from Realtime Database and interleave them from all cafes
   useEffect(() => {
-    const productsRef = ref(db, "products");
-    const q = query(productsRef, orderByChild("category"), equalTo("deals"));
-    
-    const unsub = onValue(q, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const allDeals = Object.entries(data).map(([id, val]) => ({ id, ...val }));
-        
-        // Group by cafe
-        const groups = {};
-        allDeals.forEach(d => {
-          if (!groups[d.cafeId]) groups[d.cafeId] = [];
-          groups[d.cafeId].push(d);
-        });
+    const cafesList = ["cafe1", "cafe2", "cafe3", "cafe4"];
+    const allFetchedDeals = {};
+    const unsubs = [];
+
+    cafesList.forEach(cafeId => {
+      const menuRef = ref(db, `menu/${cafeId}`);
+      const q = query(menuRef, orderByChild("category"), equalTo("deals"));
+      
+      const unsub = onValue(q, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          allFetchedDeals[cafeId] = Object.entries(data).map(([id, val]) => ({ id, ...val, cafeId }));
+        } else {
+          allFetchedDeals[cafeId] = [];
+        }
 
         // Interleave deals from all cafes evenly, up to 10
         const mixed = [];
         let index = 0;
         let itemsAdded = true;
+        
         while (mixed.length < 10 && itemsAdded) {
           itemsAdded = false;
-          // Sort keys to maintain a consistent order across re-renders (e.g. cafe1, cafe2, cafe3)
-          for (const cafeId of Object.keys(groups).sort()) {
-            if (groups[cafeId][index]) {
-              mixed.push(groups[cafeId][index]);
+          for (const cid of cafesList) {
+            if (allFetchedDeals[cid] && allFetchedDeals[cid][index]) {
+              mixed.push(allFetchedDeals[cid][index]);
               itemsAdded = true;
               if (mixed.length === 10) break;
             }
@@ -72,11 +74,11 @@ export default function Home() {
           index++;
         }
         setFeaturedItems(mixed);
-      } else {
-        setFeaturedItems([]);
-      }
+      });
+      unsubs.push(unsub);
     });
-    return () => unsub();
+
+    return () => unsubs.forEach(fn => fn());
   }, []);
 
   // Fetch reviews for dynamic ratings
@@ -352,7 +354,9 @@ export default function Home() {
                   <div className="p-4 flex flex-col flex-grow">
                     <div className="flex items-center gap-1 mb-1">
                       <Store size={11} className="text-uet-gold" />
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{item.cafeName || item.cafeId}</span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                        {cafes.find(c => c.id === item.cafeId)?.name || item.cafeName || item.cafeId}
+                      </span>
                     </div>
                     <h3 className="font-bold text-uet-navy text-sm leading-tight line-clamp-1 flex-grow">{item.name}</h3>
                     <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100">

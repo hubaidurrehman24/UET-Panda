@@ -29,6 +29,13 @@ const Sidebar = () => {
 
   const handleLogout = () => signOut(auth);
 
+  const CAFE_NAMES = {
+    cafe1: "Bhola",
+    cafe2: "GSSC",
+    cafe3: "BSSC",
+    cafe4: "Aneexe",
+  };
+
   return (
     <aside className="w-64 bg-uet-navy text-white min-h-screen flex flex-col shadow-2xl">
       <div className="p-8 border-b border-white/10 flex items-center space-x-3">
@@ -37,7 +44,7 @@ const Sidebar = () => {
         </div>
         <div>
            <h2 className="font-poppins font-bold text-lg leading-tight uppercase tracking-tighter">Admin <span className="text-uet-gold">Panda</span></h2>
-           <p className="text-[10px] text-blue-100/40 uppercase font-bold tracking-widest">{cafeId || 'Cafe Panel'}</p>
+           <p className="text-[10px] text-blue-100/40 uppercase font-bold tracking-widest">{CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'}</p>
         </div>
       </div>
 

@@ -109,6 +109,12 @@ const Sidebar = ()=>{
         }
     ];
     const handleLogout = ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$node$2d$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signOut"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$firebase$2f$config$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["auth"]);
+    const CAFE_NAMES = {
+        cafe1: "Bhola",
+        cafe2: "GSSC",
+        cafe3: "BSSC",
+        cafe4: "Aneexe"
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
         className: "w-64 bg-uet-navy text-white min-h-screen flex flex-col shadow-2xl",
         children: [
@@ -122,12 +128,12 @@ const Sidebar = ()=>{
                             size: 24
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 36,
+                            lineNumber: 43,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                        lineNumber: 35,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -141,33 +147,33 @@ const Sidebar = ()=>{
                                         children: "Panda"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                        lineNumber: 39,
+                                        lineNumber: 46,
                                         columnNumber: 106
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 39,
+                                lineNumber: 46,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-[10px] text-blue-100/40 uppercase font-bold tracking-widest",
-                                children: cafeId || 'Cafe Panel'
+                                children: CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 40,
+                                lineNumber: 47,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                        lineNumber: 38,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                lineNumber: 34,
+                lineNumber: 41,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -185,13 +191,13 @@ const Sidebar = ()=>{
                                         children: item.name
                                     }, void 0, false, {
                                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                        lineNumber: 57,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 55,
+                                lineNumber: 62,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
@@ -199,18 +205,18 @@ const Sidebar = ()=>{
                                 className: `transition-transform ${pathname === item.path ? "opacity-100" : "opacity-0 group-hover:opacity-40"}`
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 59,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, item.path, true, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                        lineNumber: 46,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                lineNumber: 44,
+                lineNumber: 51,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -223,31 +229,31 @@ const Sidebar = ()=>{
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 69,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: "Sign Out"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 70,
+                            lineNumber: 77,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                    lineNumber: 65,
+                    lineNumber: 72,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                lineNumber: 64,
+                lineNumber: 71,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-        lineNumber: 33,
+        lineNumber: 40,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

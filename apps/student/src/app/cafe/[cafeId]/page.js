@@ -21,11 +21,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const cafeInfo = {
-  cafe1: { name: "Cafe 1", specialty: "Biryani & Karahi", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&auto=format&fit=crop&q=80", color: "from-orange-700 to-red-800" },
-  cafe2: { name: "Cafe 2", specialty: "Fast Food",          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&auto=format&fit=crop&q=80", color: "from-yellow-600 to-orange-700" },
-  cafe3: { name: "Cafe 3", specialty: "Beverages",          image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&auto=format&fit=crop&q=80", color: "from-emerald-700 to-teal-800" },
-  cafe4: { name: "Cafe 4", specialty: "Street Food",        image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1200&auto=format&fit=crop&q=80", color: "from-purple-700 to-indigo-800" },
-
+  cafe1: { name: "Bhola", specialty: "Biryani & Karahi", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&auto=format&fit=crop&q=80", color: "from-orange-700 to-red-800" },
+  cafe2: { name: "GSSC", specialty: "Fast Food",          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&auto=format&fit=crop&q=80", color: "from-yellow-600 to-orange-700" },
+  cafe3: { name: "BSSC", specialty: "Beverages",          image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&auto=format&fit=crop&q=80", color: "from-emerald-700 to-teal-800" },
+  cafe4: { name: "Aneexe", specialty: "Street Food",        image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1200&auto=format&fit=crop&q=80", color: "from-purple-700 to-indigo-800" },
 };
 
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low", "A-Z"];
@@ -66,17 +65,12 @@ export default function CafeMenuPage() {
   }, [searchTerm, sortBy, selectedCategory, itemsPerPage]);
 
   useEffect(() => {
-    const productsRef = ref(db, "products");
-    const q = query(productsRef, orderByChild("cafeId"), equalTo(cafeId));
+    const menuRef = ref(db, `menu/${cafeId}`);
     
-    const unsub = onValue(q, (snapshot) => {
+    const unsub = onValue(menuRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        // Firebase queries support one OrderByChild filter, so we filter out isHidden in JS
-        const activeItems = Object.entries(data)
-          .map(([id, val]) => ({ id, ...val }))
-          .filter(item => item.isHidden === false);
-        setItems(activeItems);
+        setItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
       } else {
         setItems([]);
       }

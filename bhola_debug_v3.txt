@@ -1,0 +1,192 @@
+--- SHEETS FOUND ---
+Sheet: fastfood + fried items
+Sheet: Menu
+Sheet: Drinks
+Sheet: Chinese
+
+=== DATA FROM SHEET: fastfood + fried items ===
+Row 1: ["Items","Price","Price","Price"]
+Row 2: [null,"Small 8\"","Medium 11\"","Large 14\""]
+Row 3: ["pizza"]
+Row 4: ["chicke tikka",380,750,1100]
+Row 5: ["chicken fajita",380,750,1100]
+Row 6: ["chicken mexican",380,750,1100]
+Row 7: ["supreme pizza",380,750,1100]
+Row 8: ["stuffed cheese pizza",400,900,1300]
+Row 9: ["lasagna pizza",400,900,1300]
+Row 10: ["chiken chapli kebab",380,750,1100]
+Row 11: ["stuffed kebab","-",900,1300]
+Row 12: ["cheese lover",380,750,1100]
+Row 13: ["vegetarian",380,750,1100]
+Row 14: ["chicken sausages",380,750,1100]
+Row 15: ["special pizza",400,900,1300]
+Row 16: ["extra topping",120,250,300]
+Row 17: ["star pizza",400,800,1150]
+Row 19: ["regualr fried items","Prices"]
+Row 20: ["fries",100]
+Row 21: ["mayo fries",150]
+Row 22: ["vegetable chicken roll",50]
+Row 23: ["aloo samosa",30]
+Row 24: ["malai boti samosa",60]
+Row 25: ["aloo bara samosa",50]
+Row 26: ["chicken cheese roll",150]
+Row 27: ["sapata roll",500]
+Row 28: ["pakory",100]
+Row 30: ["regular items"]
+Row 31: ["dahi bhallay",140]
+Row 32: ["chana chaat",140]
+Row 33: ["somasa chaat",140]
+Row 34: ["papri chaat",140]
+Row 37: ["burgers"]
+Row 38: ["panini sandwich",280]
+Row 39: ["zinger burger",220]
+Row 40: ["zinger extreme",280]
+Row 41: ["tower zinger",350]
+Row 42: ["mighty zinger",400]
+Row 43: ["pizza burger",550]
+Row 44: ["chicken burger",170]
+Row 45: ["boti burger",170]
+Row 46: ["tikka burger",170]
+Row 47: ["fajita buger",170]
+Row 48: ["shami buger",170]
+Row 50: ["sandwich"]
+Row 51: ["club sandwich",170]
+Row 52: ["chicken sandwich",250]
+Row 54: ["chicken cheese pasta"]
+Row 55: ["small",400]
+Row 56: ["large",550,"same as above"]
+Row 57: ["alfredo pasta",400]
+Row 59: ["roll"]
+Row 60: ["twister roll",220]
+Row 61: ["kebab paratha roll",220]
+Row 62: ["spicy roll",220]
+Row 63: ["paratha roll",220]
+Row 64: ["shawarma roll",150]
+Row 65: ["platter shawarma",320]
+Row 67: ["loaded fries"]
+Row 68: ["small",400]
+Row 69: ["large",500,"same as above"]
+Row 71: ["nuggets"]
+Row 72: ["6 pcs",300]
+Row 73: ["12 pcs",550]
+Row 75: ["1 chicken piece",170]
+Row 77: ["Hot Deals"]
+Row 78: ["zinger burger + fries",300]
+Row 79: ["tower zinger burger + fries",420]
+Row 80: ["zinger burger + piece chicken + fries",460]
+Row 81: ["chicken burger+fries",250]
+Row 82: ["2 piece chicken+fries",430]
+Row 83: ["1platter shawarma+fries",370]
+Row 84: ["shami burger+fries",240]
+Row 85: ["migthy zinger+fries",470]
+Row 86: ["twister roll+fries",300]
+Row 87: ["shawarma+fries",220]
+
+--- IMAGES IN SHEET: fastfood + fried items ---
+Total images: 60
+ERROR GETTING IMAGES: Converting circular structure to JSON
+    --> starting at object with constructor 'Worksheet'
+    |     property '_workbook' -> object with constructor 'Workbook'
+    |     property '_worksheets' -> object with constructor 'Array'
+    --- index 1 closes the circle
+
+=== DATA FROM SHEET: Menu ===
+Row 1: ["Items","Price"]
+Row 3: ["daal chana",130]
+Row 4: ["sabzi",130]
+Row 5: ["aloo anda",130]
+Row 6: ["aloo anda bhurji",130]
+Row 7: ["chicken kofta curry",200]
+Row 8: ["aloo keema",180]
+Row 9: ["anda",50]
+Row 10: ["tawapiece",250]
+Row 11: ["ckicken keema",180]
+Row 12: ["biryani",200]
+Row 13: ["chicken karahi",200]
+Row 14: ["daal maash",130]
+Row 15: ["pizza paratha",150]
+Row 16: ["aloo paratha",70]
+Row 17: ["chicken paratha",100]
+Row 18: ["sadi roti",30]
+Row 19: ["til wala naan",35]
+Row 20: ["sada naan",30]
+Row 21: ["besan wala naan",60]
+Row 22: ["aloo wala naan",70]
+Row 23: ["rogni naan",70]
+Row 24: ["kalonji naan",70]
+Row 25: ["special kulcha",70]
+Row 26: ["khameeri roti",30]
+Row 27: ["halwa puri",200]
+Row 28: ["pathory",150]
+Row 29: ["samosy",50]
+Row 30: ["jalebi",100]
+Row 31: ["naan chaany",150]
+Row 33: ["bar b q"]
+Row 34: ["tikka",150]
+Row 35: ["kabab",200]
+Row 36: ["malai boti",250]
+Row 37: ["chicken piece",350]
+
+--- IMAGES IN SHEET: Menu ---
+Total images: 33
+ERROR GETTING IMAGES: Converting circular structure to JSON
+    --> starting at object with constructor 'Workbook'
+    |     property '_worksheets' -> object with constructor 'Array'
+    |     index 1 -> object with constructor 'Worksheet'
+    --- property '_workbook' closes the circle
+
+=== DATA FROM SHEET: Drinks ===
+Row 1: ["Items","Price"]
+Row 3: ["mosambi juice",120]
+Row 4: ["grape fruit juice",150]
+Row 5: ["doodh soda",150]
+Row 6: ["coffee shake",150]
+Row 7: ["banana shake",120]
+Row 8: ["khajoor shake",150]
+Row 9: ["apple shake",120]
+Row 10: ["oreo shake",120]
+Row 11: ["strawberry milk shake",120]
+Row 12: ["chocolate chip shake",130]
+Row 14: ["Tang",70]
+Row 15: ["Orange juice",100]
+Row 16: ["apple juice",170]
+Row 17: ["carrot juice",100]
+Row 18: ["betroot + carrot mix juice",120]
+Row 19: ["mint margarita",120]
+Row 20: ["annar juice",250]
+Row 22: ["Hot menu","reg","large"]
+Row 23: ["coffee",130,200]
+Row 24: ["caramel coffee",200,250]
+Row 25: ["kashmiri pink tea",130,200]
+Row 26: ["hot chocolate",150,"-"]
+Row 27: ["doodh pati",100,150]
+Row 28: ["tea(tea bag)",70,120]
+Row 29: ["green tea(kehwa)",60,90]
+Row 30: ["green tea lemon",60,90]
+Row 32: ["Offers","Prices"]
+Row 33: ["cold coffee",199]
+Row 34: ["ice cream shake",199]
+Row 35: ["brownie with ice cream",199]
+
+--- IMAGES IN SHEET: Drinks ---
+Total images: 28
+ERROR GETTING IMAGES: Converting circular structure to JSON
+    --> starting at object with constructor 'Workbook'
+    |     property '_worksheets' -> object with constructor 'Array'
+    |     index 1 -> object with constructor 'Worksheet'
+    --- property '_workbook' closes the circle
+
+=== DATA FROM SHEET: Chinese ===
+Row 1: ["Items","Price"]
+Row 3: ["chicken chowmein",300]
+Row 4: ["chicken rice with manchurian",350]
+Row 5: ["chicken rice with chilli dry with gravy",350]
+Row 6: ["chicken drumsticks",150]
+
+--- IMAGES IN SHEET: Chinese ---
+Total images: 4
+ERROR GETTING IMAGES: Converting circular structure to JSON
+    --> starting at object with constructor 'Workbook'
+    |     property '_worksheets' -> object with constructor 'Array'
+    |     index 1 -> object with constructor 'Worksheet'
+    --- property '_workbook' closes the circle

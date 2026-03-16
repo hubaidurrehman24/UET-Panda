@@ -22,11 +22,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 const CAFES = [
   { id: "all",   label: "All Cafes" },
-  { id: "cafe1", label: "Cafe 1" },
-  { id: "cafe2", label: "Cafe 2" },
-  { id: "cafe3", label: "Cafe 3" },
-  { id: "cafe4", label: "Cafe 4" },
-
+  { id: "cafe1", label: "Bhola" },
+  { id: "cafe2", label: "GSSC" },
+  { id: "cafe3", label: "BSSC" },
+  { id: "cafe4", label: "Aneexe" },
 ];
 
 const SORT_OPTIONS = [
@@ -35,6 +34,13 @@ const SORT_OPTIONS = [
   "Price: High to Low",
   "Name: A–Z",
 ];
+
+const CAFE_NAMES = {
+  cafe1: "Bhola",
+  cafe2: "GSSC",
+  cafe3: "BSSC",
+  cafe4: "Aneexe",
+};
 
 const CATEGORIES = [
   { id: "all", label: "All Categories" },
@@ -79,13 +85,18 @@ function MenuContent() {
   }, [searchTerm, selectedCafe, sortBy, selectedCategory, itemsPerPage]);
 
   useEffect(() => {
-    const productsRef = ref(db, "products");
-    const q = query(productsRef, orderByChild("isHidden"), equalTo(false));
-    
-    const unsub = onValue(q, (snapshot) => {
+    const menuRef = ref(db, "menu");
+    const unsub = onValue(menuRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        setItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+        // Data is { cafe1: { id1: {...}, id2: {...} }, cafe2: {...} }
+        const allItems = [];
+        Object.keys(data).forEach(cafeId => {
+          Object.entries(data[cafeId]).forEach(([id, val]) => {
+            allItems.push({ id, ...val, cafeId });
+          });
+        });
+        setItems(allItems);
       } else {
         setItems([]);
       }
@@ -348,7 +359,7 @@ function MenuContent() {
                     <div className="flex items-center gap-1.5 mb-1">
                       <Store size={11} className="text-uet-gold flex-shrink-0" />
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
-                        {item.cafeName || item.cafeId}
+                        {CAFE_NAMES[item.cafeId] || item.cafeName || item.cafeId}
                       </span>
                     </div>
 

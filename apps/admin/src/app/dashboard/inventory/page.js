@@ -43,10 +43,9 @@ const InventoryPage = () => {
   useEffect(() => {
     if (!cafeId) return;
 
-    const productsRef = ref(db, "products");
-    const q = query(productsRef, orderByChild("cafeId"), equalTo(cafeId));
+    const inventoryRef = ref(db, `menu/${cafeId}`);
     
-    const unsubscribe = onValue(q, (snapshot) => {
+    const unsubscribe = onValue(inventoryRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         setProducts(Object.entries(data).map(([id, val]) => ({ id, ...val })));
@@ -114,11 +113,12 @@ const InventoryPage = () => {
       };
 
       if (editingProduct) {
-        await update(ref(db, `products/${editingProduct.id}`), productData);
+        await update(ref(db, `menu/${cafeId}/${editingProduct.id}`), productData);
       } else {
-        const newRef = push(ref(db, "products"));
+        const newRef = push(ref(db, `menu/${cafeId}`));
         await set(newRef, {
           ...productData,
+          id: newRef.key,
           createdAt: new Date().toISOString(),
         });
       }
@@ -135,7 +135,7 @@ const InventoryPage = () => {
 
   const toggleVisibility = async (product) => {
     try {
-      await update(ref(db, `products/${product.id}`), {
+      await update(ref(db, `menu/${cafeId}/${product.id}`), {
         isHidden: !product.isHidden
       });
     } catch (error) {
@@ -146,7 +146,7 @@ const InventoryPage = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await remove(ref(db, `products/${id}`));
+        await remove(ref(db, `menu/${cafeId}/${id}`));
       } catch (error) {
         console.error(error);
       }
