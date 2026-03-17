@@ -23,6 +23,7 @@ const Sidebar = () => {
   const menuItems = [
     { name: "Inventory", icon: <Package size={20} />, path: "/dashboard/inventory" },
     { name: "Orders", icon: <ShoppingBag size={20} />, path: "/dashboard/orders" },
+    { name: "Riders", icon: <Store size={20} />, path: "/dashboard/riders" },
     { name: "Reviews", icon: <MessageSquare size={20} />, path: "/dashboard/feedback" },
     { name: "Analytics", icon: <BarChart3 size={20} />, path: "/dashboard/analytics" },
   ];

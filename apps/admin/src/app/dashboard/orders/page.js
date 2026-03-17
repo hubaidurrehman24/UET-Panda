@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { ref, query, orderByChild, equalTo, onValue, update } from "firebase/database";
+import { ref, query, orderByChild, equalTo, onValue, update, increment } from "firebase/database";
 import { db, useAuthContext } from "@uet-panda/shared-config";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -27,20 +27,20 @@ const OrderManagement = () => {
 
   // Rider assignment states
   const [selectedOrder, setSelectedOrder] = useState(null);
-  const [riderName, setRiderName] = useState("");
-  const [riderPhone, setRiderPhone] = useState("");
+  const [availableRiders, setAvailableRiders] = useState([]);
+  const [selectedRiderId, setSelectedRiderId] = useState("");
 
   useEffect(() => {
     if (!cafeId) return;
 
+    // Fetch Orders
     const ordersRef = ref(db, "orders");
-    const q = query(ordersRef, orderByChild("cafeId"), equalTo(cafeId));
+    const qOrders = query(ordersRef, orderByChild("cafeId"), equalTo(cafeId));
     
-    const unsubscribe = onValue(q, (snapshot) => {
+    const unsubOrders = onValue(qOrders, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         const o = Object.entries(data).map(([id, val]) => ({ id, ...val }));
-        // Sort by latest
         o.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         setOrders(o);
       } else {
@@ -49,17 +49,46 @@ const OrderManagement = () => {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    // Fetch Riders
+    const ridersRef = ref(db, `riders/${cafeId}`);
+    const unsubRiders = onValue(ridersRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const r = Object.entries(data).map(([id, val]) => ({ id, ...val }));
+        setAvailableRiders(r);
+      } else {
+        setAvailableRiders([]);
+      }
+    });
+
+    return () => {
+      unsubOrders();
+      unsubRiders();
+    };
   }, [cafeId]);
 
   const updateStatus = async (orderId, newStatus, extraData = {}) => {
     try {
-      await update(ref(db, `orders/${orderId}`), {
-        status: newStatus,
-        ...extraData,
-        updatedAt: new Date().toISOString()
+      const updates = {
+        [`orders/${orderId}/status`]: newStatus,
+        [`orders/${orderId}/updatedAt`]: new Date().toISOString()
+      };
+      
+      Object.entries(extraData).forEach(([k, v]) => {
+        updates[`orders/${orderId}/${k}`] = v;
       });
+
+      // Increment rider delivery count if a dispatched order is completed
+      if (newStatus === "Delivered" || newStatus === "Collected") {
+        const order = orders.find(o => o.id === orderId);
+        if (order && order.riderId) {
+          updates[`riders/${cafeId}/${order.riderId}/deliveryCount`] = increment(1);
+        }
+      }
+
+      await update(ref(db), updates);
       setSelectedOrder(null);
+      setSelectedRiderId("");
     } catch (error) {
       console.error(error);
       alert("Error updating order");
@@ -68,9 +97,18 @@ const OrderManagement = () => {
 
   const handleRiderAssignment = (e) => {
     e.preventDefault();
+    if (!selectedRiderId) {
+       alert("Please select a rider first.");
+       return;
+    }
+
+    const selectedRider = availableRiders.find(r => r.id === selectedRiderId);
+    if (!selectedRider) return;
+
     updateStatus(selectedOrder.id, "Out for Delivery", {
-      riderName,
-      riderPhone
+      riderId: selectedRider.id,
+      riderName: selectedRider.name,
+      riderPhone: selectedRider.phone
     });
   };
 
@@ -254,22 +292,26 @@ const OrderManagement = () => {
 
               <form onSubmit={handleRiderAssignment} className="p-8 -mt-8 bg-white rounded-t-[2rem] space-y-6">
                  <div>
-                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Rider Name</label>
-                   <input 
-                     type="text" required
-                     placeholder="e.g. Ahmad Hassan"
-                     className="w-full bg-slate-50 border-none outline-none p-4 rounded-2xl text-uet-navy font-medium focus:ring-2 focus:ring-uet-gold transition-all"
-                     value={riderName} onChange={(e) => setRiderName(e.target.value)}
-                   />
-                 </div>
-                 <div>
-                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Rider Phone</label>
-                   <input 
-                     type="tel" required
-                     placeholder="03XX-XXXXXXX"
-                     className="w-full bg-slate-50 border-none outline-none p-4 rounded-2xl text-uet-navy font-medium focus:ring-2 focus:ring-uet-gold transition-all"
-                     value={riderPhone} onChange={(e) => setRiderPhone(e.target.value)}
-                   />
+                   <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 ml-1">Select Active Rider</label>
+                   <div className="relative">
+                     <select 
+                       required
+                       className="w-full bg-slate-50 border-none outline-none p-4 rounded-2xl text-uet-navy font-bold focus:ring-2 focus:ring-uet-gold transition-all appearance-none cursor-pointer"
+                       value={selectedRiderId} 
+                       onChange={(e) => setSelectedRiderId(e.target.value)}
+                     >
+                       <option value="" disabled>-- Choose a rider from your fleet --</option>
+                       {availableRiders.map(rider => (
+                         <option key={rider.id} value={rider.id}>
+                           {rider.name} - {rider.phone}
+                         </option>
+                       ))}
+                     </select>
+                     <ChevronDown size={20} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                   </div>
+                   {availableRiders.length === 0 && (
+                     <p className="text-xs text-red-500 mt-2 font-medium">No riders available. Please add riders from the Riders tab.</p>
+                   )}
                  </div>
 
                  <button 

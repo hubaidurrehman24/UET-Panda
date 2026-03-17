@@ -42,6 +42,16 @@ const OrderTracking = () => {
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [expandedOrders, setExpandedOrders] = useState(new Set());
+ 
+  const toggleOrderExpand = (orderId) => {
+    setExpandedOrders(prev => {
+      const next = new Set(prev);
+      if (next.has(orderId)) next.delete(orderId);
+      else next.add(orderId);
+      return next;
+    });
+  };
 
   useEffect(() => {
     if (!user) return;
@@ -81,14 +91,16 @@ const OrderTracking = () => {
       <Navbar />
 
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <header className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
           <div>
-            <h1 className="text-3xl font-poppins font-bold text-uet-navy tracking-tight">Active Orders</h1>
-            <p className="text-slate-500 font-medium italic mt-1">Track your hunger in real-time</p>
+            <h1 className="text-2xl md:text-3xl font-poppins font-bold text-uet-navy tracking-tight text-center md:text-left">Active Orders</h1>
+            <p className="text-slate-500 font-medium italic mt-1 text-center md:text-left text-sm md:text-base">Track your hunger in real-time</p>
           </div>
-          <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-2xl border border-slate-100 shadow-sm text-xs font-bold text-slate-400">
-             <Search size={14} />
-             <span>History synced with Cloud</span>
+          <div className="flex items-center justify-center md:justify-end">
+            <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-2xl border border-slate-100 shadow-sm text-xs font-bold text-slate-400">
+               <Search size={14} />
+               <span>History synced with Cloud</span>
+            </div>
           </div>
         </header>
 
@@ -123,163 +135,184 @@ const OrderTracking = () => {
                   className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all group"
                 >
                   {/* Order Header */}
-                  <div className="bg-uet-navy text-white p-6 md:px-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                     <div className="flex items-center space-x-4">
-                        <div className="bg-uet-gold p-3 rounded-2xl text-uet-navy shadow-gold">
-                           <Store size={20} />
+                  <div className="bg-gradient-to-r from-uet-navy to-blue-900 text-white p-5 md:p-8 flex flex-row items-center justify-between gap-4">
+                     <div className="flex items-center space-x-3 md:space-x-5">
+                        <div className="bg-uet-gold p-2 md:p-3 rounded-xl md:rounded-2xl text-uet-navy shadow-gold shrink-0">
+                           <Store size={18} className="md:w-5 md:h-5" />
                         </div>
-                        <div>
-                           <div className="flex items-center space-x-2 mb-1">
-                              <span className="text-[10px] uppercase font-bold text-blue-100/40 tracking-widest">Order Receipt</span>
-                              <span className="bg-white/10 px-2 py-0.5 rounded text-[9px] font-bold text-uet-gold italic">#{order.id.slice(-6)}</span>
+                        <div className="min-w-0">
+                           <div className="flex items-center space-x-2 mb-0.5">
+                              <span className="text-[9px] uppercase font-bold text-blue-100/40 tracking-widest hidden sm:inline">Order Receipt</span>
+                              <span className="bg-white/10 px-2 py-0.5 rounded text-[8px] md:text-[9px] font-bold text-uet-gold italic">#{order.id.slice(-6)}</span>
                            </div>
-                           <h3 className="text-xl font-bold font-poppins">
+                           <h3 className="text-lg md:text-xl font-bold font-poppins truncate">
                               {CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`}
                            </h3>
                         </div>
                      </div>
-                     <div className="text-right">
-                        <p className="text-[10px] uppercase font-bold text-blue-100/40 tracking-widest mb-1">Total Amount</p>
-                        <p className="text-2xl font-bold text-uet-gold">Rs. {order.total}</p>
+                     <div className="text-right shrink-0">
+                        <p className="text-[9px] uppercase font-bold text-blue-100/40 tracking-widest mb-0.5">Total Amount</p>
+                        <p className="text-xl md:text-2xl font-bold text-uet-gold">Rs. {order.total}</p>
                      </div>
                   </div>
 
                   {/* Progress Tracker */}
-                  <div className="px-6 py-10 md:px-16 lg:px-24">
-                     <div className="relative flex items-center justify-between">
+                  <div className="px-4 py-8 md:px-16 lg:px-24">
+                     <div className="relative flex items-center justify-between max-w-sm mx-auto">
                         {/* Connecting Line */}
-                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 -z-0">
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-slate-100 -z-0">
                            <motion.div 
                              initial={{ width: 0 }}
                              animate={{ width: `${(getStatusStep(order.status) - 1) * 50}%` }}
-                             className="h-full bg-uet-gold shadow-[0_0_15px_rgba(255,215,0,0.5)]"
+                             className="h-full bg-uet-gold shadow-[0_0_10px_rgba(255,215,0,0.5)]"
                            ></motion.div>
                         </div>
-
+ 
                         {/* Step 1: Preparing */}
                         <div className="relative z-10 flex flex-col items-center">
-                           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 1 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`}>
-                              <Clock size={20} />
+                           <div className={`w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 1 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`}>
+                              <Clock size={16} className="md:w-5 md:h-5" />
                            </div>
-                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 1 ? 'text-uet-navy' : 'text-slate-300'}`}>Preparing</span>
+                           <span className={`mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 1 ? 'text-uet-navy' : 'text-slate-300'}`}>Preparing</span>
                         </div>
-
+ 
                         {/* Step 2: Transit/Ready */}
                         <div className="relative z-10 flex flex-col items-center">
-                           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 2 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`}>
-                              {order.orderType === 'takeaway' ? <ShoppingBag size={20} /> : <Truck size={20} />}
+                           <div className={`w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 2 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`}>
+                              {order.orderType === 'takeaway' ? <ShoppingBag size={16} className="md:w-5 md:h-5" /> : <Truck size={16} className="md:w-5 md:h-5" />}
                            </div>
-                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`}>
-                              {order.orderType === 'takeaway' ? 'Ready for Pickup' : 'In Transit'}
+                           <span className={`mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-center max-w-[60px] md:max-w-none ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`}>
+                              {order.orderType === 'takeaway' ? 'Ready' : 'In Transit'}
                            </span>
                         </div>
-
+ 
                         {/* Step 3: Delivered/Collected */}
                         <div className="relative z-10 flex flex-col items-center">
-                           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 3 ? 'bg-uet-gold text-uet-navy shadow-gold font-bold' : 'bg-white text-slate-300 border border-slate-200'}`}>
-                              <CheckCircle2 size={24} />
+                           <div className={`w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 3 ? 'bg-uet-gold text-uet-navy shadow-gold font-bold' : 'bg-white text-slate-300 border border-slate-200'}`}>
+                              <CheckCircle2 size={18} className="md:w-6 md:h-6" />
                            </div>
-                           <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`}>
-                              {order.orderType === 'takeaway' ? 'Pre Order Collected' : 'Home'}
+                           <span className={`mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`}>
+                              {order.orderType === 'takeaway' ? 'Done' : 'Home'}
                            </span>
                         </div>
                      </div>
                   </div>
 
-                  {/* Rider & Item Details Breakdown */}
-                  <div className="bg-slate-50 p-6 md:p-10 flex flex-col lg:flex-row gap-8">
-                     {/* Items */}
-                     <div className="flex-grow">
-                        <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-4">Items Summary</p>
-                        <div className="space-y-3">
-                           {order.items.map((item, idx) => (
-                             <div key={idx} className="flex flex-col gap-2">
-                                <div className="flex justify-between items-center group/item">
-                                   <p className="text-uet-navy font-bold text-sm leading-tight flex items-center">
-                                      <ChevronRight size={12} className="mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                                      {item.quantity}x <span className="font-medium text-slate-600 ml-1">{item.name}</span>
-                                   </p>
-                                   <p className="text-slate-400 font-mono text-xs italic">Rs.{item.price * item.quantity}</p>
-                                </div>
-                                {(order.status === "Delivered" || order.status === "Collected") && (
-                                  <button 
-                                    onClick={() => {
-                                      setSelectedItem(item);
-                                      setCurrentOrder(order);
-                                      setReviewModalOpen(true);
-                                    }}
-                                    className="self-start text-[10px] font-bold text-uet-gold hover:text-uet-navy flex items-center gap-1 transition-colors"
-                                  >
-                                    <Star size={10} className="fill-uet-gold" />
-                                    Rate Item
-                                  </button>
-                                )}
-                             </div>
-                           ))}
-                        </div>
-                     </div>
+                  {/* Mobile Expand Toggle */}
+                  <button 
+                    onClick={() => toggleOrderExpand(order.id)}
+                    className="md:hidden w-full py-4 border-t border-slate-100 flex items-center justify-center gap-2 text-[10px] font-bold text-uet-gold uppercase tracking-widest active:scale-95 transition-all"
+                  >
+                    <span>{expandedOrders.has(order.id) ? "Hide Details" : "View Details"}</span>
+                    <ChevronRight size={14} className={`transition-transform duration-300 ${expandedOrders.has(order.id) ? 'rotate-90' : ''}`} />
+                  </button>
 
-                     {/* Delivery/Takeaway Info */}
-                     <div className="bg-white p-6 rounded-[2rem] border border-slate-100 lg:w-[320px] shadow-sm relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-20 h-20 bg-uet-navy/5 rounded-full -mr-10 -mt-10"></div>
-                        
-                        <div className="relative z-10">
-                           {order.status === "Out for Delivery" && order.riderName ? (
-                             <div className="space-y-4">
-                                <div className="flex items-center space-x-3 mb-6">
-                                   <div className="bg-uet-gold/10 p-2.5 rounded-2xl text-uet-gold">
-                                      <Bike size={24} />
+                  {/* Rider & Item Details Breakdown - Collapsible on Mobile */}
+                  <AnimatePresence>
+                    {(expandedOrders.has(order.id) || (typeof window !== 'undefined' && window.innerWidth >= 768)) && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-slate-50 p-6 md:p-10 flex flex-col lg:flex-row gap-8">
+                           {/* Items */}
+                           <div className="flex-grow">
+                              <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-4">Items Summary</p>
+                              <div className="space-y-3">
+                                 {order.items.map((item, idx) => (
+                                   <div key={idx} className="flex flex-col gap-2">
+                                      <div className="flex justify-between items-center group/item">
+                                         <p className="text-uet-navy font-bold text-sm leading-tight flex items-center">
+                                            <ChevronRight size={12} className="mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                            {item.quantity}x <span className="font-medium text-slate-600 ml-1">{item.name}</span>
+                                         </p>
+                                         <p className="text-slate-400 font-mono text-xs italic">Rs.{item.price * item.quantity}</p>
+                                      </div>
+                                      {(order.status === "Delivered" || order.status === "Collected") && (
+                                        <button 
+                                          onClick={() => {
+                                            setSelectedItem(item);
+                                            setCurrentOrder(order);
+                                            setReviewModalOpen(true);
+                                          }}
+                                          className="self-start text-[10px] font-bold text-uet-gold hover:text-uet-navy flex items-center gap-1 transition-colors"
+                                        >
+                                          <Star size={10} className="fill-uet-gold" />
+                                          Rate Item
+                                        </button>
+                                      )}
                                    </div>
-                                   <div>
-                                      <p className="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Your Rider</p>
-                                      <h4 className="font-bold text-uet-navy">{order.riderName}</h4>
-                                   </div>
-                                </div>
-                                <button className="w-full bg-uet-navy text-white py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 text-sm shadow-navy active:scale-95 transition-all">
-                                   <Phone size={16} />
-                                   <span>Contact: {order.riderPhone}</span>
-                                </button>
-                             </div>
-                           ) : order.status === "Delivered" || order.status === "Collected" ? (
-                             <div className="text-center py-4">
-                                <CheckCircle2 size={32} className="text-green-500 mx-auto mb-3" />
-                                <h4 className="font-bold text-uet-navy">Enjoy your meal!</h4>
-                                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Order Complete</p>
-                             </div>
-                           ) : order.orderType === 'takeaway' ? (
-                              <div className="space-y-4">
-                                <div className="flex items-center space-x-3 mb-2">
-                                   <Store size={20} className="text-uet-gold" />
-                                   <h4 className="font-bold text-uet-navy text-sm">Self-Pickup Order</h4>
-                                </div>
-                                <p className="text-xs text-slate-400 leading-relaxed italic">
-                                  {order.status === "Ready for Pickup" 
-                                    ? "Your order is ready at the counter! Please head to the cafe to collect it." 
-                                    : "The cafe is preparing your food. We'll notify you when it's ready for pickup."}
-                                </p>
-                                <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
-                                   <Store size={14} className="text-uet-gold" />
-                                    <span className="text-[10px] font-bold text-slate-600 line-clamp-1">
-                                      {CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`} Counter
-                                    </span>
-                                </div>
+                                 ))}
                               </div>
-                            ) : (
-                             <div className="space-y-4">
-                               <div className="flex items-center space-x-3 mb-2">
-                                  <Clock size={20} className="text-uet-gold" />
-                                  <h4 className="font-bold text-uet-navy text-sm">Waiting to Dispatch</h4>
-                               </div>
-                               <p className="text-xs text-slate-400 leading-relaxed italic">The cafe is carefully preparing your food. We'll assign a rider soon.</p>
-                               <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
-                                  <MapPin size={14} className="text-red-400" />
-                                  <span className="text-[10px] font-bold text-slate-600 line-clamp-1">{order.address}</span>
-                               </div>
-                             </div>
-                           )}
+                           </div>
+ 
+                           {/* Delivery/Takeaway Info */}
+                           <div className="bg-white p-6 rounded-[2rem] border border-slate-100 lg:w-[320px] shadow-sm relative overflow-hidden">
+                              <div className="absolute top-0 right-0 w-20 h-20 bg-uet-navy/5 rounded-full -mr-10 -mt-10"></div>
+                              
+                              <div className="relative z-10">
+                                 {order.status === "Out for Delivery" && order.riderName ? (
+                                   <div className="space-y-4">
+                                      <div className="flex items-center space-x-3 mb-6">
+                                         <div className="bg-uet-gold/10 p-2.5 rounded-2xl text-uet-gold">
+                                            <Bike size={24} />
+                                         </div>
+                                         <div>
+                                            <p className="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Your Rider</p>
+                                            <h4 className="font-bold text-uet-navy">{order.riderName}</h4>
+                                         </div>
+                                      </div>
+                                      <button className="w-full bg-uet-navy text-white py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 text-sm shadow-navy active:scale-95 transition-all">
+                                         <Phone size={16} />
+                                         <span>Contact: {order.riderPhone}</span>
+                                      </button>
+                                   </div>
+                                 ) : order.status === "Delivered" || order.status === "Collected" ? (
+                                   <div className="text-center py-4">
+                                      <CheckCircle2 size={32} className="text-green-500 mx-auto mb-3" />
+                                      <h4 className="font-bold text-uet-navy">Enjoy your meal!</h4>
+                                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Order Complete</p>
+                                   </div>
+                                 ) : order.orderType === 'takeaway' ? (
+                                    <div className="space-y-4">
+                                      <div className="flex items-center space-x-3 mb-2">
+                                         <Store size={20} className="text-uet-gold" />
+                                         <h4 className="font-bold text-uet-navy text-sm">Self-Pickup Order</h4>
+                                      </div>
+                                      <p className="text-xs text-slate-400 leading-relaxed italic">
+                                        {order.status === "Ready for Pickup" 
+                                          ? "Your order is ready at the counter! Please head to the cafe to collect it." 
+                                          : "The cafe is preparing your food. We'll notify you when it's ready for pickup."}
+                                      </p>
+                                      <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
+                                         <Store size={14} className="text-uet-gold" />
+                                          <span className="text-[10px] font-bold text-slate-600 line-clamp-1">
+                                            {CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`} Counter
+                                          </span>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                   <div className="space-y-4">
+                                     <div className="flex items-center space-x-3 mb-2">
+                                        <Clock size={20} className="text-uet-gold" />
+                                        <h4 className="font-bold text-uet-navy text-sm">Waiting to Dispatch</h4>
+                                     </div>
+                                     <p className="text-xs text-slate-400 leading-relaxed italic">The cafe is carefully preparing your food. We'll assign a rider soon.</p>
+                                     <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
+                                        <MapPin size={14} className="text-red-400" />
+                                        <span className="text-[10px] font-bold text-slate-600 line-clamp-1">{order.address}</span>
+                                     </div>
+                                   </div>
+                                 )}
+                              </div>
+                           </div>
                         </div>
-                     </div>
-                  </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               ))}
             </AnimatePresence>

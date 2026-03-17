@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart, User, LogOut, Search } from "lucide-react";
+import { ShoppingCart, User, LogOut, Search, ClipboardList } from "lucide-react";
 import { useAuthContext, useCartContext, auth } from "@uet-panda/shared-config";
 import { signOut } from "firebase/auth";
 
@@ -47,8 +47,9 @@ const Navbar = () => {
         {/* Icons */}
         <div className="flex items-center space-x-4">
           {user && userRole === 'student' && (
-            <Link href="/orders" className="hidden md:block hover:text-uet-gold transition-colors font-medium mr-2">
-              My Orders
+            <Link href="/orders" className="flex items-center gap-1 hover:text-uet-gold transition-colors font-bold mr-2 text-[10px] sm:text-sm">
+              <ClipboardList size={16} className="md:hidden" />
+              <span>My Orders</span>
             </Link>
           )}
 

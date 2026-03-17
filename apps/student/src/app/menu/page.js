@@ -65,6 +65,7 @@ function MenuContent() {
   const [itemsPerPage, setItemsPerPage] = useState(12);
   const [reviews, setReviews] = useState({});
   const [viewingFeedback, setViewingFeedback] = useState(null);
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const { addToCart } = useCartContext();
   const { user } = useAuthContext();
@@ -230,26 +231,35 @@ function MenuContent() {
       {/* ── Sticky Search / Filter Bar ── */}
       <div className="sticky top-16 z-30 bg-white border-b border-slate-100 shadow-sm">
         <div className="container mx-auto px-4 py-4 max-w-[1400px]">
-          <div className="flex flex-col md:flex-row gap-3">
-            {/* Search */}
-            <div className="relative flex-grow">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={17} />
-              <input
-                type="text"
-                placeholder="Search any food item..."
-                className="w-full bg-slate-50 border border-slate-200 py-3 pl-11 pr-4 rounded-2xl text-uet-navy font-medium focus:outline-none focus:ring-2 focus:ring-uet-gold transition-all text-sm"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              {searchTerm && (
-                <button onClick={() => setSearchTerm("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-uet-navy">
-                  <X size={15} />
-                </button>
-              )}
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* Search Base */}
+            <div className="flex gap-2 w-full md:w-auto flex-grow">
+              <div className="relative flex-grow">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={17} />
+                <input
+                  type="text"
+                  placeholder="Search any food item..."
+                  className="w-full bg-slate-50 border border-slate-200 py-3 pl-11 pr-4 rounded-2xl text-uet-navy font-medium focus:outline-none focus:ring-2 focus:ring-uet-gold transition-all text-sm"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                {searchTerm && (
+                  <button onClick={() => setSearchTerm("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-uet-navy mt-0.5">
+                    <X size={15} />
+                  </button>
+                )}
+              </div>
+              {/* Mobile Filter Button */}
+              <button 
+                onClick={() => setIsMobileFilterOpen(true)}
+                className="md:hidden flex-shrink-0 bg-uet-navy text-white px-4 py-3 rounded-2xl flex items-center justify-center shadow-sm active:scale-95 transition-all"
+              >
+                <SlidersHorizontal size={20} />
+              </button>
             </div>
 
-            {/* Cafe Filter Chips — scrollable on mobile */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar flex-nowrap pb-1">
+            {/* Desktop Cafe Filter Chips */}
+            <div className="hidden md:flex items-center gap-2 overflow-x-auto no-scrollbar flex-nowrap pb-1">
               {CAFES.map((c) => (
                 <button
                   key={c.id}
@@ -265,8 +275,8 @@ function MenuContent() {
               ))}
             </div>
 
-            {/* Sort */}
-            <div className="relative flex-shrink-0">
+            {/* Desktop Sort */}
+            <div className="hidden md:block relative flex-shrink-0">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -277,8 +287,8 @@ function MenuContent() {
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white pointer-events-none" size={13} />
             </div>
 
-            {/* Items Per Page */}
-            <div className="relative flex-shrink-0">
+            {/* Desktop Items Per Page */}
+            <div className="hidden md:block relative flex-shrink-0">
               <select
                 value={itemsPerPage}
                 onChange={(e) => { setItemsPerPage(Number(e.target.value)); }}
@@ -297,8 +307,8 @@ function MenuContent() {
       {/* ── Items Grid ── */}
       <section className="container mx-auto px-4 py-12 max-w-[1400px]">
         
-        {/* Category Filters row (like the one in Figma) */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        {/* Category Filters row (Desktop Only) */}
+        <div className="hidden md:flex flex-wrap gap-2 mb-8">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
@@ -341,22 +351,22 @@ function MenuContent() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ delay: i < 12 ? i * 0.04 : 0 }}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col"
+                  className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-row sm:flex-col"
                 >
                   {/* Image */}
-                  <div className="h-44 bg-slate-100 relative overflow-hidden">
+                  <div className="w-[110px] sm:w-full h-[130px] sm:h-44 bg-slate-100 relative overflow-hidden flex-shrink-0">
                     <img
                       src={item.image || `https://via.placeholder.com/400x300?text=${item.name}`}
                       alt={item.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 right-3 bg-uet-navy/90 backdrop-blur-sm text-uet-gold text-[11px] font-bold px-2.5 py-1.5 rounded-full">
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-uet-navy/90 backdrop-blur-sm text-uet-gold text-[9px] sm:text-[11px] font-bold px-1.5 py-1 sm:px-2.5 sm:py-1.5 rounded-full">
                       Rs. {item.price}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-4 flex flex-col flex-grow">
+                  <div className="p-3 sm:p-4 flex flex-col flex-grow min-w-0 justify-between">
                     {/* Cafe Label */}
                     <div className="flex items-center gap-1.5 mb-1">
                       <Store size={11} className="text-uet-gold flex-shrink-0" />
@@ -394,7 +404,7 @@ function MenuContent() {
                     </p>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-50">
+                    <div className="flex items-center justify-between mt-2 sm:mt-4 pt-2 border-t border-slate-50">
                       <div className="flex items-center text-slate-400 text-[11px] font-medium">
                         <Clock size={11} className="mr-1" />
                         <span>15–20 min</span>
@@ -462,6 +472,89 @@ function MenuContent() {
           </div>
         )}
       </section>
+
+      {/* Mobile Filters Drawer */}
+      <AnimatePresence>
+        {isMobileFilterOpen && (
+          <div className="fixed inset-0 z-[100] flex flex-col justify-end md:hidden">
+            <motion.div 
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setIsMobileFilterOpen(false)}
+              className="absolute inset-0 bg-uet-navy/40 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
+              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+              className="relative bg-white w-full rounded-t-[2.5rem] shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
+            >
+              <div className="p-6 pb-4 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
+                 <h3 className="text-xl font-poppins font-bold text-uet-navy">Filters & Sort</h3>
+                 <button onClick={() => setIsMobileFilterOpen(false)} className="bg-slate-50 p-2 rounded-xl text-slate-400 hover:text-uet-navy transition-colors">
+                   <X size={20} />
+                 </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-8 pb-32">
+                 {/* Cafes */}
+                 <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1 flex items-center gap-1.5"><Store size={12} /> Cafes</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {CAFES.map((c) => (
+                        <button 
+                          key={c.id} onClick={() => setSelectedCafe(c.id)}
+                          className={`py-2 px-4 flex-grow rounded-xl text-xs font-bold transition-all border ${selectedCafe === c.id ? "bg-uet-gold text-uet-navy border-uet-gold shadow-md" : "bg-white text-slate-500 border-slate-200"}`}
+                        >
+                          {c.label}
+                        </button>
+                      ))}
+                    </div>
+                 </div>
+                 {/* Categories */}
+                 <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1 flex items-center gap-1.5"><Utensils size={12} /> Categories</h4>
+                    <div className="flex flex-wrap gap-2">
+                       {CATEGORIES.map(cat => (
+                         <button
+                           key={cat.id} onClick={() => setSelectedCategory(cat.id)}
+                           className={`px-4 py-2 flex-grow rounded-xl font-bold text-xs transition-all border ${selectedCategory === cat.id ? "bg-uet-navy text-white border-uet-navy shadow-md" : "bg-white text-slate-500 border-slate-200"}`}
+                         >
+                           {cat.label}
+                         </button>
+                       ))}
+                    </div>
+                 </div>
+                 {/* Sort Option */}
+                 <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Sort By</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {SORT_OPTIONS.map((o) => (
+                        <button 
+                          key={o} onClick={() => setSortBy(o)}
+                          className={`py-3 px-4 rounded-xl text-[10px] font-bold transition-all border ${sortBy === o ? "bg-uet-navy text-white border-uet-navy shadow-sm" : "bg-white text-slate-400 border-slate-200"}`}
+                        >
+                          {o}
+                        </button>
+                      ))}
+                    </div>
+                 </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-white border-t border-slate-100 flex items-center justify-between gap-4">
+                 <button 
+                   onClick={() => { setSelectedCafe("all"); setSelectedCategory("all"); setSortBy("Default"); }}
+                   className="text-xs font-bold text-slate-400 hover:text-uet-navy px-2"
+                 >
+                   Reset All
+                 </button>
+                 <button 
+                   onClick={() => setIsMobileFilterOpen(false)}
+                   className="flex-grow bg-uet-navy text-white font-bold py-4 rounded-2xl shadow-navy text-sm active:scale-95 transition-transform"
+                 >
+                   See {displayed.length} Items
+                 </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Feedback Modal */}
       <AnimatePresence>

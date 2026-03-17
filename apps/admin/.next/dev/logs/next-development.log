@@ -53,3 +53,21 @@
 [14:43:55.287] Browser ERROR   {"code":"auth/invalid-credential","customData":{},"name":"FirebaseError"}
 [14:44:05.501] Browser WARN    [2026-03-17T01:28:44.340Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
 [14:44:05.501] Browser WARN    [2026-03-17T01:28:44.355Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[22:48:36.192] Browser WARN    [2026-03-17T09:33:06.373Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[22:58:39.660] Server  LOG     ✓ Compiled in 1180ms
+[22:59:30.269] Server  LOG     ✓ Compiled in 794ms
+[22:59:52.368] Server  LOG     ✓ Compiled in 986ms
+[22:59:54.187] Browser WARN    [2026-03-17T09:44:24.514Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:00:06.146] Server  LOG     ✓ Compiled in 134ms
+[23:00:50.298] Server  LOG     ✓ Compiled in 929ms
+[23:01:31.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:01:34.568] Browser WARN    [2026-03-17T09:46:05.608Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:01:34.568] Browser WARN    [2026-03-17T09:46:05.617Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:02:35.399] Browser WARN    [2026-03-17T09:47:06.411Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:02:35.399] Browser WARN    [2026-03-17T09:47:06.457Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:23:30.984] Server  LOG     ✓ Compiled in 2.5s
+[23:23:35.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:31:53.418] Browser WARN    [2026-03-17T10:16:24.420Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:31:53.418] Browser WARN    [2026-03-17T10:16:24.465Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:32:06.671] Browser WARN    [2026-03-17T10:16:37.699Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 
+[23:32:06.671] Browser WARN    [2026-03-17T10:16:37.722Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "cafeId" at /orders to your security rules for better performance. 

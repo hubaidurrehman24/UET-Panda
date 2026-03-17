@@ -166,7 +166,7 @@ export default function Home() {
           >
             <Flame size={13} className="text-uet-gold" />
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-100/80">
-              5 Cafes · One Unified Cart
+              All Campus Cafes · One Unified Cart
             </span>
           </motion.div>
 
@@ -190,7 +190,7 @@ export default function Home() {
               text-[clamp(0.9rem,2.5vw,1.25rem)]"
           >
             Your campus hunger solved. Order from any of the{" "}
-            <span className="text-uet-gold font-bold">5 UET cafes</span>{" "}
+            <span className="text-uet-gold font-bold">UET cafes</span>{" "}
             — all in one seamless experience.
           </motion.p>
 
@@ -225,7 +225,7 @@ export default function Home() {
             className="flex items-center justify-center gap-8 md:gap-14 pt-6 border-t border-white/10 w-full"
           >
             {[
-              { value: "5",      label: "Cafes" },
+              { value: cafes.length > 0 ? Object.keys(cafes).length : "All", label: "Cafes" },
               { value: "50+",    label: "Menu Items" },
               { value: "15 min", label: "Avg. Delivery" },
             ].map((s) => (
@@ -341,9 +341,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  className="group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-row sm:flex-col"
                 >
-                  <div className="h-40 bg-slate-200 relative overflow-hidden">
+                  <div className="w-[110px] sm:w-full h-[130px] sm:h-40 bg-slate-200 relative overflow-hidden flex-shrink-0">
                     <img
                       src={item.image || `https://via.placeholder.com/400x300?text=${item.name}`}
                       alt={item.name}
@@ -353,15 +353,15 @@ export default function Home() {
                       Rs. {item.price}
                     </div>
                   </div>
-                  <div className="p-4 flex flex-col flex-grow">
+                  <div className="p-3 sm:p-4 flex flex-col flex-grow min-w-0 justify-between">
                     <div className="flex items-center gap-1 mb-1">
                       <Store size={11} className="text-uet-gold" />
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                         {cafes.find(c => c.id === item.cafeId)?.name || item.cafeName || item.cafeId}
                       </span>
                     </div>
-                    <h3 className="font-bold text-uet-navy text-sm leading-tight line-clamp-1 flex-grow">{item.name}</h3>
-                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100">
+                    <h3 className="font-bold text-uet-navy text-sm leading-tight line-clamp-2 flex-grow">{item.name}</h3>
+                    <div className="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-slate-100">
                       <div className="flex items-center text-slate-400 text-[11px] font-medium">
                         <Clock size={11} className="mr-1" />
                         <span>15–20 min</span>

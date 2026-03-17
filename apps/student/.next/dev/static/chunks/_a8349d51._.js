@@ -27,6 +27,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shopping-cart.js [app-client] (ecmascript) <export default as ShoppingCart>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user.js [app-client] (ecmascript) <export default as User>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/log-out.js [app-client] (ecmascript) <export default as LogOut>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$list$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardList$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clipboard-list.js [app-client] (ecmascript) <export default as ClipboardList>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/packages/shared-config/src/index.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/packages/shared-config/src/context/AuthContext.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/packages/shared-config/src/context/CartContext.js [app-client] (ecmascript)");
@@ -137,9 +138,25 @@ const Navbar = ()=>{
                     children: [
                         user && userRole === 'student' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/orders",
-                            className: "hidden md:block hover:text-uet-gold transition-colors font-medium mr-2",
-                            children: "My Orders"
-                        }, void 0, false, {
+                            className: "flex items-center gap-1 hover:text-uet-gold transition-colors font-bold mr-2 text-[10px] sm:text-sm",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$list$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardList$3e$__["ClipboardList"], {
+                                    size: 16,
+                                    className: "md:hidden"
+                                }, void 0, false, {
+                                    fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
+                                    lineNumber: 51,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "My Orders"
+                                }, void 0, false, {
+                                    fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
+                                    lineNumber: 52,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
                             lineNumber: 50,
                             columnNumber: 13
@@ -155,7 +172,7 @@ const Navbar = ()=>{
                                         className: "text-uet-gold"
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 57,
+                                        lineNumber: 58,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     cart.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -163,18 +180,18 @@ const Navbar = ()=>{
                                         children: cart.length
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 59,
+                                        lineNumber: 60,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                lineNumber: 56,
+                                lineNumber: 57,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -185,7 +202,7 @@ const Navbar = ()=>{
                                     children: user.email?.split('@')[0]
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 68,
+                                    lineNumber: 69,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -196,18 +213,18 @@ const Navbar = ()=>{
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 76,
+                                        lineNumber: 77,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 71,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 67,
+                            lineNumber: 68,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/login",
@@ -217,7 +234,7 @@ const Navbar = ()=>{
                                     size: 22
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 84,
+                                    lineNumber: 85,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -225,13 +242,13 @@ const Navbar = ()=>{
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 85,
+                                    lineNumber: 86,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 80,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -526,6 +543,15 @@ const OrderTracking = ()=>{
     const [rating, setRating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(5);
     const [comment, setComment] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [submitting, setSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [expandedOrders, setExpandedOrders] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Set());
+    const toggleOrderExpand = (orderId)=>{
+        setExpandedOrders((prev)=>{
+            const next = new Set(prev);
+            if (next.has(orderId)) next.delete(orderId);
+            else next.add(orderId);
+            return next;
+        });
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "OrderTracking.useEffect": ()=>{
             if (!user) return;
@@ -578,66 +604,73 @@ const OrderTracking = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navbar$3e$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                lineNumber: 81,
+                lineNumber: 91,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "container mx-auto px-4 py-12 max-w-5xl",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                        className: "mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6",
+                        className: "mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-3xl font-poppins font-bold text-uet-navy tracking-tight",
+                                        className: "text-2xl md:text-3xl font-poppins font-bold text-uet-navy tracking-tight text-center md:text-left",
                                         children: "Active Orders"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 96,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-500 font-medium italic mt-1",
+                                        className: "text-slate-500 font-medium italic mt-1 text-center md:text-left text-sm md:text-base",
                                         children: "Track your hunger in real-time"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 87,
+                                        lineNumber: 97,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 85,
+                                lineNumber: 95,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center space-x-2 bg-white px-4 py-2 rounded-2xl border border-slate-100 shadow-sm text-xs font-bold text-slate-400",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                        size: 14
-                                    }, void 0, false, {
-                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 90,
-                                        columnNumber: 14
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "History synced with Cloud"
-                                    }, void 0, false, {
-                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 91,
-                                        columnNumber: 14
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
+                                className: "flex items-center justify-center md:justify-end",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center space-x-2 bg-white px-4 py-2 rounded-2xl border border-slate-100 shadow-sm text-xs font-bold text-slate-400",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                            size: 14
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                            lineNumber: 101,
+                                            columnNumber: 16
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "History synced with Cloud"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                            lineNumber: 102,
+                                            columnNumber: 16
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                    lineNumber: 100,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 89,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                        lineNumber: 84,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -646,12 +679,12 @@ const OrderTracking = ()=>{
                             className: "animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-uet-gold"
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                            lineNumber: 97,
+                            lineNumber: 109,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                        lineNumber: 96,
+                        lineNumber: 108,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : orders.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-white rounded-[2.5rem] p-16 text-center shadow-sm border border-slate-100 max-w-2xl mx-auto",
@@ -662,12 +695,12 @@ const OrderTracking = ()=>{
                                     size: 44
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                    lineNumber: 102,
+                                    lineNumber: 114,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 101,
+                                lineNumber: 113,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -675,7 +708,7 @@ const OrderTracking = ()=>{
                                 children: "No orders found"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 104,
+                                lineNumber: 116,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -683,7 +716,7 @@ const OrderTracking = ()=>{
                                 children: "You haven't placed any orders yet. Head to the homepage to start eating!"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 105,
+                                lineNumber: 117,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -694,26 +727,26 @@ const OrderTracking = ()=>{
                                         children: "Explore Menu"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 110,
+                                        lineNumber: 122,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 111,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 106,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                        lineNumber: 100,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 gap-8",
@@ -731,91 +764,65 @@ const OrderTracking = ()=>{
                                     className: "bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all group",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-uet-navy text-white p-6 md:px-10 flex flex-col md:flex-row md:items-center justify-between gap-4",
+                                            className: "bg-gradient-to-r from-uet-navy to-blue-900 text-white p-5 md:p-8 flex flex-row items-center justify-between gap-4",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center space-x-4",
+                                                    className: "flex items-center space-x-3 md:space-x-5",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "bg-uet-gold p-3 rounded-2xl text-uet-navy shadow-gold",
+                                                            className: "bg-uet-gold p-2 md:p-3 rounded-xl md:rounded-2xl text-uet-navy shadow-gold shrink-0",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                                                                size: 20
+                                                                size: 18,
+                                                                className: "md:w-5 md:h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 129,
+                                                                lineNumber: 141,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 128,
+                                                            lineNumber: 140,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "min-w-0",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex items-center space-x-2 mb-1",
+                                                                    className: "flex items-center space-x-2 mb-0.5",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "text-[10px] uppercase font-bold text-blue-100/40 tracking-widest",
+                                                                            className: "text-[9px] uppercase font-bold text-blue-100/40 tracking-widest hidden sm:inline",
                                                                             children: "Order Receipt"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                            lineNumber: 133,
+                                                                            lineNumber: 145,
                                                                             columnNumber: 31
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "bg-white/10 px-2 py-0.5 rounded text-[9px] font-bold text-uet-gold italic",
+                                                                            className: "bg-white/10 px-2 py-0.5 rounded text-[8px] md:text-[9px] font-bold text-uet-gold italic",
                                                                             children: [
                                                                                 "#",
                                                                                 order.id.slice(-6)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                            lineNumber: 134,
+                                                                            lineNumber: 146,
                                                                             columnNumber: 31
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 144,
                                                                     columnNumber: 28
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                    className: "text-xl font-bold font-poppins",
+                                                                    className: "text-lg md:text-xl font-bold font-poppins truncate",
                                                                     children: CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 148,
                                                                     columnNumber: 28
                                                                 }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 131,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 127,
-                                                    columnNumber: 22
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-right",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-[10px] uppercase font-bold text-blue-100/40 tracking-widest mb-1",
-                                                            children: "Total Amount"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 142,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-2xl font-bold text-uet-gold",
-                                                            children: [
-                                                                "Rs. ",
-                                                                order.total
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
@@ -825,22 +832,50 @@ const OrderTracking = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 141,
+                                                    lineNumber: 139,
+                                                    columnNumber: 22
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-right shrink-0",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-[9px] uppercase font-bold text-blue-100/40 tracking-widest mb-0.5",
+                                                            children: "Total Amount"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                            lineNumber: 154,
+                                                            columnNumber: 25
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-xl md:text-2xl font-bold text-uet-gold",
+                                                            children: [
+                                                                "Rs. ",
+                                                                order.total
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                            lineNumber: 155,
+                                                            columnNumber: 25
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                    lineNumber: 153,
                                                     columnNumber: 22
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                            lineNumber: 126,
+                                            lineNumber: 138,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "px-6 py-10 md:px-16 lg:px-24",
+                                            className: "px-4 py-8 md:px-16 lg:px-24",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "relative flex items-center justify-between",
+                                                className: "relative flex items-center justify-between max-w-sm mx-auto",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 -z-0",
+                                                        className: "absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-slate-100 -z-0",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                                             initial: {
                                                                 width: 0
@@ -848,531 +883,589 @@ const OrderTracking = ()=>{
                                                             animate: {
                                                                 width: `${(getStatusStep(order.status) - 1) * 50}%`
                                                             },
-                                                            className: "h-full bg-uet-gold shadow-[0_0_15px_rgba(255,215,0,0.5)]"
+                                                            className: "h-full bg-uet-gold shadow-[0_0_10px_rgba(255,215,0,0.5)]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 152,
+                                                            lineNumber: 164,
                                                             columnNumber: 28
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 151,
+                                                        lineNumber: 163,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "relative z-10 flex flex-col items-center",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: `w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 1 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`,
+                                                                className: `w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 1 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`,
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                                    size: 20
+                                                                    size: 16,
+                                                                    className: "md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 162,
+                                                                    lineNumber: 174,
                                                                     columnNumber: 31
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 161,
+                                                                lineNumber: 173,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 1 ? 'text-uet-navy' : 'text-slate-300'}`,
+                                                                className: `mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 1 ? 'text-uet-navy' : 'text-slate-300'}`,
                                                                 children: "Preparing"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 164,
+                                                                lineNumber: 176,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 160,
+                                                        lineNumber: 172,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "relative z-10 flex flex-col items-center",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: `w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 2 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`,
+                                                                className: `w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 2 ? 'bg-uet-gold text-uet-navy shadow-gold' : 'bg-white text-slate-300 border border-slate-200'}`,
                                                                 children: order.orderType === 'takeaway' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$bag$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingBag$3e$__["ShoppingBag"], {
-                                                                    size: 20
+                                                                    size: 16,
+                                                                    className: "md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 170,
+                                                                    lineNumber: 182,
                                                                     columnNumber: 65
                                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
-                                                                    size: 20
+                                                                    size: 16,
+                                                                    className: "md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 170,
-                                                                    columnNumber: 93
+                                                                    lineNumber: 182,
+                                                                    columnNumber: 119
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 169,
+                                                                lineNumber: 181,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`,
-                                                                children: order.orderType === 'takeaway' ? 'Ready for Pickup' : 'In Transit'
+                                                                className: `mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-center max-w-[60px] md:max-w-none ${getStatusStep(order.status) >= 2 ? 'text-uet-navy' : 'text-slate-300'}`,
+                                                                children: order.orderType === 'takeaway' ? 'Ready' : 'In Transit'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 172,
+                                                                lineNumber: 184,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 168,
+                                                        lineNumber: 180,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "relative z-10 flex flex-col items-center",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: `w-12 h-12 rounded-full flex items-center justify-center transition-all ${getStatusStep(order.status) >= 3 ? 'bg-uet-gold text-uet-navy shadow-gold font-bold' : 'bg-white text-slate-300 border border-slate-200'}`,
+                                                                className: `w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${getStatusStep(order.status) >= 3 ? 'bg-uet-gold text-uet-navy shadow-gold font-bold' : 'bg-white text-slate-300 border border-slate-200'}`,
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                                                    size: 24
+                                                                    size: 18,
+                                                                    className: "md:w-6 md:h-6"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 180,
+                                                                    lineNumber: 192,
                                                                     columnNumber: 31
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 179,
+                                                                lineNumber: 191,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `mt-4 text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`,
-                                                                children: order.orderType === 'takeaway' ? 'Pre Order Collected' : 'Home'
+                                                                className: `mt-3 text-[8px] md:text-[10px] font-bold uppercase tracking-widest ${getStatusStep(order.status) >= 3 ? 'text-uet-navy' : 'text-slate-300'}`,
+                                                                children: order.orderType === 'takeaway' ? 'Done' : 'Home'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 182,
+                                                                lineNumber: 194,
                                                                 columnNumber: 28
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 178,
+                                                        lineNumber: 190,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 149,
+                                                lineNumber: 161,
                                                 columnNumber: 22
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                            lineNumber: 148,
+                                            lineNumber: 160,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-slate-50 p-6 md:p-10 flex flex-col lg:flex-row gap-8",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>toggleOrderExpand(order.id),
+                                            className: "md:hidden w-full py-4 border-t border-slate-100 flex items-center justify-center gap-2 text-[10px] font-bold text-uet-gold uppercase tracking-widest active:scale-95 transition-all",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex-grow",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    children: expandedOrders.has(order.id) ? "Hide Details" : "View Details"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                    lineNumber: 206,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                    size: 14,
+                                                    className: `transition-transform duration-300 ${expandedOrders.has(order.id) ? 'rotate-90' : ''}`
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                    lineNumber: 207,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                            lineNumber: 202,
+                                            columnNumber: 19
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                            children: (expandedOrders.has(order.id) || ("TURBOPACK compile-time value", "object") !== 'undefined' && window.innerWidth >= 768) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                initial: {
+                                                    height: 0,
+                                                    opacity: 0
+                                                },
+                                                animate: {
+                                                    height: "auto",
+                                                    opacity: 1
+                                                },
+                                                exit: {
+                                                    height: 0,
+                                                    opacity: 0
+                                                },
+                                                transition: {
+                                                    duration: 0.3,
+                                                    ease: "easeInOut"
+                                                },
+                                                className: "overflow-hidden",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "bg-slate-50 p-6 md:p-10 flex flex-col lg:flex-row gap-8",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-4",
-                                                            children: "Items Summary"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 193,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "space-y-3",
-                                                            children: order.items.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex flex-col gap-2",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex justify-between items-center group/item",
+                                                            className: "flex-grow",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-4",
+                                                                    children: "Items Summary"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                    lineNumber: 223,
+                                                                    columnNumber: 31
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "space-y-3",
+                                                                    children: order.items.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex flex-col gap-2",
                                                                             children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                    className: "text-uet-navy font-bold text-sm leading-tight flex items-center",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "flex justify-between items-center group/item",
                                                                                     children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                                                            size: 12,
-                                                                                            className: "mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity"
-                                                                                        }, void 0, false, {
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                            className: "text-uet-navy font-bold text-sm leading-tight flex items-center",
+                                                                                            children: [
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                                                    size: 12,
+                                                                                                    className: "mr-2 text-uet-gold opacity-0 group-hover/item:opacity-100 transition-opacity"
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                                    lineNumber: 229,
+                                                                                                    columnNumber: 45
+                                                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                                                item.quantity,
+                                                                                                "x ",
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                                    className: "font-medium text-slate-600 ml-1",
+                                                                                                    children: item.name
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                                    lineNumber: 230,
+                                                                                                    columnNumber: 62
+                                                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                                                            ]
+                                                                                        }, void 0, true, {
                                                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                            lineNumber: 199,
-                                                                                            columnNumber: 39
+                                                                                            lineNumber: 228,
+                                                                                            columnNumber: 42
                                                                                         }, ("TURBOPACK compile-time value", void 0)),
-                                                                                        item.quantity,
-                                                                                        "x ",
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                            className: "font-medium text-slate-600 ml-1",
-                                                                                            children: item.name
-                                                                                        }, void 0, false, {
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                            className: "text-slate-400 font-mono text-xs italic",
+                                                                                            children: [
+                                                                                                "Rs.",
+                                                                                                item.price * item.quantity
+                                                                                            ]
+                                                                                        }, void 0, true, {
                                                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                            lineNumber: 200,
-                                                                                            columnNumber: 56
+                                                                                            lineNumber: 232,
+                                                                                            columnNumber: 42
                                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                    lineNumber: 198,
-                                                                                    columnNumber: 36
+                                                                                    lineNumber: 227,
+                                                                                    columnNumber: 39
                                                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                    className: "text-slate-400 font-mono text-xs italic",
+                                                                                (order.status === "Delivered" || order.status === "Collected") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                    onClick: ()=>{
+                                                                                        setSelectedItem(item);
+                                                                                        setCurrentOrder(order);
+                                                                                        setReviewModalOpen(true);
+                                                                                    },
+                                                                                    className: "self-start text-[10px] font-bold text-uet-gold hover:text-uet-navy flex items-center gap-1 transition-colors",
                                                                                     children: [
-                                                                                        "Rs.",
-                                                                                        item.price * item.quantity
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                                            size: 10,
+                                                                                            className: "fill-uet-gold"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                            lineNumber: 243,
+                                                                                            columnNumber: 43
+                                                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                                                        "Rate Item"
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                    lineNumber: 202,
-                                                                                    columnNumber: 36
+                                                                                    lineNumber: 235,
+                                                                                    columnNumber: 41
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             ]
-                                                                        }, void 0, true, {
+                                                                        }, idx, true, {
                                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                            lineNumber: 197,
-                                                                            columnNumber: 33
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        (order.status === "Delivered" || order.status === "Collected") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                            onClick: ()=>{
-                                                                                setSelectedItem(item);
-                                                                                setCurrentOrder(order);
-                                                                                setReviewModalOpen(true);
-                                                                            },
-                                                                            className: "self-start text-[10px] font-bold text-uet-gold hover:text-uet-navy flex items-center gap-1 transition-colors",
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                                                    size: 10,
-                                                                                    className: "fill-uet-gold"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                    lineNumber: 213,
-                                                                                    columnNumber: 37
-                                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                                "Rate Item"
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                            lineNumber: 205,
-                                                                            columnNumber: 35
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, idx, true, {
+                                                                            lineNumber: 226,
+                                                                            columnNumber: 36
+                                                                        }, ("TURBOPACK compile-time value", void 0)))
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                    lineNumber: 196,
-                                                                    columnNumber: 30
-                                                                }, ("TURBOPACK compile-time value", void 0)))
-                                                        }, void 0, false, {
+                                                                    lineNumber: 224,
+                                                                    columnNumber: 31
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 194,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 192,
-                                                    columnNumber: 22
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "bg-white p-6 rounded-[2rem] border border-slate-100 lg:w-[320px] shadow-sm relative overflow-hidden",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute top-0 right-0 w-20 h-20 bg-uet-navy/5 rounded-full -mr-10 -mt-10"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 224,
-                                                            columnNumber: 25
+                                                            lineNumber: 222,
+                                                            columnNumber: 28
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "relative z-10",
-                                                            children: order.status === "Out for Delivery" && order.riderName ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "space-y-4",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center space-x-3 mb-6",
+                                                            className: "bg-white p-6 rounded-[2rem] border border-slate-100 lg:w-[320px] shadow-sm relative overflow-hidden",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "absolute top-0 right-0 w-20 h-20 bg-uet-navy/5 rounded-full -mr-10 -mt-10"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                    lineNumber: 254,
+                                                                    columnNumber: 31
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "relative z-10",
+                                                                    children: order.status === "Out for Delivery" && order.riderName ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-4",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                className: "bg-uet-gold/10 p-2.5 rounded-2xl text-uet-gold",
-                                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bike$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bike$3e$__["Bike"], {
-                                                                                    size: 24
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                    lineNumber: 231,
-                                                                                    columnNumber: 39
-                                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 230,
-                                                                                columnNumber: 36
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "flex items-center space-x-3 mb-6",
                                                                                 children: [
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                        className: "text-[9px] uppercase font-bold text-slate-400 tracking-widest",
-                                                                                        children: "Your Rider"
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                        className: "bg-uet-gold/10 p-2.5 rounded-2xl text-uet-gold",
+                                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bike$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bike$3e$__["Bike"], {
+                                                                                            size: 24
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                            lineNumber: 261,
+                                                                                            columnNumber: 45
+                                                                                        }, ("TURBOPACK compile-time value", void 0))
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                        lineNumber: 234,
-                                                                                        columnNumber: 39
+                                                                                        lineNumber: 260,
+                                                                                        columnNumber: 42
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                                        className: "font-bold text-uet-navy",
-                                                                                        children: order.riderName
-                                                                                    }, void 0, false, {
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                        children: [
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                                className: "text-[9px] uppercase font-bold text-slate-400 tracking-widest",
+                                                                                                children: "Your Rider"
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                                lineNumber: 264,
+                                                                                                columnNumber: 45
+                                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                                                className: "font-bold text-uet-navy",
+                                                                                                children: order.riderName
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                                lineNumber: 265,
+                                                                                                columnNumber: 45
+                                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                                        ]
+                                                                                    }, void 0, true, {
                                                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                        lineNumber: 235,
-                                                                                        columnNumber: 39
+                                                                                        lineNumber: 263,
+                                                                                        columnNumber: 42
                                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 233,
-                                                                                columnNumber: 36
-                                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 229,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: "w-full bg-uet-navy text-white py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 text-sm shadow-navy active:scale-95 transition-all",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
-                                                                                size: 16
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 239,
-                                                                                columnNumber: 36
+                                                                                lineNumber: 259,
+                                                                                columnNumber: 39
                                                                             }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                className: "w-full bg-uet-navy text-white py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 text-sm shadow-navy active:scale-95 transition-all",
                                                                                 children: [
-                                                                                    "Contact: ",
-                                                                                    order.riderPhone
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
+                                                                                        size: 16
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 269,
+                                                                                        columnNumber: 42
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        children: [
+                                                                                            "Contact: ",
+                                                                                            order.riderPhone
+                                                                                        ]
+                                                                                    }, void 0, true, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 270,
+                                                                                        columnNumber: 42
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 240,
-                                                                                columnNumber: 36
+                                                                                lineNumber: 268,
+                                                                                columnNumber: 39
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 238,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 228,
-                                                                columnNumber: 30
-                                                            }, ("TURBOPACK compile-time value", void 0)) : order.status === "Delivered" || order.status === "Collected" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-center py-4",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                                                        size: 32,
-                                                                        className: "text-green-500 mx-auto mb-3"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 245,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                        className: "font-bold text-uet-navy",
-                                                                        children: "Enjoy your meal!"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 246,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1",
-                                                                        children: "Order Complete"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 247,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 244,
-                                                                columnNumber: 30
-                                                            }, ("TURBOPACK compile-time value", void 0)) : order.orderType === 'takeaway' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "space-y-4",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center space-x-3 mb-2",
+                                                                        lineNumber: 258,
+                                                                        columnNumber: 36
+                                                                    }, ("TURBOPACK compile-time value", void 0)) : order.status === "Delivered" || order.status === "Collected" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "text-center py-4",
                                                                         children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                                                                                size: 20,
-                                                                                className: "text-uet-gold"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 252,
-                                                                                columnNumber: 36
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                                className: "font-bold text-uet-navy text-sm",
-                                                                                children: "Self-Pickup Order"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 253,
-                                                                                columnNumber: 36
-                                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 251,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-xs text-slate-400 leading-relaxed italic",
-                                                                        children: order.status === "Ready for Pickup" ? "Your order is ready at the counter! Please head to the cafe to collect it." : "The cafe is preparing your food. We'll notify you when it's ready for pickup."
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 255,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                                                                                size: 14,
-                                                                                className: "text-uet-gold"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 261,
-                                                                                columnNumber: 36
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                className: "text-[10px] font-bold text-slate-600 line-clamp-1",
-                                                                                children: [
-                                                                                    CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`,
-                                                                                    " Counter"
-                                                                                ]
-                                                                            }, void 0, true, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 262,
-                                                                                columnNumber: 37
-                                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 260,
-                                                                        columnNumber: 33
-                                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 250,
-                                                                columnNumber: 31
-                                                            }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "space-y-4",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center space-x-3 mb-2",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                                                size: 20,
-                                                                                className: "text-uet-gold"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 270,
-                                                                                columnNumber: 35
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                                className: "font-bold text-uet-navy text-sm",
-                                                                                children: "Waiting to Dispatch"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                                lineNumber: 271,
-                                                                                columnNumber: 35
-                                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 269,
-                                                                        columnNumber: 32
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-xs text-slate-400 leading-relaxed italic",
-                                                                        children: "The cafe is carefully preparing your food. We'll assign a rider soon."
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                        lineNumber: 273,
-                                                                        columnNumber: 32
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                                                size: 14,
-                                                                                className: "text-red-400"
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                                                                size: 32,
+                                                                                className: "text-green-500 mx-auto mb-3"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
                                                                                 lineNumber: 275,
-                                                                                columnNumber: 35
+                                                                                columnNumber: 39
                                                                             }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                className: "text-[10px] font-bold text-slate-600 line-clamp-1",
-                                                                                children: order.address
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                                className: "font-bold text-uet-navy",
+                                                                                children: "Enjoy your meal!"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
                                                                                 lineNumber: 276,
-                                                                                columnNumber: 35
+                                                                                columnNumber: 39
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                className: "text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1",
+                                                                                children: "Order Complete"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 277,
+                                                                                columnNumber: 39
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
                                                                         lineNumber: 274,
-                                                                        columnNumber: 32
+                                                                        columnNumber: 36
+                                                                    }, ("TURBOPACK compile-time value", void 0)) : order.orderType === 'takeaway' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-4",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "flex items-center space-x-3 mb-2",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
+                                                                                        size: 20,
+                                                                                        className: "text-uet-gold"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 282,
+                                                                                        columnNumber: 42
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                                        className: "font-bold text-uet-navy text-sm",
+                                                                                        children: "Self-Pickup Order"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 283,
+                                                                                        columnNumber: 42
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 281,
+                                                                                columnNumber: 39
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                className: "text-xs text-slate-400 leading-relaxed italic",
+                                                                                children: order.status === "Ready for Pickup" ? "Your order is ready at the counter! Please head to the cafe to collect it." : "The cafe is preparing your food. We'll notify you when it's ready for pickup."
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 285,
+                                                                                columnNumber: 39
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
+                                                                                        size: 14,
+                                                                                        className: "text-uet-gold"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 291,
+                                                                                        columnNumber: 42
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        className: "text-[10px] font-bold text-slate-600 line-clamp-1",
+                                                                                        children: [
+                                                                                            CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`,
+                                                                                            " Counter"
+                                                                                        ]
+                                                                                    }, void 0, true, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 292,
+                                                                                        columnNumber: 43
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 290,
+                                                                                columnNumber: 39
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                        lineNumber: 280,
+                                                                        columnNumber: 37
+                                                                    }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-4",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "flex items-center space-x-3 mb-2",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                                                                        size: 20,
+                                                                                        className: "text-uet-gold"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 300,
+                                                                                        columnNumber: 41
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                                        className: "font-bold text-uet-navy text-sm",
+                                                                                        children: "Waiting to Dispatch"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 301,
+                                                                                        columnNumber: 41
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 299,
+                                                                                columnNumber: 38
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                className: "text-xs text-slate-400 leading-relaxed italic",
+                                                                                children: "The cafe is carefully preparing your food. We'll assign a rider soon."
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 303,
+                                                                                columnNumber: 38
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                                        size: 14,
+                                                                                        className: "text-red-400"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 305,
+                                                                                        columnNumber: 41
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        className: "text-[10px] font-bold text-slate-600 line-clamp-1",
+                                                                                        children: order.address
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                        lineNumber: 306,
+                                                                                        columnNumber: 41
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                                lineNumber: 304,
+                                                                                columnNumber: 38
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                        lineNumber: 298,
+                                                                        columnNumber: 36
                                                                     }, ("TURBOPACK compile-time value", void 0))
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                                lineNumber: 268,
-                                                                columnNumber: 30
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        }, void 0, false, {
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                                    lineNumber: 256,
+                                                                    columnNumber: 31
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 226,
-                                                            columnNumber: 25
+                                                            lineNumber: 253,
+                                                            columnNumber: 28
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 223,
-                                                    columnNumber: 22
+                                                    lineNumber: 220,
+                                                    columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/student/src/app/orders/page.js",
+                                                lineNumber: 213,
+                                                columnNumber: 23
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                            lineNumber: 190,
+                                            lineNumber: 211,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, order.id, true, {
                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                    lineNumber: 118,
+                                    lineNumber: 130,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                            lineNumber: 116,
+                            lineNumber: 128,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                        lineNumber: 115,
+                        lineNumber: 127,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                lineNumber: 83,
+                lineNumber: 93,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1393,7 +1486,7 @@ const OrderTracking = ()=>{
                             className: "absolute inset-0 bg-uet-navy/60 backdrop-blur-sm"
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                            lineNumber: 294,
+                            lineNumber: 327,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1426,7 +1519,7 @@ const OrderTracking = ()=>{
                                                         children: "Rate your Meal"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 310,
+                                                        lineNumber: 343,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1434,13 +1527,13 @@ const OrderTracking = ()=>{
                                                         children: selectedItem?.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 311,
+                                                        lineNumber: 344,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 309,
+                                                lineNumber: 342,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1450,18 +1543,18 @@ const OrderTracking = ()=>{
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 314,
+                                                    lineNumber: 347,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 313,
+                                                lineNumber: 346,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 308,
+                                        lineNumber: 341,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1480,17 +1573,17 @@ const OrderTracking = ()=>{
                                                     className: `${rating >= star ? 'text-uet-gold fill-uet-gold' : 'text-slate-200'} transition-colors`
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 325,
+                                                    lineNumber: 358,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, star, false, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 320,
+                                                lineNumber: 353,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 318,
+                                        lineNumber: 351,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1503,7 +1596,7 @@ const OrderTracking = ()=>{
                                                         children: "Your Feedback (Optional)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 335,
+                                                        lineNumber: 368,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1513,13 +1606,13 @@ const OrderTracking = ()=>{
                                                         onChange: (e)=>setComment(e.target.value)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                        lineNumber: 336,
+                                                        lineNumber: 369,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 334,
+                                                lineNumber: 367,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1555,7 +1648,7 @@ const OrderTracking = ()=>{
                                                     className: "w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                    lineNumber: 375,
+                                                    lineNumber: 408,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
@@ -1563,7 +1656,7 @@ const OrderTracking = ()=>{
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                            lineNumber: 378,
+                                                            lineNumber: 411,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Submit Review"
@@ -1571,45 +1664,45 @@ const OrderTracking = ()=>{
                                                 }, void 0, true)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                                lineNumber: 344,
+                                                lineNumber: 377,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/orders/page.js",
-                                        lineNumber: 333,
+                                        lineNumber: 366,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                                lineNumber: 307,
+                                lineNumber: 340,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/orders/page.js",
-                            lineNumber: 301,
+                            lineNumber: 334,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/student/src/app/orders/page.js",
-                    lineNumber: 293,
+                    lineNumber: 326,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/apps/student/src/app/orders/page.js",
-                lineNumber: 291,
+                lineNumber: 324,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/student/src/app/orders/page.js",
-        lineNumber: 80,
+        lineNumber: 90,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(OrderTracking, "8A6IXQUWKe7XrNdxgAfAm14hnZc=", false, function() {
+_s(OrderTracking, "ioJKAwri1C+vs3Nq5QQRtZrjK38=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$AuthContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuthContext"]
     ];
@@ -1619,12 +1712,12 @@ function ProtectedOrderTrackingPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$ProtectedRoute$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ProtectedRoute$3e$__["ProtectedRoute"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(OrderTracking, {}, void 0, false, {
             fileName: "[project]/apps/student/src/app/orders/page.js",
-            lineNumber: 396,
+            lineNumber: 429,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/apps/student/src/app/orders/page.js",
-        lineNumber: 395,
+        lineNumber: 428,
         columnNumber: 5
     }, this);
 }
