@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
+import Image from "next/image";
 import { Navbar } from "@uet-panda/shared-ui";
 import { db, useCartContext, useAuthContext } from "@uet-panda/shared-config";
 import { ref, query, orderByChild, equalTo, onValue } from "firebase/database";
@@ -355,10 +356,12 @@ function MenuContent() {
                 >
                   {/* Image */}
                   <div className="w-[110px] sm:w-full h-[130px] sm:h-44 bg-slate-100 relative overflow-hidden flex-shrink-0">
-                    <img
-                      src={item.image || `https://via.placeholder.com/400x300?text=${item.name}`}
+                    <Image
+                      src={item.image || `https://via.placeholder.com/400x300?text=${encodeURIComponent(item.name)}`}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 640px) 110px, 320px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-uet-navy/90 backdrop-blur-sm text-uet-gold text-[9px] sm:text-[11px] font-bold px-1.5 py-1 sm:px-2.5 sm:py-1.5 rounded-full">
                       Rs. {item.price}
@@ -581,10 +584,13 @@ function MenuContent() {
                   <X size={20} />
                 </button>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden">
-                    <img 
-                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`} 
-                      className="w-full h-full object-cover" 
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden relative">
+                    <Image
+                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${encodeURIComponent(viewingFeedback.name)}`}
+                      alt={viewingFeedback.name}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                     />
                   </div>
                   <div>

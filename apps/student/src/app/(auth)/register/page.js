@@ -53,7 +53,7 @@ export default function RegisterPage() {
 
       router.push("/");
     } catch (err) {
-      console.error(err);
+      console.error("[Student Register] Account creation failed:", err);
       if (err.code === 'auth/email-already-in-use') {
         setError("This email is already registered.");
       } else {

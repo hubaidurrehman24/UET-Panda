@@ -551,16 +551,9 @@ function ProtectedRoute({ children, requireAdmin = false }) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!loading) {
             if (!user) {
-                // Redirect to admin login if admin is required, otherwise student login
                 const loginPath = requireAdmin ? "/admin/login" : "/login";
                 router.push(`${loginPath}?redirect=${pathname}`);
             } else if (requireAdmin && userRole !== "admin") {
-                // Redirect if requires admin but user is not admin
-                // The user is logged in but does not have the required 'admin' role.
-                // If the user is an admin, they should be redirected to their dashboard,
-                // otherwise, they should be redirected to the admin login page.
-                // This condition (userRole !== "admin") means the user is NOT an admin.
-                // So, they should be redirected to /admin/login.
                 router.replace("/admin/login");
             } else {
                 setIsAuthorized(true);
@@ -581,12 +574,12 @@ function ProtectedRoute({ children, requireAdmin = false }) {
                 className: "animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-uet-gold"
             }, void 0, false, {
                 fileName: "[project]/packages/shared-ui/src/components/ProtectedRoute.js",
-                lineNumber: 35,
+                lineNumber: 28,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/packages/shared-ui/src/components/ProtectedRoute.js",
-            lineNumber: 34,
+            lineNumber: 27,
             columnNumber: 7
         }, this);
     }
@@ -658,7 +651,6 @@ function StudentGuard({ children }) {
 
 __turbopack_context__.s([]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-// We'll export common UI pieces here
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/packages/shared-ui/src/components/Navbar.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$ProtectedRoute$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/packages/shared-ui/src/components/ProtectedRoute.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$StudentGuard$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/packages/shared-ui/src/components/StudentGuard.js [app-ssr] (ecmascript)");

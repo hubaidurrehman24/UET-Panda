@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Navbar } from "@uet-panda/shared-ui";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -140,7 +141,7 @@ export default function CafeMenuPage() {
 
       {/* ── Banner ── */}
       <section className="relative h-64 md:h-80 overflow-hidden">
-        <img src={cafe.image} alt={cafe.name} className="w-full h-full object-cover" />
+        <Image src={cafe.image} alt={cafe.name} fill sizes="100vw" className="object-cover" priority />
         <div className={`absolute inset-0 bg-gradient-to-r ${cafe.color} opacity-80`} />
         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
           <Link
@@ -265,10 +266,12 @@ export default function CafeMenuPage() {
                 >
                   {/* Image */}
                   <div className="h-48 bg-slate-100 relative overflow-hidden">
-                    <img
-                      src={item.image || `https://via.placeholder.com/400x300?text=${item.name}`}
+                    <Image
+                      src={item.image || `https://via.placeholder.com/400x300?text=${encodeURIComponent(item.name)}`}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-3 right-3 bg-uet-navy/90 backdrop-blur-sm text-uet-gold text-xs font-bold px-3 py-1.5 rounded-full">
                       Rs. {item.price}
@@ -395,10 +398,13 @@ export default function CafeMenuPage() {
                   <X size={20} />
                 </button>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden">
-                    <img 
-                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`} 
-                      className="w-full h-full object-cover" 
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden relative">
+                    <Image
+                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${encodeURIComponent(viewingFeedback.name)}`}
+                      alt={viewingFeedback.name}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                     />
                   </div>
                   <div>

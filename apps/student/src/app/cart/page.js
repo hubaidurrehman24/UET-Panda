@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { Navbar } from "@uet-panda/shared-ui";
 import { useCartContext, useAuthContext } from "@uet-panda/shared-config";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,11 +78,13 @@ const CartPage = () => {
                   <div className="divide-y divide-slate-50">
                     {splitOrders[cafeId].map((item) => (
                       <div key={item.id} className="p-6 flex items-center space-x-4">
-                        <div className="w-20 h-20 rounded-2xl bg-slate-100 overflow-hidden flex-shrink-0">
-                          <img 
-                            src={item.image || `https://via.placeholder.com/100?text=${item.name}`} 
+                        <div className="w-20 h-20 rounded-2xl bg-slate-100 overflow-hidden flex-shrink-0 relative">
+                          <Image 
+                            src={item.image || `https://via.placeholder.com/100?text=${encodeURIComponent(item.name)}`} 
                             alt={item.name} 
-                            className="w-full h-full object-cover"
+                            fill
+                            sizes="80px"
+                            className="object-cover"
                           />
                         </div>
                         <div className="flex-grow">

@@ -69,7 +69,7 @@ function LoginContent() {
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signInWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$firebase$2f$config$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"], email, password);
             router.push(redirectUrl);
         } catch (err) {
-            console.error(err);
+            console.error("[Student Login] Email/password sign-in failed:", err);
             setError("Invalid email or password. Please try again.");
         } finally{
             setLoading(false);
@@ -94,7 +94,7 @@ function LoginContent() {
             }
             router.push(redirectUrl);
         } catch (error) {
-            console.error(error);
+            console.error("[Student Login] Google sign-in failed:", error);
             setError("Failed to sign in with Google.");
         } finally{
             setLoading(false);

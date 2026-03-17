@@ -29,7 +29,7 @@ function LoginContent() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push(redirectUrl);
     } catch (err) {
-      console.error(err);
+      console.error("[Student Login] Email/password sign-in failed:", err);
       setError("Invalid email or password. Please try again.");
     } finally {
       setLoading(false);
@@ -58,7 +58,7 @@ function LoginContent() {
       
       router.push(redirectUrl);
     } catch (error) {
-      console.error(error);
+      console.error("[Student Login] Google sign-in failed:", error);
       setError("Failed to sign in with Google.");
     } finally {
       setLoading(false);

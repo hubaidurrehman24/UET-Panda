@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { Navbar } from "@uet-panda/shared-ui";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -38,8 +39,7 @@ export default function Home() {
   const { user } = useAuthContext();
   const router = useRouter();
 
-  // Fetch deals from Realtime Database and interleave them from all cafes
-  // Fetch deals from Realtime Database and interleave them from all cafes
+  // Fetch deals from Firebase and interleave them evenly across all cafes
   useEffect(() => {
     const cafesList = ["cafe1", "cafe2", "cafe3", "cafe4"];
     const allFetchedDeals = {};
@@ -141,9 +141,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
 
-      {/* ══════════════════════════════════════════════════
-          HERO — always fits the viewport, no overflow
-      ══════════════════════════════════════════════════ */}
+      {/* Hero Section */}
       <section
         className="
           bg-uet-navy text-white relative overflow-hidden
@@ -247,9 +245,7 @@ export default function Home() {
         </button>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          CAFE CARDS
-      ══════════════════════════════════════════════════ */}
+      {/* Cafe Cards Section */}
       <section id="cafes" ref={cafeSectionRef} className="py-20 px-4">
         <div className="container mx-auto max-w-[1400px]">
           <div className="text-center mb-12">
@@ -273,7 +269,13 @@ export default function Home() {
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img src={cafe.image} alt={cafe.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <Image
+                    src={cafe.image}
+                    alt={cafe.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                   <div className={`absolute inset-0 bg-gradient-to-t ${cafe.color} opacity-60`} />
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-bold text-uet-navy shadow-sm">{cafe.badge}</div>
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
@@ -305,9 +307,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          FEATURED ITEMS (10 items across all cafes)
-      ══════════════════════════════════════════════════ */}
+      {/* Featured Deals Section */}
       <section id="deals" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-[1400px]">
           {/* Header */}
@@ -344,10 +344,12 @@ export default function Home() {
                   className="group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-row sm:flex-col"
                 >
                   <div className="w-[110px] sm:w-full h-[130px] sm:h-40 bg-slate-200 relative overflow-hidden flex-shrink-0">
-                    <img
-                      src={item.image || `https://via.placeholder.com/400x300?text=${item.name}`}
+                    <Image
+                      src={item.image || `https://via.placeholder.com/400x300?text=${encodeURIComponent(item.name)}`}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 640px) 110px, 320px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-2.5 right-2.5 bg-uet-navy/90 text-uet-gold text-[11px] font-bold px-2.5 py-1 rounded-full">
                       Rs. {item.price}
@@ -409,9 +411,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          FOOTER
-      ══════════════════════════════════════════════════ */}
+      {/* Footer */}
       <footer className="bg-uet-navy text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-uet-gold/5 rounded-full -mr-60 -mt-60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto max-w-[1400px] px-4 pt-16 pb-8 relative z-10">
@@ -525,10 +525,13 @@ export default function Home() {
                   <X size={20} />
                 </button>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden">
-                    <img 
-                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${viewingFeedback.name}`} 
-                      className="w-full h-full object-cover" 
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 overflow-hidden relative">
+                    <Image
+                      src={viewingFeedback.image || `https://via.placeholder.com/100?text=${encodeURIComponent(viewingFeedback.name)}`}
+                      alt={viewingFeedback.name}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                     />
                   </div>
                   <div>
