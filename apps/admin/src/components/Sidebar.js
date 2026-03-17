@@ -44,7 +44,7 @@ const Sidebar = () => {
         </div>
         <div>
            <h2 className="font-poppins font-bold text-lg leading-tight uppercase tracking-tighter">Admin <span className="text-uet-gold">Panda</span></h2>
-           <p className="text-[10px] text-blue-100/40 uppercase font-bold tracking-widest">{CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'}</p>
+           <p className="text-sm text-blue-100 uppercase font-bold tracking-wider mt-1">{CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'}</p>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      <div className="p-4 border-t border-white/10">
+      <div className="p-4 border-t border-white/10 mt-auto">
         <button 
           onClick={handleLogout}
           className="w-full flex items-center space-x-3 p-4 rounded-2xl text-red-400 hover:bg-red-500/10 transition-all font-bold text-sm"

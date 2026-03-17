@@ -6,6 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Store, CreditCard } from "lucide-react";
 import Link from "next/link";
 
+const CAFE_NAMES = {
+  cafe1: "Bhola",
+  cafe2: "GSSC",
+  cafe3: "BSSC",
+  cafe4: "Aneexe",
+};
+
 const CartPage = () => {
   const { cart, updateQuantity, removeFromCart, cartTotal, getSplitOrders } = useCartContext();
   const splitOrders = getSplitOrders();
@@ -59,7 +66,7 @@ const CartPage = () => {
                         <Store size={18} />
                       </div>
                       <h3 className="font-poppins font-bold text-uet-navy uppercase tracking-wider text-sm">
-                        {splitOrders[cafeId][0].cafeName || `Cafe ${cafeId}`}
+                        {CAFE_NAMES[cafeId] || splitOrders[cafeId][0].cafeName || `Cafe ${cafeId}`}
                       </h3>
                     </div>
                     <span className="bg-white px-3 py-1 rounded-full text-[10px] font-bold text-slate-400 border border-slate-200 uppercase">

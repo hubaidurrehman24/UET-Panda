@@ -14,7 +14,13 @@ import {
   ArrowRight,
   LogOut,
   TrendingUp,
-  PackageCheck
+  PackageCheck,
+  Eye,
+  EyeOff,
+  Save,
+  CheckCircle2,
+  Shield,
+  Key
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -43,6 +49,13 @@ export default function SuperAdminDashboard() {
   const [orderType, setOrderTypeFilter] = useState("all");
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [selectedMonth, setSelectedMonth] = useState(new Date().toISOString().slice(0, 7)); // YYYY-MM
+  
+  // Credentials App State
+  const [cafeCreds, setCafeCreds] = useState({});
+  const [savingCred, setSavingCred] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+  const [showPassword, setShowPassword] = useState({});
+  const [editedPasswords, setEditedPasswords] = useState({});
   const router = useRouter();
 
   useEffect(() => {
@@ -57,7 +70,17 @@ export default function SuperAdminDashboard() {
       }
       setLoading(false);
     });
-    return () => unsub();
+    
+    // Add real-time listener for credentials
+    const credsRef = ref(db, "cafe_credentials");
+    const unsubCreds = onValue(credsRef, (snapshot) => {
+      setCafeCreds(snapshot.val() || {});
+    });
+
+    return () => {
+      unsub();
+      unsubCreds();
+    };
   }, []);
 
   const handleLogout = async () => {
@@ -111,6 +134,44 @@ export default function SuperAdminDashboard() {
 
     return filtered;
   }, [orders, selectedCafe, timeRange, selectedDate, selectedMonth, orderType]);
+
+  const handleSaveCredential = async (cafeId, email) => {
+    // Determine the final password to send
+    // If they haven't typed anything, editedPasswords[cafeId] might be undefined.
+    // If so, we use the original password to override, but logically we only want to submit if changed.
+    const originalPassword = cafeCreds[cafeId]?.password;
+    const newPassword = editedPasswords[cafeId] !== undefined ? editedPasswords[id] : undefined;
+    
+    const finalPassword = editedPasswords[cafeId] !== undefined ? editedPasswords[cafeId] : originalPassword;
+
+    if (!finalPassword || finalPassword.length < 6) {
+      alert("Password must be at least 6 characters.");
+      return;
+    }
+    
+    setSavingCred(cafeId);
+    try {
+      const res = await fetch("/api/updateCafeCredentials", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cafeId, email, newPassword: finalPassword })
+      });
+      const data = await res.json();
+      
+      if (data.success) {
+        setSuccessMsg(cafeId);
+        setTimeout(() => setSuccessMsg(""), 3000);
+        // Clear the edit state so it falls back to showing the DB state implicitly
+        setEditedPasswords(prev => ({...prev, [cafeId]: undefined}));
+      } else {
+        alert("Failed: " + data.error);
+      }
+    } catch(e) {
+      alert("Error saving password");
+    } finally {
+      setSavingCred("");
+    }
+  };
 
   const stats = useMemo(() => {
     const delivery = filteredData.filter(o => (o.orderType || 'delivery') !== 'takeaway');
@@ -359,6 +420,91 @@ export default function SuperAdminDashboard() {
                     </motion.tr>
                   ))
                 )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Manage Cafe Access Credentials section */}
+        <div className="bg-white rounded-[3rem] p-10 border border-slate-100 shadow-sm mt-10">
+          <div className="flex items-center justify-between mb-8">
+             <h3 className="text-xl font-poppins font-bold text-uet-navy flex items-center gap-3">
+                <Shield size={20} className="text-uet-gold" />
+                Manage Cafe Access Credentials
+             </h3>
+             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                Partner Security Settings
+             </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-slate-50">
+                  <th className="pb-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4">Cafe Partner</th>
+                  <th className="pb-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4">Login Email</th>
+                  <th className="pb-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4">Password</th>
+                  <th className="pb-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-4 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-50">
+                {Object.entries(cafeCreds).map(([id, cred]) => (
+                  <tr key={id} className="hover:bg-slate-50 transition-colors group">
+                    <td className="py-6 px-4">
+                      <div className="flex items-center gap-3">
+                         <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                            <Store size={18} />
+                         </div>
+                         <div className="flex flex-col">
+                            <span className="font-bold text-uet-navy">{cred.name || id}</span>
+                            <span className="text-xs text-slate-400">ID: {id}</span>
+                         </div>
+                      </div>
+                    </td>
+                    <td className="py-6 px-4">
+                      <span className="font-medium text-slate-600">{cred.email}</span>
+                    </td>
+                    <td className="py-6 px-4 max-w-[250px]">
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-300">
+                           <Key size={14} />
+                        </div>
+                        <input 
+                           type={showPassword[id] ? "text" : "password"}
+                           placeholder="Enter new password"
+                           value={editedPasswords[id] !== undefined ? editedPasswords[id] : cred.password}
+                           onChange={(e) => setEditedPasswords(prev => ({...prev, [id]: e.target.value}))}
+                           className="w-full bg-slate-100 border-none text-sm font-bold text-uet-navy py-2 pl-9 pr-10 rounded-xl focus:ring-1 focus:ring-uet-gold outline-none"
+                        />
+                        <button 
+                           onClick={() => setShowPassword(prev => ({...prev, [id]: !prev[id]}))}
+                           className="absolute inset-y-0 right-3 flex items-center text-slate-400 hover:text-uet-gold"
+                        >
+                           {showPassword[id] ? <EyeOff size={14} /> : <Eye size={14} />}
+                        </button>
+                      </div>
+                    </td>
+                    <td className="py-6 px-4 text-right">
+                       <button
+                         onClick={() => handleSaveCredential(id, cred.email)}
+                         disabled={savingCred === id}
+                         className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-bold text-sm transition-all shadow-sm min-w-[120px] ${
+                           successMsg === id 
+                             ? 'bg-green-500 text-white' 
+                             : 'bg-uet-navy text-white hover:bg-uet-gold hover:text-uet-navy'
+                         }`}
+                       >
+                         {savingCred === id ? (
+                           <span className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></span>
+                         ) : successMsg === id ? (
+                           <><CheckCircle2 size={16} /> Saved!</>
+                         ) : (
+                           <><Save size={16} /> Update</>
+                         )}
+                       </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

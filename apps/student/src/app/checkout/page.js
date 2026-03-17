@@ -7,6 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, User, CreditCard, Banknote, CheckCircle2, ArrowRight, Loader2, Truck, ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+const CAFE_NAMES = {
+  cafe1: "Bhola",
+  cafe2: "GSSC",
+  cafe3: "BSSC",
+  cafe4: "Aneexe",
+};
+
 const CheckoutPage = () => {
   const { cart, cartTotal, getSplitOrders, clearCart } = useCartContext();
   const { user } = useAuthContext();
@@ -56,7 +63,7 @@ const CheckoutPage = () => {
           address: orderType === 'takeaway' ? "Self-Pickup at Cafe" : address,
           orderType: orderType,
           cafeId: cafeId,
-          cafeName: items[0].cafeName || `Cafe ${cafeId}`,
+          cafeName: CAFE_NAMES[cafeId] || items[0].cafeName || `Cafe ${cafeId}`,
           items: items.map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity })),
           total: cafeTotal,
           status: "Preparing", // Preparing -> Out for Delivery -> Delivered

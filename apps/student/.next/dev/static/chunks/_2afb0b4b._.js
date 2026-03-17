@@ -485,6 +485,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+const CAFE_NAMES = {
+    cafe1: "Bhola",
+    cafe2: "GSSC",
+    cafe3: "BSSC",
+    cafe4: "Aneexe"
+};
 const CartPage = ()=>{
     _s();
     const { cart, updateQuantity, removeFromCart, cartTotal, getSplitOrders } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCartContext"])();
@@ -494,7 +500,7 @@ const CartPage = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navbar$3e$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                lineNumber: 15,
+                lineNumber: 22,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -518,12 +524,12 @@ const CartPage = ()=>{
                                     size: 32
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                    lineNumber: 24,
+                                    lineNumber: 31,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 19,
+                                lineNumber: 26,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -531,7 +537,7 @@ const CartPage = ()=>{
                                 children: "Your Smart Cart"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 26,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -539,13 +545,13 @@ const CartPage = ()=>{
                                 children: "Items from different cafes will be separate orders"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 27,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                        lineNumber: 18,
+                        lineNumber: 25,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     cart.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -557,12 +563,12 @@ const CartPage = ()=>{
                                     size: 48
                                 }, void 0, false, {
                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                    lineNumber: 33,
+                                    lineNumber: 40,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 32,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -570,7 +576,7 @@ const CartPage = ()=>{
                                 children: "Cart is empty"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 35,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -578,7 +584,7 @@ const CartPage = ()=>{
                                 children: "Looks like you haven't added any flavor to your cart yet."
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 36,
+                                lineNumber: 43,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -590,26 +596,26 @@ const CartPage = ()=>{
                                         className: "rotate-180"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                        lineNumber: 41,
+                                        lineNumber: 48,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Continue Browsing"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                        lineNumber: 42,
+                                        lineNumber: 49,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 37,
+                                lineNumber: 44,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                        lineNumber: 31,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 lg:grid-cols-3 gap-10",
@@ -639,26 +645,26 @@ const CartPage = ()=>{
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 59,
+                                                                    lineNumber: 66,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 58,
+                                                                lineNumber: 65,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                                 className: "font-poppins font-bold text-uet-navy uppercase tracking-wider text-sm",
-                                                                children: splitOrders[cafeId][0].cafeName || `Cafe ${cafeId}`
+                                                                children: CAFE_NAMES[cafeId] || splitOrders[cafeId][0].cafeName || `Cafe ${cafeId}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 61,
+                                                                lineNumber: 68,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                        lineNumber: 57,
+                                                        lineNumber: 64,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -669,13 +675,13 @@ const CartPage = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                        lineNumber: 65,
+                                                        lineNumber: 72,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                lineNumber: 56,
+                                                lineNumber: 63,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -691,12 +697,12 @@ const CartPage = ()=>{
                                                                     className: "w-full h-full object-cover"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 74,
+                                                                    lineNumber: 81,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 73,
+                                                                lineNumber: 80,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -707,7 +713,7 @@ const CartPage = ()=>{
                                                                         children: item.name
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                        lineNumber: 81,
+                                                                        lineNumber: 88,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -718,13 +724,13 @@ const CartPage = ()=>{
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                        lineNumber: 82,
+                                                                        lineNumber: 89,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 80,
+                                                                lineNumber: 87,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,12 +743,12 @@ const CartPage = ()=>{
                                                                             size: 16
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                            lineNumber: 89,
+                                                                            lineNumber: 96,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                        lineNumber: 85,
+                                                                        lineNumber: 92,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -750,7 +756,7 @@ const CartPage = ()=>{
                                                                         children: item.quantity
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                        lineNumber: 91,
+                                                                        lineNumber: 98,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -760,18 +766,18 @@ const CartPage = ()=>{
                                                                             size: 16
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                            lineNumber: 96,
+                                                                            lineNumber: 103,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                        lineNumber: 92,
+                                                                        lineNumber: 99,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 84,
+                                                                lineNumber: 91,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -781,34 +787,34 @@ const CartPage = ()=>{
                                                                     size: 20
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 103,
+                                                                    lineNumber: 110,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                lineNumber: 99,
+                                                                lineNumber: 106,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, item.id, true, {
                                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                        lineNumber: 72,
+                                                        lineNumber: 79,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                lineNumber: 70,
+                                                lineNumber: 77,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, cafeId, true, {
                                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                                        lineNumber: 50,
+                                        lineNumber: 57,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 48,
+                                lineNumber: 55,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -820,7 +826,7 @@ const CartPage = ()=>{
                                             className: "absolute top-0 right-0 w-32 h-32 bg-uet-gold/10 rounded-full -mr-16 -mt-16 blur-xl"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                            lineNumber: 115,
+                                            lineNumber: 122,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -833,20 +839,20 @@ const CartPage = ()=>{
                                                             className: "text-uet-gold"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 118,
+                                                            lineNumber: 125,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Summary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 119,
+                                                            lineNumber: 126,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                    lineNumber: 117,
+                                                    lineNumber: 124,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -859,7 +865,7 @@ const CartPage = ()=>{
                                                                     children: "Subtotal"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 124,
+                                                                    lineNumber: 131,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -869,13 +875,13 @@ const CartPage = ()=>{
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 125,
+                                                                    lineNumber: 132,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 123,
+                                                            lineNumber: 130,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -888,14 +894,14 @@ const CartPage = ()=>{
                                                                             size: 14
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                            lineNumber: 129,
+                                                                            lineNumber: 136,
                                                                             columnNumber: 25
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         "Service Fee"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 128,
+                                                                    lineNumber: 135,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -903,33 +909,7 @@ const CartPage = ()=>{
                                                                     children: "FREE"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 132,
-                                                                    columnNumber: 23
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 127,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex justify-between text-blue-100/60 font-medium italic",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    children: "Orders Count"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 135,
-                                                                    columnNumber: 23
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    children: [
-                                                                        Object.keys(splitOrders).length,
-                                                                        " Cafes"
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
@@ -939,10 +919,36 @@ const CartPage = ()=>{
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex justify-between text-blue-100/60 font-medium italic",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: "Orders Count"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/apps/student/src/app/cart/page.js",
+                                                                    lineNumber: 142,
+                                                                    columnNumber: 23
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: [
+                                                                        Object.keys(splitOrders).length,
+                                                                        " Cafes"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/apps/student/src/app/cart/page.js",
+                                                                    lineNumber: 143,
+                                                                    columnNumber: 23
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/apps/student/src/app/cart/page.js",
+                                                            lineNumber: 141,
+                                                            columnNumber: 21
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "h-px bg-white/10 my-6"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 138,
+                                                            lineNumber: 145,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -952,7 +958,7 @@ const CartPage = ()=>{
                                                                     children: "Total"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 147,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -963,19 +969,19 @@ const CartPage = ()=>{
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                                    lineNumber: 141,
+                                                                    lineNumber: 148,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 139,
+                                                            lineNumber: 146,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                    lineNumber: 122,
+                                                    lineNumber: 129,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -986,20 +992,20 @@ const CartPage = ()=>{
                                                             children: "Proceed to Checkout"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 149,
+                                                            lineNumber: 156,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                            lineNumber: 150,
+                                                            lineNumber: 157,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                    lineNumber: 145,
+                                                    lineNumber: 152,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1007,42 +1013,42 @@ const CartPage = ()=>{
                                                     children: "Split billing applied automatically"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                                    lineNumber: 153,
+                                                    lineNumber: 160,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/cart/page.js",
-                                            lineNumber: 116,
+                                            lineNumber: 123,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/student/src/app/cart/page.js",
-                                    lineNumber: 114,
+                                    lineNumber: 121,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                                lineNumber: 113,
+                                lineNumber: 120,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/cart/page.js",
-                        lineNumber: 46,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/cart/page.js",
-                lineNumber: 17,
+                lineNumber: 24,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/student/src/app/cart/page.js",
-        lineNumber: 14,
+        lineNumber: 21,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

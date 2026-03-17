@@ -102,11 +102,11 @@ const InventoryPage = () => {
       }
 
       const productData = {
-        name,
-        price: parseFloat(price),
+        name: name || "",
+        price: parseFloat(price) || 0,
         image: imageUrl || "",  // Save empty string if no image
-        description,
-        category,
+        description: description || "",
+        category: category || "desi",
         cafeId,
         isHidden: false,
         updatedAt: new Date().toISOString(),
@@ -236,7 +236,7 @@ const InventoryPage = () => {
 
            {/* Bottom Row: Category Filters */}
            <div className="flex flex-wrap items-center gap-2.5 w-full">
-             {["all", "desi", "fast-food", "chinese", "deals", "snacks", "drinks"].map((tab) => (
+             {["all", "desi", "fast-food", "chinese", "deals", "snacks", "drinks", "breakfast"].map((tab) => (
                <button
                  key={tab}
                  onClick={() => setActiveTab(tab)}

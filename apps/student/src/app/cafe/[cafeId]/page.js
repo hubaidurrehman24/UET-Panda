@@ -70,7 +70,7 @@ export default function CafeMenuPage() {
     const unsub = onValue(menuRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        setItems(Object.entries(data).map(([id, val]) => ({ id, ...val })));
+        setItems(Object.entries(data).map(([id, val]) => ({ id, ...val })).filter(item => !item.isHidden));
       } else {
         setItems([]);
       }

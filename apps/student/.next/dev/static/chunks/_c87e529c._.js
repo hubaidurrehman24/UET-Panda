@@ -501,6 +501,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+const CAFE_NAMES = {
+    cafe1: "Bhola",
+    cafe2: "GSSC",
+    cafe3: "BSSC",
+    cafe4: "Aneexe"
+};
 const CheckoutPage = ()=>{
     _s();
     const { cart, cartTotal, getSplitOrders, clearCart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$config$2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCartContext"])();
@@ -545,7 +551,7 @@ const CheckoutPage = ()=>{
                     address: orderType === 'takeaway' ? "Self-Pickup at Cafe" : address,
                     orderType: orderType,
                     cafeId: cafeId,
-                    cafeName: items[0].cafeName || `Cafe ${cafeId}`,
+                    cafeName: CAFE_NAMES[cafeId] || items[0].cafeName || `Cafe ${cafeId}`,
                     items: items.map((i)=>({
                             id: i.id,
                             name: i.name,
@@ -597,12 +603,12 @@ const CheckoutPage = ()=>{
                             className: "text-uet-navy"
                         }, void 0, false, {
                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                            lineNumber: 98,
+                            lineNumber: 105,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 97,
+                        lineNumber: 104,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -610,7 +616,7 @@ const CheckoutPage = ()=>{
                         children: "Order Placed!"
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 100,
+                        lineNumber: 107,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -618,18 +624,18 @@ const CheckoutPage = ()=>{
                         children: "Your multi-cafe orders have been submitted. Track them in your profile."
                     }, void 0, false, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 101,
+                        lineNumber: 108,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                lineNumber: 92,
+                lineNumber: 99,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/apps/student/src/app/checkout/page.js",
-            lineNumber: 91,
+            lineNumber: 98,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0));
     }
@@ -638,7 +644,7 @@ const CheckoutPage = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$Navbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navbar$3e$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                lineNumber: 109,
+                lineNumber: 116,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -652,7 +658,7 @@ const CheckoutPage = ()=>{
                                 children: showStripeMock ? "Online Payment" : "Secure Checkout"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 113,
+                                lineNumber: 120,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -660,13 +666,13 @@ const CheckoutPage = ()=>{
                                 children: showStripeMock ? "Mock Stripe Integration" : "Split billing logic will generate separate receipts"
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 114,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 112,
+                        lineNumber: 119,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     showStripeMock ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -680,7 +686,7 @@ const CheckoutPage = ()=>{
                                         children: "Card Details"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 120,
+                                        lineNumber: 127,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
@@ -688,13 +694,13 @@ const CheckoutPage = ()=>{
                                         className: "text-uet-gold"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 121,
+                                        lineNumber: 128,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 119,
+                                lineNumber: 126,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -707,7 +713,7 @@ const CheckoutPage = ()=>{
                                                 children: "Card Number"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 126,
+                                                lineNumber: 133,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -716,13 +722,13 @@ const CheckoutPage = ()=>{
                                                 className: "w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 127,
+                                                lineNumber: 134,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 125,
+                                        lineNumber: 132,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -735,7 +741,7 @@ const CheckoutPage = ()=>{
                                                         children: "Expiry"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 131,
+                                                        lineNumber: 138,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -744,13 +750,13 @@ const CheckoutPage = ()=>{
                                                         className: "w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 132,
+                                                        lineNumber: 139,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 130,
+                                                lineNumber: 137,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -760,7 +766,7 @@ const CheckoutPage = ()=>{
                                                         children: "CVC"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 135,
+                                                        lineNumber: 142,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -769,19 +775,19 @@ const CheckoutPage = ()=>{
                                                         className: "w-full bg-slate-50 border-none outline-none p-3.5 rounded-2xl text-uet-navy font-medium font-mono"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 136,
+                                                        lineNumber: 143,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 134,
+                                                lineNumber: 141,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 129,
+                                        lineNumber: 136,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -794,7 +800,7 @@ const CheckoutPage = ()=>{
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 141,
+                                                lineNumber: 148,
                                                 columnNumber: 18
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -806,7 +812,7 @@ const CheckoutPage = ()=>{
                                                     className: "animate-spin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 154,
+                                                    lineNumber: 161,
                                                     columnNumber: 32
                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: [
@@ -815,30 +821,30 @@ const CheckoutPage = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 154,
+                                                    lineNumber: 161,
                                                     columnNumber: 71
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 148,
+                                                lineNumber: 155,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 140,
+                                        lineNumber: 147,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 124,
+                                lineNumber: 131,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 118,
+                        lineNumber: 125,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                         onSubmit: handleCheckout,
@@ -858,20 +864,20 @@ const CheckoutPage = ()=>{
                                                         className: "text-uet-gold"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 165,
+                                                        lineNumber: 172,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Delivery Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 166,
+                                                        lineNumber: 173,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 164,
+                                                lineNumber: 171,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -884,7 +890,7 @@ const CheckoutPage = ()=>{
                                                                 children: "Full Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 171,
+                                                                lineNumber: 178,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -896,13 +902,13 @@ const CheckoutPage = ()=>{
                                                                 onChange: (e)=>setName(e.target.value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 172,
+                                                                lineNumber: 179,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 170,
+                                                        lineNumber: 177,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -912,7 +918,7 @@ const CheckoutPage = ()=>{
                                                                 children: "Phone Number"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 180,
+                                                                lineNumber: 187,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -924,13 +930,13 @@ const CheckoutPage = ()=>{
                                                                 onChange: (e)=>setPhone(e.target.value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 181,
+                                                                lineNumber: 188,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 179,
+                                                        lineNumber: 186,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -940,7 +946,7 @@ const CheckoutPage = ()=>{
                                                                 children: orderType === 'takeaway' ? 'Pre Order Pickup Info (Optional)' : 'UET Hostel/Dept/Room'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 189,
+                                                                lineNumber: 196,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -952,25 +958,25 @@ const CheckoutPage = ()=>{
                                                                 onChange: (e)=>setAddress(e.target.value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 192,
+                                                                lineNumber: 199,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 188,
+                                                        lineNumber: 195,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 169,
+                                                lineNumber: 176,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 163,
+                                        lineNumber: 170,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -984,20 +990,20 @@ const CheckoutPage = ()=>{
                                                         className: "text-uet-gold"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 205,
+                                                        lineNumber: 212,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Order Type"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 206,
+                                                        lineNumber: 213,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 204,
+                                                lineNumber: 211,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1013,7 +1019,7 @@ const CheckoutPage = ()=>{
                                                                 className: "mb-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 219,
+                                                                lineNumber: 226,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1021,13 +1027,13 @@ const CheckoutPage = ()=>{
                                                                 children: "Delivery"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 220,
+                                                                lineNumber: 227,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 210,
+                                                        lineNumber: 217,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1040,7 +1046,7 @@ const CheckoutPage = ()=>{
                                                                 className: "mb-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 231,
+                                                                lineNumber: 238,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1048,25 +1054,25 @@ const CheckoutPage = ()=>{
                                                                 children: "Pre Order"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 232,
+                                                                lineNumber: 239,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 222,
+                                                        lineNumber: 229,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 209,
+                                                lineNumber: 216,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 203,
+                                        lineNumber: 210,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1080,20 +1086,20 @@ const CheckoutPage = ()=>{
                                                         className: "text-uet-gold"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 240,
+                                                        lineNumber: 247,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Payment Method"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 241,
+                                                        lineNumber: 248,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 239,
+                                                lineNumber: 246,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1109,7 +1115,7 @@ const CheckoutPage = ()=>{
                                                                 className: "mb-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 254,
+                                                                lineNumber: 261,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1117,13 +1123,13 @@ const CheckoutPage = ()=>{
                                                                 children: "Cash on Delivery"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 255,
+                                                                lineNumber: 262,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 245,
+                                                        lineNumber: 252,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1136,7 +1142,7 @@ const CheckoutPage = ()=>{
                                                                 className: "mb-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 266,
+                                                                lineNumber: 273,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1144,31 +1150,31 @@ const CheckoutPage = ()=>{
                                                                 children: "Online Payment"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                lineNumber: 267,
+                                                                lineNumber: 274,
                                                                 columnNumber: 20
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 257,
+                                                        lineNumber: 264,
                                                         columnNumber: 18
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 244,
+                                                lineNumber: 251,
                                                 columnNumber: 16
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                        lineNumber: 238,
+                                        lineNumber: 245,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 162,
+                                lineNumber: 169,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1180,7 +1186,7 @@ const CheckoutPage = ()=>{
                                             className: "absolute top-0 right-0 w-32 h-32 bg-uet-gold/10 rounded-full -mr-16 -mt-16 blur-xl"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                            lineNumber: 276,
+                                            lineNumber: 283,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1191,20 +1197,20 @@ const CheckoutPage = ()=>{
                                                     className: "text-uet-gold"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 279,
+                                                    lineNumber: 286,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Final Total"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 280,
+                                                    lineNumber: 287,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                            lineNumber: 278,
+                                            lineNumber: 285,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,7 +1223,7 @@ const CheckoutPage = ()=>{
                                                             children: "Order Subtotal"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 285,
+                                                            lineNumber: 292,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1227,13 +1233,13 @@ const CheckoutPage = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 286,
+                                                            lineNumber: 293,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 284,
+                                                    lineNumber: 291,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1246,20 +1252,20 @@ const CheckoutPage = ()=>{
                                                                     size: 14
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                    lineNumber: 290,
+                                                                    lineNumber: 297,
                                                                     columnNumber: 51
                                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$bag$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingBag$3e$__["ShoppingBag"], {
                                                                     size: 14
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                                    lineNumber: 290,
+                                                                    lineNumber: 297,
                                                                     columnNumber: 73
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 orderType === 'delivery' ? 'Delivery Fee' : 'Pre Order'
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 289,
+                                                            lineNumber: 296,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1267,20 +1273,20 @@ const CheckoutPage = ()=>{
                                                             children: "FREE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 293,
+                                                            lineNumber: 300,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 288,
+                                                    lineNumber: 295,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "h-px bg-white/10 my-6"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 295,
+                                                    lineNumber: 302,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1290,7 +1296,7 @@ const CheckoutPage = ()=>{
                                                             children: "Grand Total"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 297,
+                                                            lineNumber: 304,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1301,19 +1307,19 @@ const CheckoutPage = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                            lineNumber: 298,
+                                                            lineNumber: 305,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                    lineNumber: 296,
+                                                    lineNumber: 303,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                            lineNumber: 283,
+                                            lineNumber: 290,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1324,7 +1330,7 @@ const CheckoutPage = ()=>{
                                                 className: "animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                lineNumber: 307,
+                                                lineNumber: 314,
                                                 columnNumber: 30
                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                 children: [
@@ -1332,7 +1338,7 @@ const CheckoutPage = ()=>{
                                                         children: "Place Multi-Order"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 307,
+                                                        lineNumber: 314,
                                                         columnNumber: 71
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     " ",
@@ -1340,14 +1346,14 @@ const CheckoutPage = ()=>{
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                                        lineNumber: 307,
+                                                        lineNumber: 314,
                                                         columnNumber: 102
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                            lineNumber: 302,
+                                            lineNumber: 309,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1355,36 +1361,36 @@ const CheckoutPage = ()=>{
                                             children: "Encryption active. Secure checkout via UET Panda Gate."
                                         }, void 0, false, {
                                             fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                            lineNumber: 310,
+                                            lineNumber: 317,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                    lineNumber: 275,
+                                    lineNumber: 282,
                                     columnNumber: 14
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                                lineNumber: 274,
+                                lineNumber: 281,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/student/src/app/checkout/page.js",
-                        lineNumber: 160,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/student/src/app/checkout/page.js",
-                lineNumber: 111,
+                lineNumber: 118,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/student/src/app/checkout/page.js",
-        lineNumber: 108,
+        lineNumber: 115,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1400,12 +1406,12 @@ function ProtectedCheckoutPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2d$ui$2f$src$2f$components$2f$ProtectedRoute$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ProtectedRoute$3e$__["ProtectedRoute"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CheckoutPage, {}, void 0, false, {
             fileName: "[project]/apps/student/src/app/checkout/page.js",
-            lineNumber: 325,
+            lineNumber: 332,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/apps/student/src/app/checkout/page.js",
-        lineNumber: 324,
+        lineNumber: 331,
         columnNumber: 5
     }, this);
 }

@@ -133,11 +133,11 @@ const InventoryPage = ()=>{
                 setIsUploading(false);
             }
             const productData = {
-                name,
-                price: parseFloat(price),
+                name: name || "",
+                price: parseFloat(price) || 0,
                 image: imageUrl || "",
-                description,
-                category,
+                description: description || "",
+                category: category || "desi",
                 cafeId,
                 isHidden: false,
                 updatedAt: new Date().toISOString()
@@ -419,7 +419,8 @@ const InventoryPage = ()=>{
                                     "chinese",
                                     "deals",
                                     "snacks",
-                                    "drinks"
+                                    "drinks",
+                                    "breakfast"
                                 ].map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setActiveTab(tab),
                                         className: `px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-widest transition-all ${activeTab === tab ? 'bg-uet-navy text-white shadow-md' : 'bg-white text-slate-500 hover:bg-slate-100 border border-slate-200'}`,

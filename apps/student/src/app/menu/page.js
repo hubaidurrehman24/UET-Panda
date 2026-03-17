@@ -93,7 +93,9 @@ function MenuContent() {
         const allItems = [];
         Object.keys(data).forEach(cafeId => {
           Object.entries(data[cafeId]).forEach(([id, val]) => {
-            allItems.push({ id, ...val, cafeId });
+            if (!val.isHidden) {
+              allItems.push({ id, ...val, cafeId });
+            }
           });
         });
         setItems(allItems);

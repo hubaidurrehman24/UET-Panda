@@ -25,6 +25,13 @@ import {
 import { push, set } from "firebase/database";
 import Link from "next/link";
 
+const CAFE_NAMES = {
+  cafe1: "Bhola",
+  cafe2: "GSSC",
+  cafe3: "BSSC",
+  cafe4: "Aneexe",
+};
+
 const OrderTracking = () => {
   const { user } = useAuthContext();
   const [orders, setOrders] = useState([]);
@@ -126,7 +133,9 @@ const OrderTracking = () => {
                               <span className="text-[10px] uppercase font-bold text-blue-100/40 tracking-widest">Order Receipt</span>
                               <span className="bg-white/10 px-2 py-0.5 rounded text-[9px] font-bold text-uet-gold italic">#{order.id.slice(-6)}</span>
                            </div>
-                           <h3 className="text-xl font-bold font-poppins">{order.cafeName}</h3>
+                           <h3 className="text-xl font-bold font-poppins">
+                              {CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`}
+                           </h3>
                         </div>
                      </div>
                      <div className="text-right">
@@ -250,7 +259,9 @@ const OrderTracking = () => {
                                 </p>
                                 <div className="mt-4 pt-4 border-t border-slate-50 flex items-center space-x-2">
                                    <Store size={14} className="text-uet-gold" />
-                                   <span className="text-[10px] font-bold text-slate-600 line-clamp-1">{order.cafeName} Counter</span>
+                                    <span className="text-[10px] font-bold text-slate-600 line-clamp-1">
+                                      {CAFE_NAMES[order.cafeId] || order.cafeName || `Cafe ${order.cafeId}`} Counter
+                                    </span>
                                 </div>
                               </div>
                             ) : (

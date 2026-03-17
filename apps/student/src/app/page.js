@@ -52,7 +52,9 @@ export default function Home() {
       const unsub = onValue(q, (snapshot) => {
         const data = snapshot.val();
         if (data) {
-          allFetchedDeals[cafeId] = Object.entries(data).map(([id, val]) => ({ id, ...val, cafeId }));
+          allFetchedDeals[cafeId] = Object.entries(data)
+            .map(([id, val]) => ({ id, ...val, cafeId }))
+            .filter(item => !item.isHidden);
         } else {
           allFetchedDeals[cafeId] = [];
         }
