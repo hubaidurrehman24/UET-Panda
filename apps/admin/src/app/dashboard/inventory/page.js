@@ -15,6 +15,7 @@ import {
   X, 
   Check, 
   Loader2, 
+  Star,
   Image as ImageIcon,
   UploadCloud
 } from "lucide-react";
