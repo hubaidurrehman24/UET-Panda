@@ -77,7 +77,9 @@ function LoginContent() {
         className="w-full max-w-md relative z-10"
       >
         {/* Logo Section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
+          <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} className="mx-auto mb-6" />
+          {/* 
           <motion.div 
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
@@ -88,6 +90,7 @@ function LoginContent() {
           <h1 className="text-3xl font-poppins font-bold text-white">
             Welcome to <span className="text-uet-gold">UET PANDA</span>
           </h1>
+          */}
           <p className="text-blue-100/60 mt-2 font-medium italic">Independent Cafes, Unified Flavor</p>
         </div>
 

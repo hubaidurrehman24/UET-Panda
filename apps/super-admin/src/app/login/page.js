@@ -48,10 +48,13 @@ export default function SuperAdminLogin() {
       >
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-10 shadow-2xl">
           <div className="text-center mb-10">
+            <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} className="mx-auto mb-6" />
+            {/* 
             <div className="inline-flex p-4 bg-uet-gold rounded-2xl shadow-gold mb-6">
               <ShieldCheck size={32} className="text-uet-navy" />
             </div>
             <h1 className="text-3xl font-poppins font-bold text-white tracking-tight">Super Admin</h1>
+            */}
             <p className="text-blue-100/40 text-sm font-medium mt-2">Centralized Statistics Hub</p>
           </div>
 

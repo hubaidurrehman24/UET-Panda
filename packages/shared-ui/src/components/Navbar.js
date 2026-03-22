@@ -24,9 +24,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
+          <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} className="hover:scale-105 transition-transform" />
+          {/* 
           <span className="font-poppins font-bold text-xl tracking-tight">
             UET <span className="text-uet-gold">PANDA</span>
           </span>
+          */}
         </Link>
 
         {/* Desktop Navigation */}

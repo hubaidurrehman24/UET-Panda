@@ -32,7 +32,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lock.js [app-client] (ecmascript) <export default as Lock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/store.js [app-client] (ecmascript) <export default as Store>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/eye.js [app-client] (ecmascript) <export default as Eye>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2d$off$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__EyeOff$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/eye-off.js [app-client] (ecmascript) <export default as EyeOff>");
@@ -78,7 +77,7 @@ function AdminLoginContent() {
                 setError("Unauthorized access. This portal is for Cafe Partners only.");
             }
         } catch (err) {
-            console.error(err);
+            console.error("[Admin Login] Sign-in failed:", err);
             setError("Invalid credentials. Please check your email and password.");
         } finally{
             setLoading(false);
@@ -146,10 +145,14 @@ function AdminLoginContent() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "p-4 bg-uet-navy rounded-2xl inline-block shadow-lg mb-6",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                                                    size: 32,
-                                                    className: "text-uet-gold"
+                                                className: "mb-6",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: "/logo.png",
+                                                    alt: "Logo",
+                                                    style: {
+                                                        width: '130px',
+                                                        height: 'auto'
+                                                    }
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
                                                     lineNumber: 71,
@@ -166,7 +169,7 @@ function AdminLoginContent() {
                                                     "Merchant ",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 74,
+                                                        lineNumber: 79,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -174,13 +177,13 @@ function AdminLoginContent() {
                                                         children: "Portal"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 75,
+                                                        lineNumber: 80,
                                                         columnNumber: 20
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 73,
+                                                lineNumber: 78,
                                                 columnNumber: 17
                                             }, this)
                                         ]
@@ -195,14 +198,14 @@ function AdminLoginContent() {
                                             "Secure management for ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 79,
+                                                lineNumber: 84,
                                                 columnNumber: 39
                                             }, this),
                                             "UET Panda partners"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                        lineNumber: 78,
+                                        lineNumber: 83,
                                         columnNumber: 14
                                     }, this)
                                 ]
@@ -219,24 +222,21 @@ function AdminLoginContent() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "md:hidden flex justify-center mb-6",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "bg-uet-gold p-4 rounded-2xl",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                                                        size: 28,
-                                                        className: "text-uet-navy"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 89,
-                                                        columnNumber: 23
-                                                    }, this)
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: "/logo.png",
+                                                    alt: "Logo",
+                                                    style: {
+                                                        width: '130px',
+                                                        height: 'auto'
+                                                    }
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                    lineNumber: 88,
+                                                    lineNumber: 93,
                                                     columnNumber: 20
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 87,
+                                                lineNumber: 92,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -244,7 +244,7 @@ function AdminLoginContent() {
                                                 children: "Partner Login"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 92,
+                                                lineNumber: 100,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -252,13 +252,13 @@ function AdminLoginContent() {
                                                 children: "Access your orders & inventory"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 93,
+                                                lineNumber: 101,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 91,
                                         columnNumber: 14
                                     }, this),
                                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -277,7 +277,7 @@ function AdminLoginContent() {
                                                 className: "text-red-400 shrink-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 102,
+                                                lineNumber: 110,
                                                 columnNumber: 18
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -285,13 +285,13 @@ function AdminLoginContent() {
                                                 children: error
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 103,
+                                                lineNumber: 111,
                                                 columnNumber: 18
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                        lineNumber: 97,
+                                        lineNumber: 105,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -306,7 +306,7 @@ function AdminLoginContent() {
                                                         children: "Work Email"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 109,
+                                                        lineNumber: 117,
                                                         columnNumber: 18
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -318,12 +318,12 @@ function AdminLoginContent() {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                    lineNumber: 112,
+                                                                    lineNumber: 120,
                                                                     columnNumber: 22
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                lineNumber: 111,
+                                                                lineNumber: 119,
                                                                 columnNumber: 20
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -335,19 +335,19 @@ function AdminLoginContent() {
                                                                 onChange: (e)=>setEmail(e.target.value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                lineNumber: 114,
+                                                                lineNumber: 122,
                                                                 columnNumber: 20
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 110,
+                                                        lineNumber: 118,
                                                         columnNumber: 18
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 108,
+                                                lineNumber: 116,
                                                 columnNumber: 16
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -358,7 +358,7 @@ function AdminLoginContent() {
                                                         children: "Password"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 126,
+                                                        lineNumber: 134,
                                                         columnNumber: 18
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -370,12 +370,12 @@ function AdminLoginContent() {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                    lineNumber: 129,
+                                                                    lineNumber: 137,
                                                                     columnNumber: 22
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                lineNumber: 128,
+                                                                lineNumber: 136,
                                                                 columnNumber: 20
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -387,7 +387,7 @@ function AdminLoginContent() {
                                                                 onChange: (e)=>setPassword(e.target.value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                lineNumber: 131,
+                                                                lineNumber: 139,
                                                                 columnNumber: 20
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -398,30 +398,30 @@ function AdminLoginContent() {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                    lineNumber: 144,
+                                                                    lineNumber: 152,
                                                                     columnNumber: 38
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__["Eye"], {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                    lineNumber: 144,
+                                                                    lineNumber: 152,
                                                                     columnNumber: 61
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                                lineNumber: 139,
+                                                                lineNumber: 147,
                                                                 columnNumber: 20
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                        lineNumber: 127,
+                                                        lineNumber: 135,
                                                         columnNumber: 18
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 125,
+                                                lineNumber: 133,
                                                 columnNumber: 16
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -432,7 +432,7 @@ function AdminLoginContent() {
                                                     className: "animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-uet-navy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                    lineNumber: 155,
+                                                    lineNumber: 163,
                                                     columnNumber: 20
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
@@ -440,27 +440,27 @@ function AdminLoginContent() {
                                                             children: "Authorized Access"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                            lineNumber: 158,
+                                                            lineNumber: 166,
                                                             columnNumber: 22
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                            lineNumber: 159,
+                                                            lineNumber: 167,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                                lineNumber: 149,
+                                                lineNumber: 157,
                                                 columnNumber: 16
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                        lineNumber: 107,
+                                        lineNumber: 115,
                                         columnNumber: 14
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,18 +471,18 @@ function AdminLoginContent() {
                                             children: "← Return to Student Website"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                            lineNumber: 166,
+                                            lineNumber: 174,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                        lineNumber: 165,
+                                        lineNumber: 173,
                                         columnNumber: 14
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                                lineNumber: 85,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -496,7 +496,7 @@ function AdminLoginContent() {
                         children: "Property of UET Panda — Authorized Use Only"
                     }, void 0, false, {
                         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                        lineNumber: 174,
+                        lineNumber: 182,
                         columnNumber: 9
                     }, this)
                 ]
@@ -527,22 +527,22 @@ function AdminLoginPage() {
                 className: "animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-uet-gold"
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-                lineNumber: 184,
+                lineNumber: 192,
                 columnNumber: 100
             }, void 0)
         }, void 0, false, {
             fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-            lineNumber: 184,
+            lineNumber: 192,
             columnNumber: 25
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AdminLoginContent, {}, void 0, false, {
             fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-            lineNumber: 185,
+            lineNumber: 193,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/apps/admin/src/app/(auth)/admin/login/page.js",
-        lineNumber: 184,
+        lineNumber: 192,
         columnNumber: 5
     }, this);
 }

@@ -39,13 +39,18 @@ const Sidebar = () => {
 
   return (
     <aside className="w-64 bg-uet-navy text-white min-h-screen flex flex-col shadow-2xl">
-      <div className="p-8 border-b border-white/10 flex items-center space-x-3">
-        <div className="bg-uet-gold p-2 rounded-xl">
+      <div className="p-6 border-b border-white/10 flex flex-col items-center space-y-1">
+        <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} />
+        <div className="bg-uet-gold p-2 rounded-xl hidden">
           <Store className="text-uet-navy" size={24} />
         </div>
-        <div>
+        <div className="text-center">
+           {/* 
            <h2 className="font-poppins font-bold text-lg leading-tight uppercase tracking-tighter">Admin <span className="text-uet-gold">Panda</span></h2>
-           <p className="text-sm text-blue-100 uppercase font-bold tracking-wider mt-1">{CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'}</p>
+           */}
+           <p className="text-base text-blue-100 uppercase font-bold tracking-widest opacity-80">
+             {CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'}
+           </p>
         </div>
       </div>
 

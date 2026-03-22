@@ -130,55 +130,48 @@ const Sidebar = ()=>{
         className: "w-64 bg-uet-navy text-white min-h-screen flex flex-col shadow-2xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "p-8 border-b border-white/10 flex items-center space-x-3",
+                className: "p-6 border-b border-white/10 flex flex-col items-center space-y-1",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-uet-gold p-2 rounded-xl",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
-                            className: "text-uet-navy",
-                            size: 24
-                        }, void 0, false, {
-                            fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 44,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/logo.png",
+                        alt: "Logo",
+                        style: {
+                            width: '130px',
+                            height: 'auto'
+                        }
                     }, void 0, false, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
                         lineNumber: 43,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "font-poppins font-bold text-lg leading-tight uppercase tracking-tighter",
-                                children: [
-                                    "Admin ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-uet-gold",
-                                        children: "Panda"
-                                    }, void 0, false, {
-                                        fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                        lineNumber: 47,
-                                        columnNumber: 106
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 47,
-                                columnNumber: 12
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-blue-100 uppercase font-bold tracking-wider mt-1",
-                                children: CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'
-                            }, void 0, false, {
-                                fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 48,
-                                columnNumber: 12
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
+                        className: "bg-uet-gold p-2 rounded-xl hidden",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
+                            className: "text-uet-navy",
+                            size: 24
+                        }, void 0, false, {
+                            fileName: "[project]/apps/admin/src/components/Sidebar.js",
+                            lineNumber: 45,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                        lineNumber: 46,
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-base text-blue-100 uppercase font-bold tracking-widest opacity-80",
+                            children: CAFE_NAMES[cafeId] || cafeId || 'Cafe Panel'
+                        }, void 0, false, {
+                            fileName: "[project]/apps/admin/src/components/Sidebar.js",
+                            lineNumber: 51,
+                            columnNumber: 12
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/apps/admin/src/components/Sidebar.js",
+                        lineNumber: 47,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -202,13 +195,13 @@ const Sidebar = ()=>{
                                         children: item.name
                                     }, void 0, false, {
                                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                        lineNumber: 65,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 63,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
@@ -216,18 +209,18 @@ const Sidebar = ()=>{
                                 className: `transition-transform ${pathname === item.path ? "opacity-100" : "opacity-0 group-hover:opacity-40"}`
                             }, void 0, false, {
                                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                                lineNumber: 67,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, item.path, true, {
                         fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                        lineNumber: 54,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                lineNumber: 52,
+                lineNumber: 57,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -240,25 +233,25 @@ const Sidebar = ()=>{
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 77,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: "Sign Out"
                         }, void 0, false, {
                             fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                            lineNumber: 78,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                    lineNumber: 73,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/apps/admin/src/components/Sidebar.js",
-                lineNumber: 72,
+                lineNumber: 77,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -321,20 +314,15 @@ const Navbar = ()=>{
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     href: "/",
                     className: "flex items-center",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "font-poppins font-bold text-xl tracking-tight",
-                        children: [
-                            "UET ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-uet-gold",
-                                children: "PANDA"
-                            }, void 0, false, {
-                                fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                lineNumber: 28,
-                                columnNumber: 17
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/logo.png",
+                        alt: "Logo",
+                        style: {
+                            width: '130px',
+                            height: 'auto'
+                        },
+                        className: "hover:scale-105 transition-transform"
+                    }, void 0, false, {
                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
                         lineNumber: 27,
                         columnNumber: 11
@@ -357,7 +345,7 @@ const Navbar = ()=>{
                                     children: "Cafes"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 36,
+                                    lineNumber: 39,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -368,7 +356,7 @@ const Navbar = ()=>{
                                     children: "Deals"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 37,
+                                    lineNumber: 40,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -379,13 +367,13 @@ const Navbar = ()=>{
                             children: "Admin Dashboard"
                         }, void 0, false, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 41,
+                            lineNumber: 44,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                    lineNumber: 33,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -400,20 +388,20 @@ const Navbar = ()=>{
                                     className: "md:hidden"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 51,
+                                    lineNumber: 54,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "My Orders"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 52,
+                                    lineNumber: 55,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 50,
+                            lineNumber: 53,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -427,7 +415,7 @@ const Navbar = ()=>{
                                         className: "text-uet-gold"
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 58,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     cart.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -435,18 +423,18 @@ const Navbar = ()=>{
                                         children: cart.length
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 60,
+                                        lineNumber: 63,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                lineNumber: 57,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 56,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,7 +445,7 @@ const Navbar = ()=>{
                                     children: user.email?.split('@')[0]
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 69,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -468,18 +456,18 @@ const Navbar = ()=>{
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                        lineNumber: 77,
+                                        lineNumber: 80,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 72,
+                                    lineNumber: 75,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 68,
+                            lineNumber: 71,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             href: "/login",
@@ -489,7 +477,7 @@ const Navbar = ()=>{
                                     size: 22
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 85,
+                                    lineNumber: 88,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -497,19 +485,19 @@ const Navbar = ()=>{
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                                    lineNumber: 86,
+                                    lineNumber: 89,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                            lineNumber: 81,
+                            lineNumber: 84,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/packages/shared-ui/src/components/Navbar.js",
-                    lineNumber: 48,
+                    lineNumber: 51,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

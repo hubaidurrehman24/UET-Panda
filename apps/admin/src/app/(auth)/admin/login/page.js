@@ -67,9 +67,14 @@ function AdminLoginContent() {
                    <ArrowLeft size={16} />
                    Back to Site
                 </Link>
+                <div className="mb-6">
+                   <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} />
+                </div>
+                {/* 
                 <div className="p-4 bg-uet-navy rounded-2xl inline-block shadow-lg mb-6">
                    <Store size={32} className="text-uet-gold" />
                 </div>
+                */}
                 <h2 className="text-3xl font-poppins font-extrabold text-uet-navy tracking-tight leading-tight">
                    Merchant <br/>
                    <span className="text-white">Portal</span>
@@ -85,9 +90,12 @@ function AdminLoginContent() {
           <div className="flex-grow p-8 md:p-12 flex flex-col justify-center">
              <div className="mb-8">
                 <div className="md:hidden flex justify-center mb-6">
+                   <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} />
+                   {/* 
                    <div className="bg-uet-gold p-4 rounded-2xl">
                       <Store size={28} className="text-uet-navy" />
                    </div>
+                   */}
                 </div>
                 <h1 className="text-2xl font-poppins font-bold text-white mb-2">Partner Login</h1>
                 <p className="text-blue-100/40 text-sm font-medium">Access your orders & inventory</p>

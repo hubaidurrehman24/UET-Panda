@@ -76,7 +76,9 @@ export default function RegisterPage() {
         className="w-full max-w-md relative z-10"
       >
         {/* Header Section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
+          <img src="/logo.png" alt="Logo" style={{ width: '130px', height: 'auto' }} className="mx-auto mb-6" />
+          {/* 
           <motion.div 
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
@@ -87,6 +89,7 @@ export default function RegisterPage() {
           <h1 className="text-3xl font-poppins font-bold text-white">
             Create <span className="text-uet-gold">Account</span>
           </h1>
+          */}
           <p className="text-blue-100/60 mt-2 font-medium italic">Join UET PANDA today</p>
         </div>
 
